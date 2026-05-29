@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Septeo ADB - Alina Lagarde</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,500&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --paper: #f8f5f0;
+  --white: #ffffff;
+  --ink: #131b24;
+  --copy: #46515e;
+  --quiet: #737d87;
+  --line: #ddd6cb;
+  --accent: #c98700;
+  --accent-bright: #f4c74c;
+  --accent-soft: #fff3d5;
+  --secondary: #5b55c8;
+  --secondary-soft: #f0efff;
+  --navy: #182038;
+  --shadow: 0 16px 45px rgba(17, 27, 39, 0.07);
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Manrope", "Helvetica Neue", sans-serif;
+  font-weight: 400;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+p {
+  color: var(--copy);
+  font-size: 15px;
+  line-height: 1.78;
+  margin-bottom: 15px;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+strong {
+  color: var(--ink);
+  font-weight: 650;
+}
+
+.page {
+  background: var(--paper);
+  box-shadow: 0 0 0 1px rgba(221, 214, 203, 0.35);
+  margin: 0 auto;
+  max-width: 1360px;
+}
+
+.language-panel[hidden] {
+  display: none;
+}
+
+.topbar {
+  align-items: center;
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  padding: 21px 54px;
+}
+
+.topbar-name {
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+.topbar-info {
+  align-items: center;
+  color: var(--quiet);
+  display: flex;
+  font-size: 11px;
+  font-weight: 600;
+  gap: 17px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.language-switch {
+  align-items: center;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  display: flex;
+  gap: 2px;
+  padding: 3px;
+}
+
+.language-option {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  border-radius: 999px;
+  color: var(--quiet);
+  cursor: pointer;
+  font: inherit;
+  font-size: 10px;
+  letter-spacing: 0.13em;
+  padding: 7px 11px;
+  transition: background 180ms ease, color 180ms ease;
+}
+
+.language-option.is-active {
+  background: var(--ink);
+  color: var(--white);
+}
+
+.language-option:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.brand-pips {
+  display: flex;
+  gap: 5px;
+}
+
+.brand-pips span {
+  border-radius: 50%;
+  display: block;
+  height: 7px;
+  width: 7px;
+}
+
+.brand-pips span:first-child {
+  background: var(--accent-bright);
+}
+
+.brand-pips span:last-child {
+  background: var(--secondary);
+}
+
+.hero {
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: minmax(390px, 47%) 1fr;
+  min-height: 650px;
+}
+
+.hero-photo {
+  background: var(--navy);
+  min-height: 650px;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-photo img {
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+
+.hero-photo::before {
+  background:
+    linear-gradient(to right, transparent 67%, rgba(248, 245, 240, 0.34) 80%, var(--paper) 100%),
+    linear-gradient(180deg, transparent 50%, rgba(24, 32, 56, 0.28) 100%);
+  content: "";
+  inset: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.hero-photo::after {
+  background: var(--accent-bright);
+  bottom: 34px;
+  content: "";
+  height: 5px;
+  left: 42px;
+  position: absolute;
+  width: 75px;
+  z-index: 2;
+}
+
+@media (min-width: 981px) {
+  .hero-photo {
+    height: 650px;
+  }
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px 56px 48px 52px;
+}
+
+.eyebrow,
+.section-label {
+  align-items: center;
+  color: var(--accent);
+  display: flex;
+  font-size: 11px;
+  font-weight: 700;
+  gap: 12px;
+  letter-spacing: 0.19em;
+  margin-bottom: 19px;
+  text-transform: uppercase;
+}
+
+.eyebrow::before,
+.section-label::before {
+  background: var(--accent);
+  content: "";
+  height: 1px;
+  width: 34px;
+}
+
+h1 {
+  color: var(--ink);
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(39px, 4.1vw, 56px);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1.06;
+  margin-bottom: 23px;
+}
+
+h1 em {
+  color: var(--accent);
+  font-style: italic;
+}
+
+.hero-lead {
+  font-size: 16px;
+  line-height: 1.75;
+  margin-bottom: 30px;
+  max-width: 560px;
+}
+
+.metadata {
+  background: var(--white);
+  border: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.meta-cell {
+  border-bottom: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+  min-height: 84px;
+  padding: 16px 17px;
+}
+
+.meta-cell:nth-child(2n) {
+  border-right: 0;
+}
+
+.meta-cell:nth-last-child(-n + 2) {
+  border-bottom: 0;
+}
+
+.meta-label,
+.field-label,
+.result-label {
+  color: var(--quiet);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  margin-bottom: 7px;
+  text-transform: uppercase;
+}
+
+.meta-value,
+.field-value {
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.chip {
+  background: var(--accent-soft);
+  border-radius: 999px;
+  color: var(--accent);
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  margin: 2px 5px 2px 0;
+  padding: 3px 9px;
+}
+
+.split {
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 1.36fr 0.84fr;
+}
+
+.split-main {
+  border-right: 1px solid var(--line);
+  padding: 57px 58px 56px 54px;
+}
+
+.split-side {
+  background: var(--white);
+  padding: 55px 45px;
+}
+
+.section-title {
+  color: var(--ink);
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(28px, 2.7vw, 36px);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+  margin-bottom: 25px;
+}
+
+.callout {
+  background: var(--accent-soft);
+  border-left: 3px solid var(--accent-bright);
+  margin-top: 28px;
+  padding: 21px 23px;
+}
+
+.callout p {
+  margin: 0;
+}
+
+.field {
+  border-bottom: 1px solid var(--line);
+  padding: 0 0 24px;
+}
+
+.field + .field {
+  padding-top: 24px;
+}
+
+.field:last-child {
+  border-bottom: 0;
+}
+
+.field-value.accent {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.participants {
+  border-bottom: 1px solid var(--line);
+  padding: 56px 54px;
+}
+
+.participant-grid,
+.phases,
+.visual-grid,
+.results-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.participant-grid {
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 30px;
+}
+
+.participant-card,
+.phase,
+.visual-card,
+.result-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  padding: 27px 25px;
+}
+
+.participant-card h3,
+.phase h3,
+.result-card h3 {
+  color: var(--ink);
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+.participant-card p {
+  font-size: 14px;
+}
+
+.approach {
+  border-bottom: 1px solid var(--line);
+  padding: 57px 54px;
+}
+
+.approach-layout {
+  align-items: start;
+  display: grid;
+  gap: 28px;
+  grid-template-columns: 0.9fr 1.1fr;
+  margin-top: 31px;
+}
+
+.approach-visual,
+.visual-card {
+  overflow: hidden;
+}
+
+.approach-visual img {
+  background: var(--white);
+  border: 1px solid var(--line);
+  width: 100%;
+}
+
+.steps {
+  display: grid;
+  gap: 13px;
+  grid-template-columns: repeat(5, 1fr);
+  margin-top: 31px;
+}
+
+.step {
+  background: var(--white);
+  border: 1px solid var(--line);
+  padding: 23px 19px;
+}
+
+.step-number {
+  color: var(--accent);
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 28px;
+  line-height: 1;
+  margin-bottom: 14px;
+  opacity: 0.65;
+}
+
+.step h3 {
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.45;
+  margin-bottom: 9px;
+}
+
+.step p {
+  font-size: 12px;
+  line-height: 1.62;
+}
+
+.caption {
+  color: var(--quiet);
+  font-size: 12px;
+  line-height: 1.65;
+  margin-top: 12px;
+}
+
+.phases {
+  grid-template-columns: 1fr;
+}
+
+.phase {
+  display: grid;
+  gap: 17px;
+  grid-template-columns: 43px 1fr;
+  padding: 19px 21px;
+}
+
+.phase-number {
+  color: var(--accent);
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 26px;
+}
+
+.phase p {
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.evidence {
+  border-bottom: 1px solid var(--line);
+  padding: 57px 54px;
+}
+
+.visual-grid {
+  grid-template-columns: 0.9fr 1.35fr;
+  margin-top: 30px;
+}
+
+.visual-card {
+  padding: 0;
+}
+
+.visual-card img {
+  height: 100%;
+  min-height: 315px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.visual-card figcaption {
+  background: var(--white);
+  margin: 0;
+  padding: 15px 18px 18px;
+}
+
+.visual-card.map {
+  grid-column: 1 / -1;
+}
+
+.visual-card.map img {
+  height: auto;
+  min-height: 0;
+  object-fit: contain;
+}
+
+.visual-card.overview {
+  grid-column: 1 / -1;
+}
+
+.visual-card.overview img {
+  height: auto;
+  min-height: 0;
+  object-fit: contain;
+}
+
+.results {
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+  padding: 57px 54px;
+}
+
+.results-layout {
+  display: grid;
+  gap: 34px;
+  grid-template-columns: 0.76fr 1.24fr;
+  margin-top: 30px;
+}
+
+.result-list {
+  border: 1px solid var(--line);
+}
+
+.result-item {
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+  padding: 23px 22px;
+}
+
+.result-item:last-child {
+  border-bottom: 0;
+}
+
+.result-item p {
+  font-size: 13px;
+}
+
+.result-item h3 {
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.45;
+  margin-bottom: 10px;
+}
+
+.flow-map-grid {
+  display: grid;
+  gap: 17px;
+}
+
+.flow-map {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.flow-map img {
+  background: var(--white);
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.flow-map .caption {
+  margin: 0;
+  padding: 13px 16px 16px;
+}
+
+.results-grid {
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 29px;
+}
+
+.result-card {
+  background: var(--paper);
+}
+
+.result-card p {
+  font-size: 14px;
+}
+
+.reflection {
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  gap: 38px;
+  grid-template-columns: 215px 1fr;
+  padding: 57px 54px;
+}
+
+.quote-mark {
+  color: var(--accent);
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 104px;
+  line-height: 0.6;
+  opacity: 0.3;
+}
+
+.quote {
+  color: var(--ink);
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(23px, 2.35vw, 30px);
+  letter-spacing: -0.02em;
+  line-height: 1.42;
+  margin-bottom: 20px;
+}
+
+.project-navigation {
+  align-items: center;
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  gap: 28px;
+  justify-content: space-between;
+  padding: 30px 54px;
+}
+
+.project-home {
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+.project-next {
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  text-align: right;
+  text-decoration: none;
+}
+
+.project-next span {
+  color: var(--quiet);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.17em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.project-next strong {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 24px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.project-home:hover,
+.project-next:hover strong {
+  color: var(--accent);
+}
+
+.footer {
+  align-items: center;
+  color: var(--quiet);
+  display: flex;
+  font-size: 12px;
+  justify-content: space-between;
+  padding: 28px 54px;
+}
+
+.footer-mark {
+  align-items: center;
+  display: flex;
+  gap: 13px;
+}
+
+.footer-mark::before {
+  background: var(--accent-bright);
+  content: "";
+  display: block;
+  height: 2px;
+  width: 28px;
+}
+
+@media (max-width: 980px) {
+  .topbar,
+  .footer {
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+
+  .hero,
+  .split,
+  .approach-layout,
+  .participant-grid,
+  .visual-grid,
+  .results-grid,
+  .results-layout,
+  .flow-map-grid,
+  .reflection {
+    display: block;
+  }
+
+  .steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero-photo {
+    height: 390px;
+    min-height: 390px;
+  }
+
+  .hero-photo img {
+    object-position: center top;
+  }
+
+  .hero-photo::before {
+    background:
+      linear-gradient(to bottom, transparent 60%, rgba(248, 245, 240, 0.22) 78%, var(--paper) 100%),
+      linear-gradient(180deg, transparent 52%, rgba(24, 32, 56, 0.24) 100%);
+  }
+
+  .hero-content,
+  .split-main,
+  .split-side,
+  .participants,
+  .approach,
+  .evidence,
+  .results,
+  .reflection {
+    padding: 40px 28px;
+  }
+
+  .project-navigation {
+    padding: 28px;
+  }
+
+  .split-main {
+    border-bottom: 1px solid var(--line);
+    border-right: 0;
+  }
+
+  .participant-card,
+  .phase,
+  .visual-card,
+  .step,
+  .flow-map,
+  .result-card {
+    margin-bottom: 17px;
+  }
+
+  .step {
+    margin-bottom: 0;
+  }
+
+  .visual-card img {
+    height: auto;
+  }
+}
+
+@media (max-width: 620px) {
+  .topbar {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 13px;
+  }
+
+  .topbar-info {
+    flex-wrap: wrap;
+  }
+
+  .project-navigation {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .project-next {
+    text-align: left;
+  }
+
+  .metadata {
+    grid-template-columns: 1fr;
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+  }
+
+  .meta-cell {
+    border-right: 0;
+  }
+
+  .meta-cell:nth-last-child(-n + 2) {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .meta-cell:last-child {
+    border-bottom: 0;
+  }
+}
+
+@media print {
+  @page {
+    margin: 0;
+    size: A4 landscape;
+  }
+
+  body {
+    background: var(--white);
+  }
+
+  .page {
+    box-shadow: none;
+  }
+
+  .project-navigation {
+    display: none;
+  }
+
+  .topbar {
+    padding: 21px 54px;
+  }
+
+  .footer {
+    padding: 28px 54px;
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: minmax(390px, 47%) 1fr;
+    min-height: 650px;
+  }
+
+  .hero-photo {
+    height: 650px;
+    min-height: 650px;
+  }
+
+  .hero-photo img {
+    object-position: center;
+  }
+
+  .hero-photo::before {
+    background:
+      linear-gradient(to right, transparent 67%, rgba(248, 245, 240, 0.34) 80%, var(--paper) 100%),
+      linear-gradient(180deg, transparent 50%, rgba(24, 32, 56, 0.28) 100%);
+  }
+
+  .hero-content {
+    padding: 50px 56px 48px 52px;
+  }
+
+  .metadata {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .split {
+    display: grid;
+    grid-template-columns: 1.36fr 0.84fr;
+  }
+
+  .split-main {
+    border-bottom: 0;
+    border-right: 1px solid var(--line);
+    padding: 57px 58px 56px 54px;
+  }
+
+  .split-side {
+    padding: 55px 45px;
+  }
+
+  .participants {
+    padding: 56px 54px;
+  }
+
+  .approach,
+  .evidence,
+  .results {
+    padding: 57px 54px;
+  }
+
+  .participant-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .visual-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.35fr;
+  }
+
+  .results-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .results-layout {
+    display: grid;
+    grid-template-columns: 0.76fr 1.24fr;
+  }
+
+  .flow-map-grid {
+    display: grid;
+  }
+
+  .reflection {
+    display: grid;
+    grid-template-columns: 215px 1fr;
+    padding: 57px 54px;
+  }
+
+  .participant-card,
+  .phase,
+  .visual-card,
+  .step,
+  .flow-map,
+  .result-card {
+    margin-bottom: 0;
+  }
+
+  .approach {
+    break-inside: avoid;
+  }
+}
+</style>
+</head>
+<body>
+<main class="page">
+  <div class="language-panel" lang="fr" data-language-panel="fr">
+    <header class="topbar">
+      <span class="topbar-name">Alina Lagarde - Portfolio</span>
+      <div class="topbar-info">
+        <span>Service Design - Cas client</span>
+        <nav class="language-switch" aria-label="Choix de la langue">
+          <button class="language-option" type="button" data-language-option="en" aria-pressed="false">EN</button>
+          <button class="language-option is-active" type="button" data-language-option="fr" aria-pressed="true">FR</button>
+        </nav>
+        <div class="brand-pips" aria-hidden="true"><span></span><span></span></div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <figure class="hero-photo">
+        <img src="assets/septeo/hero-workshop-photo.jpg" alt="Participants Septeo devant le board d'atelier Event Storming">
+      </figure>
+      <div class="hero-content">
+        <div class="eyebrow">Septeo-ADB x Globant - Juin 2025</div>
+        <h1><em>Event Storming</em><br>prospectif pour une<br>roadmap IA-centric</h1>
+        <p class="hero-lead">Cartographie des flux métiers cibles pour une refonte comptable post-acquisition - 2 jours, restitution Miro, 4 flux cartographiés.</p>
+        <div class="metadata">
+          <div class="meta-cell">
+            <div class="meta-label">Client</div>
+            <div class="meta-value">Septeo-ADB<br>Logiciel de gestion immobilière</div>
+          </div>
+          <div class="meta-cell">
+            <div class="meta-label">Mon rôle</div>
+            <div class="meta-value">Lead Facilitator<br>et Service Designer</div>
+          </div>
+        <div class="meta-cell">
+          <div class="meta-label">Format</div>
+          <div class="meta-value">2 jours - Présentiel</div>
+          </div>
+          <div class="meta-cell">
+            <div class="meta-label">Méthodes</div>
+            <div class="meta-value">
+              <span class="chip">Event Storming</span>
+              <span class="chip">JTBD</span>
+              <span class="chip">Dot voting</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="split">
+      <div class="split-main">
+        <div class="section-label">Contexte</div>
+        <h2 class="section-title">Un écart post-acquisition à combler,<br>une vision IA-centric à définir.</h2>
+        <p>Septeo-ADB, leader français des logiciels pour administrateurs de biens <strong>(3 200 agences, 150 000 utilisateurs)</strong>, venait d'acquérir un nouveau produit comptable pour consolider ses deux métiers clés : la gestion de copropriété <strong>(Syndic)</strong> et la gestion locative.</p>
+        <p>Le produit acquis couvrait environ <strong>90 % du périmètre Syndic, mais seulement 50 à 60 % de la gestion locative</strong>. L'objectif : définir des flux métiers cibles indépendamment des outils existants, identifier les fonctionnalités manquantes et prioriser le développement dans une logique « IA-centric ».</p>
+        <div class="callout">
+          <p><strong>Le véritable défi.</strong> Les interviews utilisateurs avaient été refusées pour des raisons budgétaires : nous sommes arrivées avec une connaissance métier minimale. L'interlocuteur client était peu familier des approches centrées utilisateur.</p>
+          <p><strong>Pivot au premier jour.</strong> Les deux ateliers étaient initialement conçus selon la même structure. Dès la première matinée, les cas d'usage Syndic et Gestion locative se sont révélés nettement différents. Le programme du second atelier a été revu en fin de première journée, avec les participants métier présents sur les deux sessions.</p>
+        </div>
+      </div>
+      <aside class="split-side">
+        <div class="field">
+          <div class="field-label">Objectif</div>
+          <div class="field-value">Cartographier des flux comptables cibles indépendamment des outils existants, identifier les fonctionnalités manquantes et cadrer la roadmap IA-centric.</div>
+        </div>
+        <div class="field">
+          <div class="field-label">Mission via</div>
+          <div class="field-value">Globant</div>
+        </div>
+        <div class="field">
+          <div class="field-label">Co-facilitatrice</div>
+          <div class="field-value">Dounia Hamza</div>
+        </div>
+        <div class="field">
+          <div class="field-label">Domaine</div>
+          <div class="field-value">B2B SaaS - Immobilier / Comptabilité</div>
+        </div>
+        <div class="field">
+          <div class="field-label">Livrable</div>
+          <div class="field-value accent">4 flux cartographiés + fiches synthèse actionnables</div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="participants">
+      <div class="section-label">Participants</div>
+      <h2 class="section-title">Deux groupes de 8 à 9 personnes aux profils hétérogènes.</h2>
+      <p>Les utilisateurs finaux étaient minoritaires, mais en position clé pour <strong>la vision terrain et la priorisation des flux.</strong></p>
+      <div class="participant-grid">
+        <article class="participant-card">
+          <h3>Métier et produit</h3>
+          <p><span class="chip">PM</span><span class="chip">PO</span><span class="chip">CTO</span><span class="chip">Consultants métier</span><span class="chip">Formation</span><span class="chip">Support</span></p>
+        </article>
+        <article class="participant-card">
+          <h3>Utilisateurs finaux - voix clé</h3>
+          <p><span class="chip">Administrateurs de biens</span><span class="chip">2-3 par atelier</span></p>
+          <p>En position minoritaire, mais avec un rôle clé pour prioriser les flux au plus près des besoins terrain.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="approach">
+      <div class="section-label">Approche</div>
+      <h2 class="section-title">5 étapes par jour - du contexte brut à une entrée de roadmap IA.</h2>
+      <p>Chaque atelier suivait une progression structurée, de la construction collective du contexte à des livrables actionnables. La dimension <strong>prospective</strong>, imaginer les flux cibles sans contrainte de l'outil actuel, était intégrée à la phase 4 avec un focus sur les candidats à <strong>l'automatisation ou à l'assistance IA.</strong></p>
+      <div class="steps">
+        <article class="step">
+          <div class="step-number">01</div>
+          <h3>Introduction et icebreaker</h3>
+          <p>Objectifs, règles de co-création et alignement du groupe.</p>
+        </article>
+        <article class="step">
+          <div class="step-number">02</div>
+          <h3>Jobs to be done et macro-flux</h3>
+          <p>Identifier les JTBD et les traduire en flux métiers candidats.</p>
+        </article>
+        <article class="step">
+          <div class="step-number">03</div>
+          <h3>Priorisation par vote</h3>
+          <p>Vote des utilisateurs finaux pour classer les flux selon leur impact terrain.</p>
+        </article>
+        <article class="step">
+          <div class="step-number">04</div>
+          <h3>Event Storming en sous-groupes</h3>
+          <p>Événements, commandes, acteurs, systèmes, règles, hotspots et idées IA.</p>
+        </article>
+        <article class="step">
+          <div class="step-number">05</div>
+          <h3>Pitch et débrief collectif</h3>
+          <p>Présentation de chaque sous-groupe et rétrospective à chaud.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="evidence">
+      <div class="section-label">Preuves d'atelier</div>
+      <h2 class="section-title">Workspace Miro - vue d'ensemble de la restitution.</h2>
+      <div class="visual-grid">
+        <figure class="visual-card overview">
+          <img src="assets/septeo/miro-overview.png" alt="Vue d'ensemble de la restitution Miro Septeo">
+          <figcaption class="caption">Board de restitution des deux journées - Syndic en haut et Gestion locative en bas. Chaque section couvre le parcours complet, des JTBD aux cartes de flux priorisées.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="results">
+      <div class="section-label">Résultats</div>
+      <h2 class="section-title">Des décisions exploitables pour la roadmap IA-centric.</h2>
+      <div class="results-layout">
+        <div class="result-list">
+        <article class="result-item">
+          <div class="result-label">Livrables</div>
+          <h3>4 flux métiers cartographiés</h3>
+          <p>Pour chacun : une fiche synthèse avec objectif métier, fonctionnalités prioritaires des utilisateurs finaux, registre des hotspots et inventaire d'automatisation IA étape par étape.</p>
+        </article>
+        <article class="result-item">
+          <div class="result-label">Impact</div>
+          <h3>Une entrée directe pour la roadmap IA</h3>
+          <p>Des candidats à l'automatisation au niveau des workflows, et non des demandes de fonctionnalités abstraites. Les équipes produit pouvaient croiser les flux cibles avec le logiciel acquis et identifier précisément les écarts de développement restants.</p>
+        </article>
+        <article class="result-item">
+          <div class="result-label">À retenir</div>
+          <h3>Une base pour prioriser le MVP</h3>
+          <p>Les fiches synthèse ont alimenté la priorisation du MVP : les équipes produit ont pu croiser les flux métiers cibles avec les fonctionnalités du logiciel acquis et identifier les écarts de développement restants.</p>
+        </article>
+        </div>
+        <div>
+          <div class="section-label">Cartes de flux métiers cibles</div>
+          <div class="flow-map-grid">
+            <figure class="flow-map">
+              <img src="assets/septeo/annual-balance-syndic.png" alt="Bilan annuel - Syndic">
+              <figcaption class="caption">Flux bilan annuel - Syndic</figcaption>
+            </figure>
+            <figure class="flow-map">
+              <img src="assets/septeo/annual-accounting-rental.png" alt="Traitement comptable annuel - Gestion locative">
+              <figcaption class="caption">Flux traitement comptable annuel - Gestion locative</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="reflection">
+      <div>
+        <div class="section-label">Apprentissages</div>
+        <div class="quote-mark">&ldquo;</div>
+      </div>
+      <div>
+        <p class="quote">Séparer la cartographie de l'existant, menée avec les équipes métier et produit, de la phase prospective, menée avec davantage d'utilisateurs finaux, aurait rendu les deux exercices plus efficaces.</p>
+        <p>Une session d'interviews métier en amont, même courte, aurait réduit significativement le temps de montée en contexte. <strong>Ce sont des points de cadrage à intégrer systématiquement dans les prochaines propositions.</strong></p>
+      </div>
+    </section>
+
+    <nav class="project-navigation" aria-label="Navigation entre les projets">
+      <a class="project-home" href="portfolio-case-studies.html">Tous les projets</a>
+      <a class="project-next" href="insee-case-study.html">
+        <span>Projet suivant</span>
+        <strong>INSEE &rarr;</strong>
+      </a>
+    </nav>
+    <footer class="footer">
+      <span>Alina Lagarde - Portfolio de Service Design - 2026</span>
+      <span class="footer-mark">Septeo-ADB - Cas client</span>
+    </footer>
+  </div>
+
+  <div class="language-panel" lang="en" data-language-panel="en" hidden>
+    <header class="topbar">
+      <span class="topbar-name">Alina Lagarde - Portfolio</span>
+      <div class="topbar-info">
+        <span>Service Design - Case Study</span>
+        <nav class="language-switch" aria-label="Language selection">
+          <button class="language-option is-active" type="button" data-language-option="en" aria-pressed="true">EN</button>
+          <button class="language-option" type="button" data-language-option="fr" aria-pressed="false">FR</button>
+        </nav>
+        <div class="brand-pips" aria-hidden="true"><span></span><span></span></div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <figure class="hero-photo">
+        <img src="assets/septeo/hero-workshop-photo.jpg" alt="Septeo participants reviewing the Event Storming workshop board">
+      </figure>
+      <div class="hero-content">
+        <div class="eyebrow">Septeo-ADB x Globant - June 2025</div>
+        <h1>Prospective<br><em>Event Storming</em><br>for an AI-centric roadmap</h1>
+        <p class="hero-lead">Target business workflow mapping for a post-acquisition accounting redesign - 2 days, Miro restitution, 4 mapped flows.</p>
+        <div class="metadata">
+          <div class="meta-cell">
+            <div class="meta-label">Client</div>
+            <div class="meta-value">Septeo-ADB<br>Property management software</div>
+          </div>
+          <div class="meta-cell">
+            <div class="meta-label">My role</div>
+            <div class="meta-value">Lead Facilitator<br>and Service Designer</div>
+          </div>
+        <div class="meta-cell">
+          <div class="meta-label">Format</div>
+          <div class="meta-value">2 days - On-site</div>
+          </div>
+          <div class="meta-cell">
+            <div class="meta-label">Methods</div>
+            <div class="meta-value">
+              <span class="chip">Event Storming</span>
+              <span class="chip">JTBD</span>
+              <span class="chip">Dot voting</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="split">
+      <div class="split-main">
+        <div class="section-label">Context</div>
+        <h2 class="section-title">A post-acquisition gap to close,<br>an AI-centric vision to define.</h2>
+        <p>Septeo-ADB, the French market leader in property management software <strong>(3,200 agencies, 150,000 users)</strong>, had just acquired a new accounting product to consolidate both its core domains: co-ownership management <strong>(Syndic)</strong> and rental management.</p>
+        <p>The acquired product covered approximately <strong>90% of the Syndic scope but only 50-60% of rental management</strong>. The goal: define target business workflows independently of existing tools, identify missing features, and prioritize development in an "AI-centric" logic.</p>
+        <div class="callout">
+          <p><strong>The real challenge.</strong> User interviews had been refused for budget reasons - we arrived with minimal domain knowledge. The client contact was unfamiliar with user-centered approaches.</p>
+          <p><strong>Day one pivot.</strong> The two workshops were initially identical in structure. From the first morning, Syndic and rental management use cases diverged significantly. The second workshop agenda was revised at the end of day one, with business participants attending both sessions.</p>
+        </div>
+      </div>
+      <aside class="split-side">
+        <div class="field">
+          <div class="field-label">Objective</div>
+          <div class="field-value">Map target accounting flows independent of existing tools, identify missing features, and frame the "AI-centric" product roadmap.</div>
+        </div>
+        <div class="field">
+          <div class="field-label">Sourced via</div>
+          <div class="field-value">Globant</div>
+        </div>
+        <div class="field">
+          <div class="field-label">Co-facilitator</div>
+          <div class="field-value">Dounia Hamza</div>
+        </div>
+        <div class="field">
+          <div class="field-label">Domain</div>
+          <div class="field-value">B2B SaaS - Real estate / Accounting</div>
+        </div>
+        <div class="field">
+          <div class="field-label">Deliverable</div>
+          <div class="field-value accent">4 mapped flows + actionable summary cards</div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="participants">
+      <div class="section-label">Participants</div>
+      <h2 class="section-title">Two groups of 8 to 9 people with varied profiles.</h2>
+      <p>End users were in the minority but held a key position for <strong>field insight and flow prioritization.</strong></p>
+      <div class="participant-grid">
+        <article class="participant-card">
+          <h3>Business and Product</h3>
+          <p><span class="chip">PM</span><span class="chip">PO</span><span class="chip">CTO</span><span class="chip">Business consultants</span><span class="chip">Training</span><span class="chip">Support</span></p>
+        </article>
+        <article class="participant-card">
+          <h3>End users - key voice</h3>
+          <p><span class="chip">Property managers</span><span class="chip">2-3 per workshop</span></p>
+          <p>In a minority position, but with a key role in prioritizing flows according to field needs.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="approach">
+      <div class="section-label">Approach</div>
+      <h2 class="section-title">5 stages per day - from raw context to AI-ready roadmap input.</h2>
+      <p>Each workshop followed a structured arc, moving from collective sense-making to concrete actionable outputs. The <strong>prospective dimension</strong> - imagining target flows unconstrained by the current tool - was embedded in stage 4, with a focus on identifying candidates for <strong>AI automation or assistance.</strong></p>
+      <div class="steps">
+        <article class="step">
+          <div class="step-number">01</div>
+          <h3>Intro and icebreaker</h3>
+          <p>Objectives, co-creation rules, getting the room aligned.</p>
+        </article>
+        <article class="step">
+          <div class="step-number">02</div>
+          <h3>Jobs-to-be-done and macro flows</h3>
+          <p>Identifying JTBDs, translating into business flow candidates.</p>
+        </article>
+        <article class="step">
+          <div class="step-number">03</div>
+          <h3>Prioritization by vote</h3>
+          <p>End users only - dot voting to rank flows by real-world impact.</p>
+        </article>
+        <article class="step">
+          <div class="step-number">04</div>
+          <h3>Event Storming in sub-groups</h3>
+          <p>Events, commands, actors, systems, rules, hotspots and AI ideas.</p>
+        </article>
+        <article class="step">
+          <div class="step-number">05</div>
+          <h3>Plenary pitch and debrief</h3>
+          <p>Each sub-group presents - hot retrospective with all participants.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="evidence">
+      <div class="section-label">Workshop Evidence</div>
+      <h2 class="section-title">Miro workspace - full restitution overview.</h2>
+      <div class="visual-grid">
+        <figure class="visual-card overview">
+          <img src="assets/septeo/miro-overview.png" alt="Miro restitution overview">
+          <figcaption class="caption">Two-day restitution board - Syndic (top) and Rental management (bottom). Each section covers the full arc from JTBDs to prioritized flow maps.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="results">
+      <div class="section-label">Results</div>
+      <h2 class="section-title">Directly usable input for an AI-centric roadmap.</h2>
+      <div class="results-layout">
+        <div class="result-list">
+        <article class="result-item">
+          <div class="result-label">Deliverable</div>
+          <h3>4 business flows mapped in detail</h3>
+          <p>For each: a summary card with business objective, end-user priority features, hotspot register, and AI automation inventory step by step.</p>
+        </article>
+        <article class="result-item">
+          <div class="result-label">Impact</div>
+          <h3>Workflow-level AI opportunities</h3>
+          <p>Directly usable AI roadmap input - automation candidates at workflow level, not as abstract feature requests. Product teams could cross-reference target flows against the acquired software and identify remaining development gaps with precision.</p>
+        </article>
+        <article class="result-item">
+          <div class="result-label">Takeaway</div>
+          <h3>A basis for MVP prioritization</h3>
+          <p>Summary cards fed MVP prioritization: product teams could compare target business flows with the acquired software features and identify remaining development gaps.</p>
+        </article>
+        </div>
+        <div>
+          <div class="section-label">Target business flow maps</div>
+          <div class="flow-map-grid">
+            <figure class="flow-map">
+              <img src="assets/septeo/annual-balance-syndic.png" alt="Bilan annuel - Syndic">
+              <figcaption class="caption">Annual balance flow - Syndic</figcaption>
+            </figure>
+            <figure class="flow-map">
+              <img src="assets/septeo/annual-accounting-rental.png" alt="Traitement comptable annuel - Gestion locative">
+              <figcaption class="caption">Annual accounting flow - Rental management</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="reflection">
+      <div>
+        <div class="section-label">Learnings</div>
+        <div class="quote-mark">&ldquo;</div>
+      </div>
+      <div>
+        <p class="quote">Separating existing-state mapping with business and product teams from the prospective phase with more end users would have made both exercises more effective.</p>
+        <p>A short upfront business interview session would have significantly reduced context-building time. <strong>These are framing points to integrate systematically into future proposals.</strong></p>
+      </div>
+    </section>
+
+    <nav class="project-navigation" aria-label="Case study navigation">
+      <a class="project-home" href="portfolio-case-studies.html">All projects</a>
+      <a class="project-next" href="insee-case-study.html">
+        <span>Next project</span>
+        <strong>INSEE &rarr;</strong>
+      </a>
+    </nav>
+    <footer class="footer">
+      <span>Alina Lagarde - Service Design Portfolio - 2026</span>
+      <span class="footer-mark">Septeo-ADB - Case Study</span>
+    </footer>
+  </div>
+</main>
+<script>
+  const languagePanels = document.querySelectorAll("[data-language-panel]");
+  const languageOptions = document.querySelectorAll("[data-language-option]");
+
+  function setLanguage(language) {
+    document.documentElement.lang = language;
+    languagePanels.forEach((panel) => {
+      panel.hidden = panel.dataset.languagePanel !== language;
+    });
+
+    languageOptions.forEach((option) => {
+      const isActive = option.dataset.languageOption === language;
+      option.classList.toggle("is-active", isActive);
+      option.setAttribute("aria-pressed", String(isActive));
+    });
+  }
+
+  languageOptions.forEach((option) => {
+    option.addEventListener("click", () => setLanguage(option.dataset.languageOption));
+  });
+
+  setLanguage("en");
+</script>
+</body>
+</html>

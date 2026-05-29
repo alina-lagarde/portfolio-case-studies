@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Studies - Alina Lagarde</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --night: #0f1423;
+  --night-soft: #161d2d;
+  --paper: #f8f5f0;
+  --copy: #a3acbd;
+  --quiet: #788398;
+  --line: rgba(210, 201, 187, 0.17);
+  --accent: #e0ad32;
+  --accent-bright: #f4c74c;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--night);
+  color: var(--paper);
+  font-family: "Manrope", "Helvetica Neue", sans-serif;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.language-panel[hidden] {
+  display: none;
+}
+
+.page {
+  background:
+    radial-gradient(circle at 76% 18%, rgba(224, 173, 50, 0.07), transparent 27%),
+    var(--night);
+  min-height: 100vh;
+}
+
+.topbar {
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  padding: 26px clamp(28px, 5vw, 64px);
+}
+
+.topbar-name {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.topbar-info {
+  align-items: center;
+  color: var(--quiet);
+  display: flex;
+  font-size: 11px;
+  font-weight: 600;
+  gap: 18px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.language-switch {
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  display: flex;
+  gap: 2px;
+  padding: 3px;
+}
+
+.language-option {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  border-radius: 999px;
+  color: var(--quiet);
+  cursor: pointer;
+  font: inherit;
+  font-size: 10px;
+  letter-spacing: 0.13em;
+  padding: 7px 11px;
+}
+
+.language-option.is-active {
+  background: var(--paper);
+  color: var(--night);
+}
+
+.language-option:focus-visible,
+.project-link:focus-visible {
+  outline: 2px solid var(--accent-bright);
+  outline-offset: 4px;
+}
+
+.overview {
+  display: grid;
+  gap: clamp(46px, 6vw, 78px);
+  grid-template-columns: clamp(250px, 21vw, 310px) 1fr;
+  min-height: calc(100vh - 81px);
+  padding: clamp(50px, 6vw, 76px) clamp(28px, 5vw, 64px) clamp(44px, 6vw, 70px);
+}
+
+.overview-aside {
+  border-right: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-right: clamp(30px, 5vw, 58px);
+}
+
+.eyebrow {
+  color: var(--accent-bright);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  margin-bottom: 22px;
+  text-transform: uppercase;
+}
+
+h1 {
+  color: var(--paper);
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(52px, 5.1vw, 68px);
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 0.99;
+}
+
+h1 em {
+  color: var(--accent-bright);
+  font-style: italic;
+}
+
+.overview-copy {
+  color: var(--copy);
+  font-size: 14px;
+  line-height: 1.75;
+  max-width: 260px;
+}
+
+.project-list {
+  list-style: none;
+}
+
+.project-item {
+  border-bottom: 1px solid var(--line);
+}
+
+.project-link {
+  align-items: start;
+  display: grid;
+  gap: clamp(24px, 3.7vw, 46px);
+  grid-template-columns: 34px minmax(0, 1fr) auto;
+  padding: 24px 0 26px;
+  transition: color 180ms ease, transform 180ms ease;
+}
+
+.project-link:hover {
+  transform: translateX(7px);
+}
+
+.project-number {
+  color: var(--accent-bright);
+  font-size: 12px;
+  font-weight: 700;
+  padding-top: 10px;
+}
+
+.project-title {
+  color: var(--paper);
+  display: block;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(25px, 2.3vw, 32px);
+  font-weight: 500;
+  line-height: 1.18;
+  margin-bottom: 10px;
+}
+
+.project-description {
+  color: var(--copy);
+  display: block;
+  font-size: 14px;
+  line-height: 1.7;
+  max-width: 820px;
+}
+
+.project-discipline {
+  color: var(--quiet);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  padding-top: 13px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.project-link:hover .project-title,
+.project-link:hover .project-discipline {
+  color: var(--accent-bright);
+}
+
+.footer {
+  border-top: 1px solid var(--line);
+  color: var(--quiet);
+  display: flex;
+  font-size: 11px;
+  justify-content: space-between;
+  letter-spacing: 0.14em;
+  padding: 22px clamp(28px, 5vw, 64px);
+  text-transform: uppercase;
+}
+
+@media (max-width: 880px) {
+  .overview {
+    display: block;
+    min-height: 0;
+  }
+
+  .overview-aside {
+    border-bottom: 1px solid var(--line);
+    border-right: 0;
+    gap: 30px;
+    margin-bottom: 34px;
+    padding-bottom: 36px;
+    padding-right: 0;
+  }
+
+  .project-link {
+    grid-template-columns: 32px 1fr;
+  }
+
+  .project-discipline {
+    grid-column: 2;
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .topbar,
+  .footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  h1 {
+    font-size: clamp(45px, 16vw, 55px);
+  }
+
+  .project-link {
+    gap: 14px;
+    padding: 23px 0;
+  }
+}
+
+.profile {
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding-top: 32px;
+}
+
+.profile-photo {
+  border-radius: 50%;
+  display: block;
+  filter: grayscale(20%);
+  height: 112px;
+  object-fit: cover;
+  width: 112px;
+}
+
+.profile-name {
+  color: var(--paper);
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+}
+
+.profile-bio {
+  color: var(--copy);
+  font-size: 13px;
+  line-height: 1.72;
+  max-width: 260px;
+}
+</style>
+</head>
+<body>
+<main class="page">
+  <div class="language-panel" lang="fr" data-language-panel="fr">
+    <header class="topbar">
+      <span class="topbar-name">Alina Lagarde - Portfolio</span>
+      <div class="topbar-info">
+        <span>Use cases</span>
+        <nav class="language-switch" aria-label="Choix de la langue">
+          <button class="language-option" type="button" data-language-option="en" aria-pressed="false">EN</button>
+          <button class="language-option is-active" type="button" data-language-option="fr" aria-pressed="true">FR</button>
+        </nav>
+      </div>
+    </header>
+    <section class="overview">
+      <div class="overview-aside">
+        <div>
+          <div class="eyebrow">Portfolio - Use cases</div>
+          <h1>Projets<br><em>choisis</em></h1>
+        </div>
+        <div class="profile">
+          <img class="profile-photo" src="assets/hub/alina-lagarde-profile.jpg" alt="Alina Lagarde">
+          <div class="profile-text">
+            <span class="profile-name">Alina Lagarde</span>
+            <p class="profile-bio">Senior Service &amp; Product Designer avec 10+ ans à faire le lien entre les équipes métier, les squads produit et les utilisateurs finaux — d&#39;Orange en SAFe Agile à la recherche terrain avec le CSTB et l&#39;ADEME. Je conçois pour la complexité : écosystèmes multi-acteurs, pilotes itératifs, outils B2B que les équipes terrain utilisent vraiment.</p>
+          </div>
+        </div>
+      </div>
+      <ol class="project-list">
+        <li class="project-item">
+          <a class="project-link" href="orange-sosh-case-study-v2.html">
+            <span class="project-number">01</span>
+            <span>
+              <span class="project-title">Orange &amp; Sosh</span>
+              <span class="project-description">Structurer une trajectoire produit progressive.</span>
+            </span>
+            <span class="project-discipline">Stratégie produit &amp; Service Design</span>
+          </a>
+        </li>
+        <li class="project-item">
+          <a class="project-link" href="cstb-2024-case-study.html">
+            <span class="project-number">02</span>
+            <span>
+              <span class="project-title">CSTB / RESTORE</span>
+              <span class="project-description">Cartographier un écosystème métier complexe.</span>
+            </span>
+            <span class="project-discipline">UX Research</span>
+          </a>
+        </li>
+        <li class="project-item">
+          <a class="project-link" href="septeo-case-study.html">
+            <span class="project-number">03</span>
+            <span>
+              <span class="project-title">Septeo-ADB</span>
+              <span class="project-description">Event Storming prospectif pour une roadmap IA-centric.</span>
+            </span>
+            <span class="project-discipline">Service Design</span>
+          </a>
+        </li>
+        <li class="project-item">
+          <a class="project-link" href="insee-case-study.html">
+            <span class="project-number">04</span>
+            <span>
+              <span class="project-title">INSEE</span>
+              <span class="project-description">Refonte intranet et communication interne.</span>
+            </span>
+            <span class="project-discipline">UX Strategy</span>
+          </a>
+        </li>
+      </ol>
+    </section>
+    <footer class="footer">
+      <span>Alina Lagarde - Portfolio - 2026</span>
+      <span>4 use cases</span>
+    </footer>
+  </div>
+
+  <div class="language-panel" lang="en" data-language-panel="en" hidden>
+    <header class="topbar">
+      <span class="topbar-name">Alina Lagarde - Portfolio</span>
+      <div class="topbar-info">
+        <span>Case studies</span>
+        <nav class="language-switch" aria-label="Language selection">
+          <button class="language-option is-active" type="button" data-language-option="en" aria-pressed="true">EN</button>
+          <button class="language-option" type="button" data-language-option="fr" aria-pressed="false">FR</button>
+        </nav>
+      </div>
+    </header>
+    <section class="overview">
+      <div class="overview-aside">
+        <div>
+          <div class="eyebrow">Portfolio - Case studies</div>
+          <h1>Selected<br><em>projects</em></h1>
+        </div>
+        <div class="profile">
+          <img class="profile-photo" src="assets/hub/alina-lagarde-profile.jpg" alt="Alina Lagarde">
+          <div class="profile-text">
+            <span class="profile-name">Alina Lagarde</span>
+            <p class="profile-bio">Senior Service &amp; Product Designer with 10+ years bridging business teams, product squads, and end users — from Orange&#39;s Agile SAFe environment to field research with CSTB and ADEME. I design for complexity: multi-stakeholder ecosystems, iterative pilots, and B2B tools that sales and operations teams actually use.</p>
+          </div>
+        </div>
+      </div>
+      <ol class="project-list">
+        <li class="project-item">
+          <a class="project-link" href="orange-sosh-case-study-v2.html">
+            <span class="project-number">01</span>
+            <span>
+              <span class="project-title">Orange &amp; Sosh</span>
+              <span class="project-description">Structuring an incremental product trajectory.</span>
+            </span>
+            <span class="project-discipline">Product Strategy &amp; Service Design</span>
+          </a>
+        </li>
+        <li class="project-item">
+          <a class="project-link" href="cstb-2024-case-study.html">
+            <span class="project-number">02</span>
+            <span>
+              <span class="project-title">CSTB / RESTORE</span>
+              <span class="project-description">Mapping a complex professional ecosystem.</span>
+            </span>
+            <span class="project-discipline">UX Research</span>
+          </a>
+        </li>
+        <li class="project-item">
+          <a class="project-link" href="septeo-case-study.html">
+            <span class="project-number">03</span>
+            <span>
+              <span class="project-title">Septeo-ADB</span>
+              <span class="project-description">Prospective Event Storming for an AI-centric roadmap.</span>
+            </span>
+            <span class="project-discipline">Service Design</span>
+          </a>
+        </li>
+        <li class="project-item">
+          <a class="project-link" href="insee-case-study.html">
+            <span class="project-number">04</span>
+            <span>
+              <span class="project-title">INSEE</span>
+              <span class="project-description">Intranet redesign and internal communication.</span>
+            </span>
+            <span class="project-discipline">UX Strategy</span>
+          </a>
+        </li>
+      </ol>
+    </section>
+    <footer class="footer">
+      <span>Alina Lagarde - Portfolio - 2026</span>
+      <span>4 case studies</span>
+    </footer>
+  </div>
+</main>
+<script>
+  const languagePanels = document.querySelectorAll("[data-language-panel]");
+  const languageOptions = document.querySelectorAll("[data-language-option]");
+
+  function setLanguage(language) {
+    document.documentElement.lang = language;
+    languagePanels.forEach((panel) => {
+      panel.hidden = panel.dataset.languagePanel !== language;
+    });
+    languageOptions.forEach((option) => {
+      const isActive = option.dataset.languageOption === language;
+      option.classList.toggle("is-active", isActive);
+      option.setAttribute("aria-pressed", String(isActive));
+    });
+  }
+
+  languageOptions.forEach((option) => {
+    option.addEventListener("click", () => setLanguage(option.dataset.languageOption));
+  });
+
+  setLanguage("en");
+</script>
+</body>
+</html>

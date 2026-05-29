@@ -1,0 +1,17 @@
+.DS_Store
+
+# Generated exports
+exports/
+figma-import/
+portfolio-local-html-export/
+*.zip
+*.pdf
+
+# Heavy standalone export kept locally only
+portfolio-case-studies-standalone.html
+
+# Older draft kept locally only
+orange-sosh-case-study.html
+
+# Local scripts used to generate exports
+scripts/

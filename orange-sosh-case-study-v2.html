@@ -1,0 +1,1626 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orange &amp; Sosh - Alina Lagarde</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,500&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --paper: #f8f5f0;
+  --white: #ffffff;
+  --ink: #131b24;
+  --copy: #46515e;
+  --quiet: #737d87;
+  --line: #ddd6cb;
+  --orange: #ff7900;
+  --orange-soft: #fff0e2;
+  --teal: #00a4b5;
+  --teal-soft: #e8f6f6;
+  --navy: #071a33;
+  --sand: #eee7db;
+  --shadow: 0 16px 45px rgba(17, 27, 39, 0.07);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Manrope", "Helvetica Neue", sans-serif;
+  font-weight: 400;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+p {
+  color: var(--copy);
+  font-size: 15px;
+  line-height: 1.78;
+  margin-bottom: 15px;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+strong {
+  color: var(--ink);
+  font-weight: 650;
+}
+
+.page {
+  max-width: 1360px;
+  margin: 0 auto;
+  background: var(--paper);
+  box-shadow: 0 0 0 1px rgba(221, 214, 203, 0.35);
+}
+
+.topbar {
+  align-items: center;
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  padding: 21px 54px;
+}
+
+.topbar-name {
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+.topbar-info {
+  align-items: center;
+  color: var(--quiet);
+  display: flex;
+  font-size: 11px;
+  font-weight: 600;
+  gap: 17px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.language-panel[hidden] {
+  display: none;
+}
+
+.language-switch {
+  align-items: center;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  display: flex;
+  gap: 2px;
+  padding: 3px;
+}
+
+.language-option {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  border-radius: 999px;
+  color: var(--quiet);
+  cursor: pointer;
+  font: inherit;
+  font-size: 10px;
+  letter-spacing: 0.13em;
+  padding: 7px 11px;
+  transition: background 180ms ease, color 180ms ease;
+}
+
+.language-option.is-active {
+  background: var(--ink);
+  color: var(--white);
+}
+
+.language-option:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 2px;
+}
+
+.brand-pips {
+  display: flex;
+  gap: 5px;
+}
+
+.brand-pips span {
+  border-radius: 50%;
+  display: block;
+  height: 7px;
+  width: 7px;
+}
+
+.brand-pips span:first-child {
+  background: var(--orange);
+}
+
+.brand-pips span:last-child {
+  background: var(--teal);
+}
+
+.hero {
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: minmax(390px, 47%) 1fr;
+  min-height: 640px;
+}
+
+.hero-photo {
+  background: var(--navy);
+  min-height: 640px;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-photo img {
+  height: 100%;
+  object-fit: cover;
+  object-position: 52% center;
+  width: 100%;
+}
+
+.hero-photo::before {
+  background:
+    linear-gradient(to right, transparent 67%, rgba(248, 245, 240, 0.32) 79%, var(--paper) 100%),
+    linear-gradient(180deg, transparent 55%, rgba(7, 26, 51, 0.42) 100%);
+  content: "";
+  inset: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.hero-photo::after {
+  background: var(--orange);
+  bottom: 34px;
+  content: "";
+  height: 5px;
+  left: 42px;
+  position: absolute;
+  width: 75px;
+  z-index: 2;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 55px 56px 52px 52px;
+}
+
+.eyebrow {
+  align-items: center;
+  color: var(--orange);
+  display: flex;
+  font-size: 11px;
+  font-weight: 700;
+  gap: 12px;
+  letter-spacing: 0.19em;
+  margin-bottom: 22px;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  background: var(--orange);
+  content: "";
+  height: 1px;
+  width: 34px;
+}
+
+h1 {
+  color: var(--ink);
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(41px, 4.2vw, 58px);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+  margin-bottom: 24px;
+}
+
+h1 em {
+  color: var(--orange);
+  font-style: italic;
+}
+
+.hero-lead {
+  color: var(--copy);
+  font-size: 16px;
+  line-height: 1.75;
+  margin-bottom: 34px;
+  max-width: 545px;
+}
+
+.metadata {
+  background: var(--white);
+  border: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.meta-cell {
+  border-bottom: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+  min-height: 76px;
+  padding: 14px 17px;
+}
+
+.meta-cell:nth-child(even) {
+  border-right: 0;
+}
+
+.meta-cell:nth-last-child(-n + 2) {
+  border-bottom: 0;
+}
+
+.meta-label,
+.section-label,
+.field-label,
+.result-label {
+  color: var(--quiet);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.meta-label {
+  margin-bottom: 5px;
+}
+
+.meta-value {
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.chip {
+  background: var(--orange-soft);
+  color: var(--orange);
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  margin: 2px 3px 0 0;
+  padding: 3px 8px;
+  text-transform: uppercase;
+}
+
+.split {
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 1fr 355px;
+}
+
+.split-main {
+  border-right: 1px solid var(--line);
+  padding: 58px 56px 56px;
+}
+
+.split-side {
+  background: var(--white);
+  padding: 58px 38px;
+}
+
+.section-label {
+  margin-bottom: 14px;
+}
+
+.section-title {
+  color: var(--ink);
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(25px, 2.6vw, 32px);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.23;
+  margin-bottom: 20px;
+}
+
+.callout {
+  background: var(--white);
+  border-left: 4px solid var(--orange);
+  box-shadow: var(--shadow);
+  margin-top: 29px;
+  padding: 23px 27px;
+}
+
+.callout p {
+  font-size: 13.5px;
+}
+
+.field {
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 25px;
+  padding-bottom: 24px;
+}
+
+.field:last-child {
+  border-bottom: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.field-label {
+  margin-bottom: 7px;
+}
+
+.field-value {
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.field-value.accent {
+  color: var(--orange);
+  font-weight: 700;
+}
+
+.role-actions {
+  column-gap: 24px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.role-note {
+  background: var(--teal-soft);
+  border-left: 3px solid var(--teal);
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.7;
+  margin-top: 26px;
+  padding: 17px 20px;
+}
+
+.prompt-list {
+  list-style: none;
+  margin-top: 18px;
+}
+
+.prompt-list li {
+  border-top: 1px solid var(--line);
+  color: var(--copy);
+  font-size: 13px;
+  line-height: 1.6;
+  padding: 11px 0;
+}
+
+.diagnostic {
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  gap: 50px;
+  grid-template-columns: 0.92fr 1.08fr;
+  padding: 56px;
+}
+
+.evidence-frame {
+  background: var(--white);
+  border: 1px solid var(--line);
+  padding: 10px;
+}
+
+.evidence-frame img {
+  width: 100%;
+}
+
+.caption {
+  color: var(--quiet);
+  font-size: 12px;
+  font-style: italic;
+  line-height: 1.55;
+  margin-top: 12px;
+}
+
+.finding-list {
+  display: grid;
+  gap: 10px;
+  list-style: none;
+  margin-top: 25px;
+}
+
+.finding-list li {
+  border-top: 1px solid var(--line);
+  color: var(--copy);
+  font-size: 14px;
+  line-height: 1.62;
+  padding: 12px 0 0 25px;
+  position: relative;
+}
+
+.finding-list li::before {
+  color: var(--orange);
+  content: "+";
+  font-size: 20px;
+  font-weight: 400;
+  left: 0;
+  line-height: 1;
+  position: absolute;
+  top: 13px;
+}
+
+.approach {
+  border-bottom: 1px solid var(--line);
+  padding: 56px;
+}
+
+.approach-intro {
+  max-width: 760px;
+}
+
+.phases {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 31px;
+}
+
+.phase {
+  background: var(--white);
+  border: 1px solid var(--line);
+  min-height: 276px;
+  padding: 25px 24px;
+  position: relative;
+}
+
+.phase::after {
+  background: var(--orange);
+  content: "";
+  height: 3px;
+  left: 24px;
+  position: absolute;
+  top: 0;
+  width: 42px;
+}
+
+.phase:nth-child(2)::after {
+  background: var(--teal);
+}
+
+.phase:nth-child(3) {
+  background: var(--navy);
+  border-color: var(--navy);
+}
+
+.phase:nth-child(3)::after {
+  background: var(--orange);
+}
+
+.phase-number {
+  color: var(--orange);
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 35px;
+  line-height: 1;
+  margin: 13px 0 16px;
+}
+
+.phase:nth-child(2) .phase-number {
+  color: var(--teal);
+}
+
+.phase:nth-child(3) .phase-number,
+.phase:nth-child(3) .phase-title {
+  color: var(--white);
+}
+
+.phase-title {
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.45;
+  margin-bottom: 12px;
+}
+
+.phase p {
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.phase:nth-child(3) p {
+  color: #c3cfda;
+}
+
+.visuals {
+  border-bottom: 1px solid var(--line);
+  padding: 56px;
+}
+
+.visual-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: 1.04fr 0.96fr;
+  margin-top: 28px;
+}
+
+.visual-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  padding: 12px 12px 17px;
+}
+
+.visual-card:first-child {
+  grid-row: span 2;
+}
+
+.visual-card:first-child img {
+  height: calc(100% - 54px);
+  min-height: 530px;
+  object-fit: cover;
+}
+
+.visual-card:not(:first-child) img {
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.visual-card .caption {
+  margin: 13px 5px 0;
+}
+
+.scope {
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 300px 1fr;
+}
+
+.scope-intro {
+  background: var(--navy);
+  color: var(--white);
+  padding: 54px 38px 48px 54px;
+}
+
+.scope-intro .section-label {
+  color: #a5b8c8;
+}
+
+.scope-intro .section-title {
+  color: var(--white);
+  font-size: 28px;
+}
+
+.scope-intro p {
+  color: #bdcad4;
+  font-size: 13.5px;
+}
+
+.scope-content {
+  padding: 53px 55px;
+}
+
+.decisions {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.decision {
+  background: var(--white);
+  border: 1px solid var(--line);
+  padding: 24px 25px;
+}
+
+.decision.excluded {
+  background: transparent;
+}
+
+.decision-title {
+  align-items: center;
+  color: var(--ink);
+  display: flex;
+  font-size: 15px;
+  font-weight: 700;
+  gap: 9px;
+  margin-bottom: 16px;
+}
+
+.decision-title span {
+  background: var(--orange);
+  border-radius: 50%;
+  display: inline-block;
+  height: 8px;
+  width: 8px;
+}
+
+.excluded .decision-title span {
+  background: var(--teal);
+}
+
+.decision ul {
+  list-style: none;
+}
+
+.decision li {
+  border-top: 1px solid var(--line);
+  color: var(--copy);
+  font-size: 13.5px;
+  line-height: 1.48;
+  padding: 9px 0;
+}
+
+.testing-results {
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 0.93fr 1.07fr;
+}
+
+.testing {
+  border-right: 1px solid var(--line);
+  padding: 55px 48px 55px 56px;
+}
+
+.test-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 26px 0;
+}
+
+.test-card {
+  background: var(--orange-soft);
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+  padding: 10px 13px;
+}
+
+.metric-strip {
+  background: var(--teal-soft);
+  border-left: 3px solid var(--teal);
+  color: var(--copy);
+  font-size: 12.5px;
+  line-height: 1.72;
+  padding: 18px 20px;
+}
+
+.results {
+  padding: 55px 56px 55px 48px;
+}
+
+.result-item {
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 108px 1fr;
+  padding: 17px 0;
+}
+
+.result-item:first-of-type {
+  margin-top: 24px;
+}
+
+.result-label {
+  color: var(--orange);
+  padding-top: 3px;
+}
+
+.result-copy {
+  color: var(--copy);
+  font-size: 14px;
+  line-height: 1.72;
+}
+
+.reflection {
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  gap: 36px;
+  grid-template-columns: 210px 1fr;
+  padding: 57px 56px;
+}
+
+.quote-mark {
+  color: var(--orange);
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 104px;
+  line-height: 0.6;
+  opacity: 0.28;
+}
+
+.quote {
+  color: var(--ink);
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(24px, 2.5vw, 31px);
+  letter-spacing: -0.02em;
+  line-height: 1.4;
+  margin-bottom: 21px;
+}
+
+.project-navigation {
+  align-items: center;
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  gap: 28px;
+  justify-content: space-between;
+  padding: 30px 54px;
+}
+
+.project-home {
+  color: var(--orange);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+.project-next {
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  text-align: right;
+  text-decoration: none;
+}
+
+.project-next span {
+  color: var(--quiet);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.17em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.project-next strong {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 24px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.project-home:hover,
+.project-next:hover strong {
+  color: var(--orange);
+}
+
+.footer {
+  align-items: center;
+  color: var(--quiet);
+  display: flex;
+  font-size: 12px;
+  justify-content: space-between;
+  padding: 28px 54px;
+}
+
+.footer-mark {
+  align-items: center;
+  display: flex;
+  gap: 13px;
+}
+
+.footer-mark::before {
+  background: var(--orange);
+  content: "";
+  display: block;
+  height: 2px;
+  width: 28px;
+}
+
+@media (max-width: 980px) {
+  .topbar,
+  .footer {
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+
+  .hero,
+  .split,
+  .diagnostic,
+  .scope,
+  .testing-results,
+  .reflection {
+    display: block;
+  }
+
+  .hero-photo {
+    min-height: 360px;
+  }
+
+  .hero-photo::before {
+    background:
+      linear-gradient(to bottom, transparent 62%, rgba(248, 245, 240, 0.22) 78%, var(--paper) 100%),
+      linear-gradient(180deg, transparent 55%, rgba(7, 26, 51, 0.35) 100%);
+  }
+
+  .hero-content,
+  .split-main,
+  .split-side,
+  .diagnostic,
+  .approach,
+  .visuals,
+  .scope-intro,
+  .scope-content,
+  .testing,
+  .results,
+  .reflection {
+    padding: 40px 28px;
+  }
+
+  .project-navigation {
+    padding: 28px;
+  }
+
+  .split-main,
+  .testing {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .visual-grid,
+  .decisions,
+  .role-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .phases {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .visual-card:first-child {
+    grid-row: auto;
+  }
+
+  .visual-card:first-child img {
+    height: auto;
+    min-height: 0;
+  }
+}
+
+@media (max-width: 620px) {
+  .topbar {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 13px;
+  }
+
+  .topbar-info {
+    flex-wrap: wrap;
+  }
+
+  .project-navigation {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .project-next {
+    text-align: left;
+  }
+
+  .metadata,
+  .result-item {
+    grid-template-columns: 1fr;
+  }
+
+  .phases {
+    grid-template-columns: 1fr;
+  }
+
+  .meta-cell {
+    border-right: 0;
+  }
+
+  .meta-cell:nth-last-child(2) {
+    border-bottom: 1px solid var(--line);
+  }
+}
+
+@media print {
+  @page {
+    margin: 0;
+    size: A4 landscape;
+  }
+
+  body {
+    background: var(--white);
+  }
+
+  .page {
+    box-shadow: none;
+    max-width: none;
+  }
+
+  .project-navigation {
+    display: none;
+  }
+
+  .topbar {
+    padding: 21px 54px;
+  }
+
+  .footer {
+    padding: 28px 54px;
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: minmax(390px, 47%) 1fr;
+    min-height: 640px;
+  }
+
+  .hero-photo {
+    min-height: 640px;
+  }
+
+  .hero-photo::before {
+    background:
+      linear-gradient(to right, transparent 67%, rgba(248, 245, 240, 0.32) 79%, var(--paper) 100%),
+      linear-gradient(180deg, transparent 55%, rgba(7, 26, 51, 0.42) 100%);
+  }
+
+  .hero-content {
+    padding: 55px 56px 52px 52px;
+  }
+
+  .metadata {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .split {
+    display: grid;
+    grid-template-columns: 1fr 355px;
+  }
+
+  .split-main {
+    border-bottom: 0;
+    border-right: 1px solid var(--line);
+    padding: 58px 56px 56px;
+  }
+
+  .split-side {
+    padding: 58px 38px;
+  }
+
+  .diagnostic {
+    display: grid;
+    grid-template-columns: 0.92fr 1.08fr;
+    padding: 56px;
+  }
+
+  .approach,
+  .visuals {
+    padding: 56px;
+  }
+
+  .phases {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .visual-grid {
+    grid-template-columns: 1.04fr 0.96fr;
+  }
+
+  .visual-card:first-child {
+    grid-row: span 2;
+  }
+
+  .visual-card:first-child img {
+    height: calc(100% - 54px);
+    min-height: 530px;
+  }
+
+  .scope {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+  }
+
+  .scope-intro {
+    padding: 54px 38px 48px 54px;
+  }
+
+  .scope-content {
+    padding: 53px 55px;
+  }
+
+  .decisions,
+  .role-actions {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .testing-results {
+    display: grid;
+    grid-template-columns: 0.93fr 1.07fr;
+  }
+
+  .testing {
+    border-bottom: 0;
+    border-right: 1px solid var(--line);
+    padding: 55px 48px 55px 56px;
+  }
+
+  .results {
+    padding: 55px 56px 55px 48px;
+  }
+
+  .result-item {
+    grid-template-columns: 108px 1fr;
+  }
+
+  .reflection {
+    display: grid;
+    grid-template-columns: 210px 1fr;
+    padding: 57px 56px;
+  }
+
+  .hero,
+  .split,
+  .diagnostic,
+  .approach,
+  .visuals,
+  .scope,
+  .testing-results,
+  .reflection {
+    break-inside: avoid;
+  }
+}
+</style>
+</head>
+<body>
+<main class="page">
+  <div class="language-panel" lang="en" data-language-panel="en" hidden>
+  <header class="topbar">
+    <span class="topbar-name">Alina Lagarde - Portfolio</span>
+    <div class="topbar-info">
+      <span>Design Strategy - Use Case</span>
+      <nav class="language-switch" aria-label="Language selection">
+        <button class="language-option is-active" type="button" data-language-option="en" aria-pressed="true">EN</button>
+        <button class="language-option" type="button" data-language-option="fr" aria-pressed="false">FR</button>
+      </nav>
+      <div class="brand-pips" aria-hidden="true"><span></span><span></span></div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <figure class="hero-photo">
+      <img src="assets/orange-sosh/cover-high-resolution.png" alt="Illustrated digital support journey in Orange and Sosh brand colors">
+    </figure>
+    <div class="hero-content">
+      <div class="eyebrow">Orange &amp; Sosh</div>
+      <h1>Structuring an<br><em>incremental</em><br>product trajectory</h1>
+      <p class="hero-lead">Two brands. Two architectures. Two logics. A mandate to converge - fast, cleanly, without breaking everything. This project is about moving from a theoretical vision to a testable product trajectory, by making the right exclusion choices as much as the right inclusion ones.</p>
+      <div class="metadata">
+        <div class="meta-cell">
+          <div class="meta-label">Client</div>
+          <div class="meta-value">Orange &amp; Sosh<br>Digital support</div>
+        </div>
+        <div class="meta-cell">
+          <div class="meta-label">My role</div>
+          <div class="meta-value">Design Thinking Coach<br>and Design Strategist</div>
+        </div>
+        <div class="meta-cell">
+          <div class="meta-label">Focus</div>
+          <div class="meta-value">Support convergence<br>SEO &amp; Djingo</div>
+        </div>
+        <div class="meta-cell">
+          <div class="meta-label">Methods</div>
+          <div class="meta-value">
+            <span class="chip">Value Thinking</span>
+            <span class="chip">MVP</span>
+            <span class="chip">Test Cards</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="split">
+    <div class="split-main">
+      <div class="section-label">Context</div>
+      <h2 class="section-title">A target convergence vision existed.<br>It was poorly sequenced.</h2>
+      <p>When I joined the project, Orange and Sosh each had their own digital support system: <strong>two architectures, two SEO logics, two contact journeys</strong>, two ways of integrating Djingo <strong>(Orange's in-house AI)</strong>, and two FAQ systems.</p>
+      <p>A target convergence vision existed - but it was theoretical, long-term, and poorly sequenced. Meanwhile: strong pressure to reduce inbound contacts, a strategic SEO challenge, and massive content redundancy across both brands.</p>
+      <div class="callout">
+        <p><strong>The risk was clear.</strong> Diving into a large-scale convergence project without first validating the foundational building blocks.</p>
+      </div>
+    </div>
+    <aside class="split-side">
+      <div class="field">
+        <div class="field-label">Official question</div>
+        <div class="field-value">How do we bring Orange and Sosh's support systems closer together?</div>
+      </div>
+      <div class="field">
+        <div class="field-label">The real question</div>
+        <div class="field-value accent">How do we converge without blowing up the technical and organisational risk?</div>
+      </div>
+      <div class="field">
+        <div class="field-label">Questions to answer</div>
+        <ul class="prompt-list">
+          <li>Which building blocks are truly structural?</li>
+          <li>What should we include now - and what should we deliberately leave out?</li>
+          <li>How do we prove value before full consolidation?</li>
+        </ul>
+      </div>
+    </aside>
+  </section>
+
+  <section class="split role-section">
+    <div class="split-main">
+      <div class="section-label">My Role</div>
+      <h2 class="section-title">Structuring the product trajectory.</h2>
+      <p>Design thinking coach and design strategist within the transformation department, in a cross-functional alignment and decision-structuring posture. Concretely:</p>
+      <ul class="finding-list role-actions">
+        <li>Systemic diagnostic of the scope</li>
+        <li>Challenging the "big bang" convergence logic</li>
+        <li>Proposing an incremental approach: MVP V01 &rarr; V02</li>
+        <li>Defining which building blocks to include - and which to deliberately exclude</li>
+        <li>Structuring a test strategy through 5 test cards</li>
+        <li>Aligning PM, PO and the design team</li>
+      </ul>
+      <p class="role-note">I did not lead development, but I structured the product trajectory.</p>
+    </div>
+    <aside class="split-side">
+      <div class="field">
+        <div class="field-label">Team</div>
+        <div class="field-value">1 Lead UX<br>1 UX Designer<br>1 UI Designer<br>1 Product Manager<br>1 Product Owner</div>
+      </div>
+      <div class="field">
+        <div class="field-label">Trajectory</div>
+        <div class="field-value accent">Incremental approach: MVP V01 &rarr; V02</div>
+      </div>
+      <div class="field">
+        <div class="field-label">Deliverable</div>
+        <div class="field-value">A prioritised MVP scope and 5 structured test cards.</div>
+      </div>
+    </aside>
+  </section>
+
+  <section class="diagnostic">
+    <figure>
+      <div class="evidence-frame">
+        <img src="assets/orange-sosh/diagnostic.png" alt="Research material combining tracking, forum conversations and customer surveys">
+      </div>
+      <figcaption class="caption">Gathering qualitative and quantitative user data: tracking, forums and surveys.</figcaption>
+    </figure>
+    <div>
+      <div class="section-label">What The Diagnostic Revealed</div>
+      <h2 class="section-title">Mapping the system surfaced several tensions.</h2>
+      <ul class="finding-list">
+        <li><strong>SEO was actually driving the architecture</strong> - more than the product itself.</li>
+        <li><strong>Djingo's role was ambiguous:</strong> present everywhere, decisive nowhere.</li>
+        <li><strong>The contact journey was both necessary and risky.</strong></li>
+        <li><strong>N-1 pages were numerous, redundant and sometimes inconsistent</strong> across both brands.</li>
+        <li><strong>The Sosh &rarr; Orange technical stack</strong> imposed constraints that could not be ignored.</li>
+      </ul>
+      <p class="role-note">Conclusion: we could not tackle everything at once. Smart sequencing was essential.</p>
+    </div>
+  </section>
+
+  <section class="approach">
+    <div class="section-label">Approach</div>
+    <h2 class="section-title">De-risking through increments.</h2>
+    <p class="approach-intro">A sequenced approach to validate foundational building blocks before moving towards broader convergence.</p>
+    <div class="phases">
+      <article class="phase">
+        <div class="phase-number">01</div>
+        <h3 class="phase-title">Kick-off - core team</h3>
+        <p>Consolidation and analysis of all existing data; scoping of perimeter, stakes and risks; structuring the way of working and the timeline; validation of workshops and deliverables.</p>
+      </article>
+      <article class="phase">
+        <div class="phase-number">02</div>
+        <h3 class="phase-title">Expanded ideation</h3>
+        <p>Workshops with key knowledge-holding stakeholders - customer support, data and sales teams; prioritisation of high-impact ideas; refinement of journeys and opportunity moments.</p>
+      </article>
+      <article class="phase">
+        <div class="phase-number">03</div>
+        <h3 class="phase-title">Value Thinking and MVP scoping</h3>
+        <p>Identification and prioritisation of features by value and feasibility, followed by the definition of the test strategy.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="visuals">
+    <div class="section-label">Workshop Evidence</div>
+    <h2 class="section-title">From current journeys to prioritised decisions.</h2>
+    <div class="visual-grid">
+      <figure class="visual-card">
+        <img src="assets/orange-sosh/journeys.png" alt="Mapped Orange and Sosh current support journeys">
+        <figcaption class="caption">Hypothetical user journeys based on existing user knowledge data, completed with the product team on identified and prioritised use cases.</figcaption>
+      </figure>
+      <figure class="visual-card">
+        <img src="assets/orange-sosh/mvp-workshop.png" alt="Value Thinking workshop board for MVP prioritisation">
+        <figcaption class="caption">Value Thinking workshop to de-risk and prioritise MVP features and subsequent increments.</figcaption>
+      </figure>
+      <div class="visual-card">
+        <div class="section-label">Decision Lens</div>
+        <h3 class="section-title" style="font-size:23px; margin-bottom:13px;">Group prioritisation of needs.</h3>
+        <p>Mapping of existing and target user journeys with customer support stakeholders, including advisors and phone agents.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="scope">
+    <div class="scope-intro">
+      <div class="section-label">MVP V01</div>
+      <h2 class="section-title">What we included.</h2>
+      <p>High-impact, low-risk building blocks formed the first increment.</p>
+    </div>
+    <div class="scope-content">
+      <div class="decisions">
+        <article class="decision">
+          <h3 class="decision-title"><span></span>Included now</h3>
+          <ul>
+            <li>HP Hub</li>
+            <li>Structured N-1 pages: Internet, TV, Account</li>
+            <li>Callback scheduling</li>
+            <li>Clarified contact journey</li>
+            <li>FAQ rationalisation</li>
+            <li>Controlled Djingo integration</li>
+          </ul>
+        </article>
+        <article class="decision excluded">
+          <h3 class="decision-title"><span></span>Deliberately excluded</h3>
+          <ul>
+            <li>Advanced personalisation</li>
+            <li>Auto-suggest engine</li>
+            <li>Life moments</li>
+            <li>Profile extensions</li>
+          </ul>
+          <p class="caption">These features were potentially powerful but technically heavy and risky at this stage. Including them would have jeopardised the trajectory.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="testing-results">
+    <div class="testing">
+      <div class="section-label">Test Strategy</div>
+      <h2 class="section-title">5 structured test cards.</h2>
+      <p>Each card defined a clear hypothesis, a validation method and success criteria.</p>
+      <div class="test-cards">
+        <span class="test-card">Overall MVP impact</span>
+        <span class="test-card">Value of life moments and alerts</span>
+        <span class="test-card">SEO performance of N-1 pages</span>
+        <span class="test-card">Relevance of dedicated N-2 pages</span>
+        <span class="test-card">Cognitive load linked to user profiles</span>
+      </div>
+      <div class="metric-strip">
+        <strong>Methods:</strong> A/B testing, SEO analysis and user testing.<br>
+        <strong>KPIs:</strong> visit-to-contact rate, Djingo versus search usage, SEO performance and SAT/CES.<br>
+        <strong>Critical criterion:</strong> the contact rate must not increase despite making the contact journey more visible.
+      </div>
+    </div>
+    <div class="results">
+      <div class="section-label">Results</div>
+      <h2 class="section-title">From conceptual debate to a controlled product trajectory.</h2>
+      <div class="result-item">
+        <div class="result-label">Short-term</div>
+        <div class="result-copy">MVP scope clearly prioritised; core team aligned; consolidation risk reduced; sequenced V01 &rarr; V02 vision activated.</div>
+      </div>
+      <div class="result-item">
+        <div class="result-label">Medium-term</div>
+        <div class="result-copy">Progressive, tested convergence; better articulation between SEO, chatbot and contact journey; decisions grounded in measurable hypotheses.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reflection">
+    <div>
+      <div class="section-label">Key Takeaway</div>
+      <div class="quote-mark">&ldquo;</div>
+    </div>
+    <div>
+      <p class="quote">The MVP was not a "lite" version. It was a learning instrument: moving from an abstract global vision to a testable trajectory.</p>
+      <p>The project moved from a conceptual debate to a controlled product trajectory.</p>
+    </div>
+  </section>
+
+  <nav class="project-navigation" aria-label="Case study navigation">
+    <a class="project-home" href="portfolio-case-studies.html">All projects</a>
+    <a class="project-next" href="cstb-2024-case-study.html">
+      <span>Next project</span>
+      <strong>CSTB / RESTORE &rarr;</strong>
+    </a>
+  </nav>
+  <footer class="footer">
+    <span>Alina Lagarde - Design Strategy Portfolio - 2026</span>
+    <span class="footer-mark">Orange &amp; Sosh - Use Case</span>
+  </footer>
+  </div>
+
+  <div class="language-panel" lang="fr" data-language-panel="fr">
+  <header class="topbar">
+    <span class="topbar-name">Alina Lagarde - Portfolio</span>
+    <div class="topbar-info">
+      <span>Stratégie design - Cas client</span>
+      <nav class="language-switch" aria-label="Choix de la langue">
+        <button class="language-option" type="button" data-language-option="en" aria-pressed="false">EN</button>
+        <button class="language-option is-active" type="button" data-language-option="fr" aria-pressed="true">FR</button>
+      </nav>
+      <div class="brand-pips" aria-hidden="true"><span></span><span></span></div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <figure class="hero-photo">
+      <img src="assets/orange-sosh/cover-high-resolution.png" alt="Illustration du parcours de support digital aux couleurs d'Orange et Sosh">
+    </figure>
+    <div class="hero-content">
+      <div class="eyebrow">Orange &amp; Sosh</div>
+      <h1>Structurer une<br>trajectoire produit<br><em>progressive</em></h1>
+      <p class="hero-lead">Deux marques. Deux architectures. Deux logiques. Un mandat : converger rapidement et proprement, sans tout casser. Ce projet consiste à passer d'une vision théorique à une trajectoire produit testable, en faisant autant les bons choix d'exclusion que d'inclusion.</p>
+      <div class="metadata">
+        <div class="meta-cell">
+          <div class="meta-label">Client</div>
+          <div class="meta-value">Orange &amp; Sosh<br>Assistance digitale</div>
+        </div>
+        <div class="meta-cell">
+          <div class="meta-label">Mon rôle</div>
+          <div class="meta-value">Coach en Design Thinking<br>et Design Strategist</div>
+        </div>
+        <div class="meta-cell">
+          <div class="meta-label">Enjeu</div>
+          <div class="meta-value">Convergence du support<br>SEO &amp; Djingo</div>
+        </div>
+        <div class="meta-cell">
+          <div class="meta-label">Méthodes</div>
+          <div class="meta-value">
+            <span class="chip">Value Thinking</span>
+            <span class="chip">MVP</span>
+            <span class="chip">Cartes de test</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="split">
+    <div class="split-main">
+      <div class="section-label">Contexte</div>
+      <h2 class="section-title">Une vision cible de convergence existait.<br>Son séquencement restait à définir.</h2>
+      <p>À mon arrivée sur le projet, Orange et Sosh disposaient chacun de leur propre système d'assistance digitale : <strong>deux architectures, deux logiques SEO, deux parcours de contact</strong>, deux façons d'intégrer Djingo <strong>(l'IA interne d'Orange)</strong> et deux systèmes de FAQ.</p>
+      <p>Une vision cible de convergence existait, mais elle était théorique, pensée à long terme et mal séquencée. En parallèle : une forte pression pour réduire les contacts entrants, un enjeu SEO stratégique et une redondance massive des contenus entre les deux marques.</p>
+      <div class="callout">
+        <p><strong>Le risque était clair.</strong> Se lancer dans une convergence à grande échelle sans avoir d'abord validé les briques fondatrices.</p>
+      </div>
+    </div>
+    <aside class="split-side">
+      <div class="field">
+        <div class="field-label">Question officielle</div>
+        <div class="field-value">Comment rapprocher les systèmes d'assistance d'Orange et de Sosh ?</div>
+      </div>
+      <div class="field">
+        <div class="field-label">La vraie question</div>
+        <div class="field-value accent">Comment converger sans faire exploser le risque technique et organisationnel ?</div>
+      </div>
+      <div class="field">
+        <div class="field-label">Questions à résoudre</div>
+        <ul class="prompt-list">
+          <li>Quelles briques sont réellement structurantes ?</li>
+          <li>Que faut-il intégrer maintenant, et que faut-il volontairement laisser de côté ?</li>
+          <li>Comment prouver la valeur avant la consolidation complète ?</li>
+        </ul>
+      </div>
+    </aside>
+  </section>
+
+  <section class="split role-section">
+    <div class="split-main">
+      <div class="section-label">Mon rôle</div>
+      <h2 class="section-title">Structurer la trajectoire produit.</h2>
+      <p>Coach en design thinking et design strategist au sein du département transformation, dans une posture d'alignement transverse et de structuration de la décision. Concrètement :</p>
+      <ul class="finding-list role-actions">
+        <li>Réaliser un diagnostic systémique du périmètre</li>
+        <li>Remettre en question la logique de convergence en « big bang »</li>
+        <li>Proposer une approche progressive : MVP V01 &rarr; V02</li>
+        <li>Définir les briques à intégrer et celles à exclure volontairement</li>
+        <li>Structurer une stratégie de test à travers 5 cartes de test</li>
+        <li>Aligner PM, PO et équipe design</li>
+      </ul>
+      <p class="role-note">Je n'ai pas piloté le développement, mais j'ai structuré la trajectoire produit.</p>
+    </div>
+    <aside class="split-side">
+      <div class="field">
+        <div class="field-label">Équipe</div>
+        <div class="field-value">1 Lead UX<br>1 UX Designer<br>1 UI Designer<br>1 Product Manager<br>1 Product Owner</div>
+      </div>
+      <div class="field">
+        <div class="field-label">Trajectoire</div>
+        <div class="field-value accent">Approche progressive : MVP V01 &rarr; V02</div>
+      </div>
+      <div class="field">
+        <div class="field-label">Livrable</div>
+        <div class="field-value">Un périmètre MVP priorisé et 5 cartes de test structurées.</div>
+      </div>
+    </aside>
+  </section>
+
+  <section class="diagnostic">
+    <figure>
+      <div class="evidence-frame">
+        <img src="assets/orange-sosh/diagnostic.png" alt="Matériaux de recherche combinant tracking, échanges de forum et enquêtes client">
+      </div>
+      <figcaption class="caption">Collecte de données utilisateur qualitatives et quantitatives : tracking, forums et enquêtes.</figcaption>
+    </figure>
+    <div>
+      <div class="section-label">Ce que le diagnostic a révélé</div>
+      <h2 class="section-title">La cartographie du système a mis en lumière plusieurs tensions.</h2>
+      <ul class="finding-list">
+        <li><strong>Le SEO guidait en réalité l'architecture</strong>, davantage que le produit lui-même.</li>
+        <li><strong>Le rôle de Djingo était ambigu :</strong> présent partout, décisif nulle part.</li>
+        <li><strong>Le parcours de contact était à la fois nécessaire et risqué.</strong></li>
+        <li><strong>Les pages N-1 étaient nombreuses, redondantes et parfois incohérentes</strong> entre les deux marques.</li>
+        <li><strong>La stack technique Sosh &rarr; Orange</strong> imposait des contraintes impossibles à ignorer.</li>
+      </ul>
+      <p class="role-note">Conclusion : nous ne pouvions pas tout traiter à la fois. Un séquencement intelligent était essentiel.</p>
+    </div>
+  </section>
+
+  <section class="approach">
+    <div class="section-label">Approche</div>
+    <h2 class="section-title">Réduire le risque par incréments.</h2>
+    <p class="approach-intro">Une approche séquencée pour valider les briques fondatrices avant d'aller vers une convergence plus large.</p>
+    <div class="phases">
+      <article class="phase">
+        <div class="phase-number">01</div>
+        <h3 class="phase-title">Lancement - équipe coeur</h3>
+        <p>Consolidation et analyse de l'ensemble des données existantes ; cadrage du périmètre, des enjeux et des risques ; structuration du mode de travail et du calendrier ; validation des ateliers et des livrables.</p>
+      </article>
+      <article class="phase">
+        <div class="phase-number">02</div>
+        <h3 class="phase-title">Idéation élargie</h3>
+        <p>Ateliers avec les parties prenantes détentrices de connaissances clés : service client, équipes data et commerciales ; priorisation des idées à fort impact ; affinage des parcours et des moments d'opportunité.</p>
+      </article>
+      <article class="phase">
+        <div class="phase-number">03</div>
+        <h3 class="phase-title">Value Thinking et cadrage du MVP</h3>
+        <p>Identification et priorisation des fonctionnalités selon leur valeur et leur faisabilité, puis définition de la stratégie de test.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="visuals">
+    <div class="section-label">Preuves d'atelier</div>
+    <h2 class="section-title">Des parcours existants aux décisions priorisées.</h2>
+    <div class="visual-grid">
+      <figure class="visual-card">
+        <img src="assets/orange-sosh/journeys.png" alt="Parcours d'assistance actuels Orange et Sosh cartographiés">
+        <figcaption class="caption">Parcours utilisateurs hypothétiques fondés sur les données existantes de connaissance utilisateur, complétés avec l'équipe produit sur les cas d'usage identifiés et priorisés.</figcaption>
+      </figure>
+      <figure class="visual-card">
+        <img src="assets/orange-sosh/mvp-workshop.png" alt="Board d'atelier Value Thinking pour la priorisation du MVP">
+        <figcaption class="caption">Atelier Value Thinking pour réduire le risque et prioriser les fonctionnalités du MVP et des incréments suivants.</figcaption>
+      </figure>
+      <div class="visual-card">
+        <div class="section-label">Prisme de décision</div>
+        <h3 class="section-title" style="font-size:23px; margin-bottom:13px;">Priorisation collective des besoins.</h3>
+        <p>Cartographie des parcours utilisateur existants et cibles avec les parties prenantes du support client, notamment les conseillers et agents téléphoniques.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="scope">
+    <div class="scope-intro">
+      <div class="section-label">MVP V01</div>
+      <h2 class="section-title">Ce que nous avons intégré.</h2>
+      <p>Les briques à fort impact et faible risque ont constitué le premier incrément.</p>
+    </div>
+    <div class="scope-content">
+      <div class="decisions">
+        <article class="decision">
+          <h3 class="decision-title"><span></span>Intégré dès maintenant</h3>
+          <ul>
+            <li>Hub HP</li>
+            <li>Pages N-1 structurées : Internet, TV, Compte</li>
+            <li>Programmation de rappel</li>
+            <li>Parcours de contact clarifié</li>
+            <li>Rationalisation de la FAQ</li>
+            <li>Intégration maîtrisée de Djingo</li>
+          </ul>
+        </article>
+        <article class="decision excluded">
+          <h3 class="decision-title"><span></span>Volontairement exclu</h3>
+          <ul>
+            <li>Personnalisation avancée</li>
+            <li>Moteur d'auto-suggestion</li>
+            <li>Moments de vie</li>
+            <li>Extensions de profil</li>
+          </ul>
+          <p class="caption">Ces fonctionnalités étaient potentiellement puissantes, mais lourdes techniquement et risquées à ce stade. Les inclure aurait mis en danger la trajectoire.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="testing-results">
+    <div class="testing">
+      <div class="section-label">Stratégie de test</div>
+      <h2 class="section-title">5 cartes de test structurées.</h2>
+      <p>Chaque carte définissait une hypothèse claire, une méthode de validation et des critères de succès.</p>
+      <div class="test-cards">
+        <span class="test-card">Impact global du MVP</span>
+        <span class="test-card">Valeur des moments de vie et alertes</span>
+        <span class="test-card">Performance SEO des pages N-1</span>
+        <span class="test-card">Pertinence de pages N-2 dédiées</span>
+        <span class="test-card">Charge cognitive liée aux profils utilisateur</span>
+      </div>
+      <div class="metric-strip">
+        <strong>Méthodes :</strong> tests A/B, analyse SEO et tests utilisateurs.<br>
+        <strong>KPIs :</strong> taux de visite vers contact, usage Djingo versus recherche, performance SEO et SAT/CES.<br>
+        <strong>Critère critique :</strong> le taux de contact ne doit pas augmenter malgré une visibilité accrue du parcours de contact.
+      </div>
+    </div>
+    <div class="results">
+      <div class="section-label">Résultats</div>
+      <h2 class="section-title">Du débat conceptuel à une trajectoire produit maîtrisée.</h2>
+      <div class="result-item">
+        <div class="result-label">Court terme</div>
+        <div class="result-copy">Périmètre MVP clairement priorisé ; équipe coeur alignée ; risque de consolidation réduit ; vision séquencée V01 &rarr; V02 activée.</div>
+      </div>
+      <div class="result-item">
+        <div class="result-label">Moyen terme</div>
+        <div class="result-copy">Convergence progressive et testée ; meilleure articulation entre SEO, chatbot et parcours de contact ; décisions fondées sur des hypothèses mesurables.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reflection">
+    <div>
+      <div class="section-label">À retenir</div>
+      <div class="quote-mark">&ldquo;</div>
+    </div>
+    <div>
+      <p class="quote">Le MVP n'était pas une version « allégée ». C'était un instrument d'apprentissage : passer d'une vision globale abstraite à une trajectoire testable.</p>
+      <p>Le projet est passé d'un débat conceptuel à une trajectoire produit maîtrisée.</p>
+    </div>
+  </section>
+
+  <nav class="project-navigation" aria-label="Navigation entre les projets">
+    <a class="project-home" href="portfolio-case-studies.html">Tous les projets</a>
+    <a class="project-next" href="cstb-2024-case-study.html">
+      <span>Projet suivant</span>
+      <strong>CSTB / RESTORE &rarr;</strong>
+    </a>
+  </nav>
+  <footer class="footer">
+    <span>Alina Lagarde - Portfolio de stratégie design - 2026</span>
+    <span class="footer-mark">Orange &amp; Sosh - Cas client</span>
+  </footer>
+  </div>
+</main>
+<script>
+  const languagePanels = document.querySelectorAll("[data-language-panel]");
+  const languageOptions = document.querySelectorAll("[data-language-option]");
+  const pageTitles = {
+    en: "Orange & Sosh - Alina Lagarde",
+    fr: "Orange & Sosh - Alina Lagarde"
+  };
+
+  function setLanguage(language) {
+    document.documentElement.lang = language;
+    document.title = pageTitles[language];
+
+    languagePanels.forEach((panel) => {
+      panel.hidden = panel.dataset.languagePanel !== language;
+    });
+
+    languageOptions.forEach((option) => {
+      const isActive = option.dataset.languageOption === language;
+      option.classList.toggle("is-active", isActive);
+      option.setAttribute("aria-pressed", String(isActive));
+    });
+  }
+
+  languageOptions.forEach((option) => {
+    option.addEventListener("click", () => setLanguage(option.dataset.languageOption));
+  });
+
+  setLanguage("en");
+</script>
+</body>
+</html>
