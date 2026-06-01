@@ -85,7 +85,14 @@ strong {
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.17em;
+  text-decoration: none;
   text-transform: uppercase;
+  transition: color 180ms ease;
+}
+
+.topbar-name:hover,
+.topbar-name:focus-visible {
+  color: var(--blue);
 }
 
 .topbar-info {
@@ -1075,7 +1082,7 @@ h1 em {
 <main class="page">
   <div class="language-panel" lang="en" data-language-panel="en" hidden>
   <header class="topbar">
-    <span class="topbar-name">Alina Lagarde - Portfolio</span>
+    <a class="topbar-name" href="portfolio-case-studies.html">Alina Lagarde - Portfolio</a>
     <div class="topbar-info">
       <span>Design Strategy - Use Case</span>
       <nav class="language-switch" aria-label="Language selection">
@@ -1335,7 +1342,7 @@ h1 em {
 
   <div class="language-panel" lang="fr" data-language-panel="fr">
   <header class="topbar">
-    <span class="topbar-name">Alina Lagarde - Portfolio</span>
+    <a class="topbar-name" href="portfolio-case-studies.html">Alina Lagarde - Portfolio</a>
     <div class="topbar-info">
       <span>Stratégie design - Cas client</span>
       <nav class="language-switch" aria-label="Choix de la langue">
@@ -1617,7 +1624,9 @@ h1 em {
   }
 
   languageOptions.forEach((option) => {
-    option.addEventListener("click", () => setLanguage(option.dataset.languageOption));
+    option.addEventListener("click", () => {
+      setLanguage(document.documentElement.lang === "en" ? "fr" : "en");
+    });
   });
 
   setLanguage("en");

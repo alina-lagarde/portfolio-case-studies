@@ -18,7 +18,8 @@ strong { color:var(--ink); font-weight:650; }
 .page { background:var(--paper); box-shadow:0 0 0 1px rgba(221,214,203,.35); margin:0 auto; max-width:1360px; }
 .language-panel[hidden] { display:none; }
 .topbar { align-items:center; background:var(--white); border-bottom:1px solid var(--line); display:flex; justify-content:space-between; padding:21px 54px; }
-.topbar-name { font-size:12px; font-weight:700; letter-spacing:.17em; text-transform:uppercase; }
+.topbar-name { color:var(--ink); font-size:12px; font-weight:700; letter-spacing:.17em; text-decoration:none; text-transform:uppercase; transition:color 180ms ease; }
+.topbar-name:hover, .topbar-name:focus-visible { color:var(--blue); }
 .topbar-info { align-items:center; color:var(--quiet); display:flex; font-size:11px; font-weight:600; gap:17px; letter-spacing:.15em; text-transform:uppercase; }
 .language-switch { align-items:center; background:var(--paper); border:1px solid var(--line); border-radius:999px; display:flex; gap:2px; padding:3px; }
 .language-option { appearance:none; background:transparent; border:0; border-radius:999px; color:var(--quiet); cursor:pointer; font:inherit; font-size:10px; letter-spacing:.13em; padding:7px 11px; }
@@ -124,7 +125,7 @@ h1 em { color:var(--blue); font-style:italic; }
 <body>
 <main class="page"><div class="language-panel" lang="en" data-language-panel="en">
     <header class="topbar">
-      <span class="topbar-name">Alina Lagarde - Portfolio</span>
+      <a class="topbar-name" href="portfolio-case-studies.html">Alina Lagarde - Portfolio</a>
       <div class="topbar-info">
         <span>Product Design - Case Study</span>
         <nav class="language-switch" aria-label="Language selection">
@@ -189,7 +190,7 @@ h1 em { color:var(--blue); font-style:italic; }
     <footer class="footer"><span>Alina Lagarde - Product Design Portfolio - 2026</span><span class="footer-mark">Alain Afflelou - Design Studio setup</span></footer>
   </div><div class="language-panel" lang="fr" data-language-panel="fr" hidden>
     <header class="topbar">
-      <span class="topbar-name">Alina Lagarde - Portfolio</span>
+      <a class="topbar-name" href="portfolio-case-studies.html">Alina Lagarde - Portfolio</a>
       <div class="topbar-info">
         <span>Product Design - Use Case</span>
         <nav class="language-switch" aria-label="Choix de la langue">
@@ -265,7 +266,11 @@ h1 em { color:var(--blue); font-style:italic; }
       option.setAttribute("aria-pressed", String(isActive));
     });
   }
-  languageOptions.forEach((option) => { option.addEventListener("click", () => setLanguage(option.dataset.languageOption)); });
+  languageOptions.forEach((option) => {
+    option.addEventListener("click", () => {
+      setLanguage(document.documentElement.lang === "en" ? "fr" : "en");
+    });
+  });
   setLanguage("en");
 </script>
 </body>
