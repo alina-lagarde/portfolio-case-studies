@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Septeo ADB - Alina Lagarde</title>
-<link rel="icon" type="image/gif" href="assets/favicon.gif">
+<title>CSTB - Programme RESTORE - Alina Lagarde</title>
+<link rel="icon" type="image/gif" href="../../assets/favicon.gif">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,500&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
@@ -203,12 +203,6 @@ strong {
   z-index: 2;
 }
 
-@media (min-width: 981px) {
-  .hero-photo {
-    height: 650px;
-  }
-}
-
 .hero-content {
   display: flex;
   flex-direction: column;
@@ -300,12 +294,15 @@ h1 em {
   line-height: 1.55;
 }
 
-.metadata.has-extra-meta .meta-cell:nth-last-child(-n + 2) {
+.metadata.has-status .meta-cell:nth-last-child(-n + 2) {
   border-bottom: 1px solid var(--line);
 }
 
-.metadata.has-extra-meta .meta-cell:nth-last-child(-n + 2) {
+.metadata.has-status .meta-cell.status {
   border-bottom: 0;
+  border-right: 0;
+  grid-column: 1 / -1;
+  min-height: 66px;
 }
 
 .chip {
@@ -392,7 +389,7 @@ h1 em {
 }
 
 .participant-grid {
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   margin-top: 30px;
 }
 
@@ -448,7 +445,7 @@ h1 em {
 .steps {
   display: grid;
   gap: 13px;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   margin-top: 31px;
 }
 
@@ -543,6 +540,16 @@ h1 em {
 }
 
 .visual-card.map img {
+  height: auto;
+  min-height: 0;
+  object-fit: contain;
+}
+
+.visual-card.interview {
+  grid-column: 1 / -1;
+}
+
+.visual-card.interview img {
   height: auto;
   min-height: 0;
   object-fit: contain;
@@ -649,6 +656,56 @@ h1 em {
   font-size: 14px;
 }
 
+.outcomes-panel {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  margin-top: 28px;
+  padding: 27px 30px 22px;
+}
+
+.outcomes-panel h3 {
+  color: var(--ink);
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 25px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  margin-bottom: 18px;
+}
+
+.outcomes-list {
+  border-top: 1px solid var(--line);
+}
+
+.outcome-row {
+  align-items: start;
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 235px 1fr;
+  padding: 15px 0;
+}
+
+.outcome-row:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.outcome-label {
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  line-height: 1.45;
+  text-transform: uppercase;
+}
+
+.outcome-value {
+  color: var(--copy);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
 .reflection {
   border-bottom: 1px solid var(--line);
   display: grid;
@@ -674,51 +731,6 @@ h1 em {
   letter-spacing: -0.02em;
   line-height: 1.42;
   margin-bottom: 20px;
-}
-
-.impact-flow {
-  border-bottom: 1px solid var(--line);
-  margin: 0 auto;
-  max-width: 1360px;
-  padding: 57px 54px;
-}
-
-.impact-flow-grid {
-  display: grid;
-  gap: 16px;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin-top: 26px;
-}
-
-.impact-flow-card {
-  background: var(--white);
-  border: 1px solid var(--line);
-  min-height: 210px;
-  padding: 24px 24px 25px;
-}
-
-.impact-flow-label {
-  color: var(--accent);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  margin-bottom: 17px;
-  text-transform: uppercase;
-}
-
-.impact-flow-card h3 {
-  color: var(--ink);
-  font-family: "Fraunces", Georgia, serif;
-  font-size: 23px;
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  line-height: 1.25;
-  margin-bottom: 13px;
-}
-
-.impact-flow-card p {
-  font-size: 14px;
-  line-height: 1.72;
 }
 
 .project-navigation {
@@ -818,7 +830,6 @@ h1 em {
   .results-grid,
   .results-layout,
   .flow-map-grid,
-  .impact-flow-grid,
   .reflection {
     display: block;
   }
@@ -828,12 +839,7 @@ h1 em {
   }
 
   .hero-photo {
-    height: 390px;
     min-height: 390px;
-  }
-
-  .hero-photo img {
-    object-position: center top;
   }
 
   .hero-photo::before {
@@ -849,7 +855,6 @@ h1 em {
   .approach,
   .evidence,
   .results,
-  .impact-flow,
   .reflection {
     padding: 40px 28px;
   }
@@ -872,8 +877,8 @@ h1 em {
     margin-bottom: 17px;
   }
 
-  .impact-flow-card {
-    margin-bottom: 17px;
+  .outcome-row {
+    grid-template-columns: 210px 1fr;
   }
 
   .step {
@@ -925,12 +930,25 @@ h1 em {
     border-bottom: 0;
   }
 
-  .metadata.has-extra-meta .meta-cell:nth-last-child(-n + 2) {
+  .metadata.has-status .meta-cell:nth-last-child(-n + 2) {
     border-bottom: 1px solid var(--line);
   }
 
-  .metadata.has-extra-meta .meta-cell:last-child {
+  .metadata.has-status .meta-cell.status {
     border-bottom: 0;
+  }
+
+  .outcomes-panel {
+    padding: 24px 22px 20px;
+  }
+
+  .outcome-row {
+    display: block;
+    padding: 16px 0;
+  }
+
+  .outcome-label {
+    margin-bottom: 7px;
   }
 }
 
@@ -967,12 +985,7 @@ h1 em {
   }
 
   .hero-photo {
-    height: 650px;
     min-height: 650px;
-  }
-
-  .hero-photo img {
-    object-position: center;
   }
 
   .hero-photo::before {
@@ -1016,12 +1029,12 @@ h1 em {
 
   .participant-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .steps {
     display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .visual-grid {
@@ -1105,9 +1118,9 @@ h1 em {
 <main class="page">
   <div class="language-panel" lang="fr" data-language-panel="fr">
     <header class="topbar">
-      <a class="topbar-name" href="hub/fr/">Alina Lagarde - Portfolio</a>
+        <a class="topbar-name" href="../../hub/fr/">Alina Lagarde - Portfolio</a>
       <div class="topbar-info">
-        <span>Service Design - Cas client</span>
+          <span>UX Research - Cas client</span>
         <nav class="language-switch" aria-label="Choix de la langue">
           <button class="language-option" type="button" data-language-option="en" aria-pressed="false">EN</button>
           <button class="language-option is-active" type="button" data-language-option="fr" aria-pressed="true">FR</button>
@@ -1118,40 +1131,37 @@ h1 em {
 
     <section class="hero">
       <figure class="hero-photo">
-        <img src="assets/septeo/hero-workshop-photo.jpg" alt="Participants Septeo devant le board d'atelier Event Storming">
+        <img src="../../assets/cstb/hero-ambience-detail.png" alt="Modèles de maisons illustrant la rénovation énergétique">
       </figure>
       <div class="hero-content">
-        <div class="eyebrow">Septeo-ADB x Globant - Juin 2025</div>
-        <h1><em>Event Storming</em><br>prospectif pour une<br>roadmap IA-centric</h1>
-        <p class="hero-lead">Cartographie des flux métiers cibles pour une refonte comptable post-acquisition - 2 jours, restitution Miro, 4 flux cartographiés.</p>
-        <div class="metadata has-extra-meta">
+        <div class="eyebrow">CSTB / RESTORE - User Research Strategy</div>
+        <h1><em>Cartographier</em><br>un écosystème métier<br>complexe</h1>
+        <p class="hero-lead">Pour cadrer une roadmap d'outils IA-centric destinés à la rénovation énergétique des maisons individuelles.</p>
+        <div class="metadata has-status">
           <div class="meta-cell">
             <div class="meta-label">Client</div>
-            <div class="meta-value">Septeo-ADB<br>Logiciel de gestion immobilière</div>
+            <div class="meta-value">CSTB<br>Centre Scientifique et Technique du Bâtiment</div>
           </div>
           <div class="meta-cell">
             <div class="meta-label">Mon rôle</div>
-            <div class="meta-value">Lead Facilitator<br>et Service Designer</div>
+            <div class="meta-value">Lead User Researcher<br>Lead projet / interface client</div>
           </div>
         <div class="meta-cell">
           <div class="meta-label">Format</div>
-          <div class="meta-value">2 jours - Présentiel</div>
+          <div class="meta-value">4 mois (janv. - avr. 2024)<br>À distance uniquement</div>
           </div>
           <div class="meta-cell">
             <div class="meta-label">Méthodes</div>
             <div class="meta-value">
-              <span class="chip">Event Storming</span>
-              <span class="chip">JTBD</span>
-              <span class="chip">Dot voting</span>
+              <span class="chip">Entretiens</span>
+              <span class="chip">Ateliers participatifs</span>
+              <span class="chip">Focus groups</span>
+              <span class="chip">Concept testing</span>
             </div>
           </div>
-          <div class="meta-cell">
+          <div class="meta-cell status">
             <div class="meta-label">Statut</div>
             <div class="meta-value">Terminé</div>
-          </div>
-          <div class="meta-cell">
-            <div class="meta-label">Livrables principaux</div>
-            <div class="meta-value">Cartographie JTBD · 4 flux Event Storming · Fiches synthèse actionnables</div>
           </div>
         </div>
       </div>
@@ -1160,192 +1170,180 @@ h1 em {
     <section class="split">
       <div class="split-main">
         <div class="section-label">Contexte</div>
-        <h2 class="section-title">Un écart post-acquisition à combler,<br>une vision IA-centric à définir.</h2>
-        <p>Septeo-ADB, leader français des logiciels pour administrateurs de biens <strong>(3 200 agences, 150 000 utilisateurs)</strong>, venait d'acquérir un nouveau produit comptable pour consolider ses deux métiers clés : la gestion de copropriété <strong>(Syndic)</strong> et la gestion locative.</p>
-        <p>Le produit acquis couvrait environ <strong>90 % du périmètre Syndic, mais seulement 50 à 60 % de la gestion locative</strong>. L'objectif : définir des flux métiers cibles indépendamment des outils existants, identifier les fonctionnalités manquantes et prioriser le développement dans une logique « IA-centric ».</p>
+        <h2 class="section-title">Qui utilise réellement ces outils,<br>et de quoi a-t-il besoin ?</h2>
+        <p>Dans le cadre du programme <strong>RESTORE</strong>, le CSTB devait évaluer la réplicabilité technique, géographique et commerciale d'outils numériques conçus pour la rénovation énergétique de maisons individuelles.</p>
+        <p>Avant de pouvoir évaluer un outil, une question fondatrice devait être résolue : qui sont les utilisateurs réels, comment travaillent-ils et de quoi ont-ils effectivement besoin ?</p>
+        <p>Le périmètre couvrait cinq profils professionnels distincts de la chaîne de rénovation : architectes, artisans, assistants à maîtrise d'ouvrage (AMO), dirigeants d'entreprise et distributeurs. Chacun travaillait dans un contexte radicalement différent, avec ses propres processus, modes de décision et irritants.</p>
         <div class="callout">
-          <p><strong>Le véritable défi.</strong> Les interviews utilisateurs avaient été refusées pour des raisons budgétaires : nous sommes arrivées avec une connaissance métier minimale. L'interlocuteur client était peu familier des approches centrées utilisateur.</p>
-          <p><strong>Pivot au premier jour.</strong> Les deux ateliers étaient initialement conçus selon la même structure. Dès la première matinée, les cas d'usage Syndic et Gestion locative se sont révélés nettement différents. Le programme du second atelier a été revu en fin de première journée, avec les participants métier présents sur les deux sessions.</p>
+          <p><strong>Le véritable défi.</strong> Concevoir une recherche couvrant cinq profils avec des modèles mentaux, vocabulaires et façons de travailler très différents : de l'artisan indépendant au manager de distribution d'une grande enseigne.</p>
+          <p>Un protocole unique ne pouvait pas convenir à tous. Chaque phase devait être adaptée par profil, du recrutement à la structure des ateliers, dans un secteur fragmenté par des aides changeantes, des compétences variables et une défiance profonde entre acteurs : MAR, artisans et architectes.</p>
         </div>
       </div>
       <aside class="split-side">
         <div class="field">
           <div class="field-label">Objectif</div>
-          <div class="field-value">Cartographier des flux comptables cibles indépendamment des outils existants, identifier les fonctionnalités manquantes et cadrer la roadmap IA-centric.</div>
+          <div class="field-value">Identifier et analyser les pratiques, besoins et contraintes de professionnels de la rénovation sur 5 profils. Tester 4 concepts d'outils face à leurs workflows réels.</div>
         </div>
         <div class="field">
-          <div class="field-label">Mission via</div>
-          <div class="field-value">Globant</div>
+          <div class="field-label">Programme</div>
+          <div class="field-value">RESTORE - Lot 6 (CSTB)</div>
         </div>
         <div class="field">
-          <div class="field-label">Co-facilitatrice</div>
-          <div class="field-value">Dounia Hamza</div>
+          <div class="field-label">Co-recherche</div>
+          <div class="field-value">Johanna Meng (freelance user researcher)</div>
+        </div>
+        <div class="field">
+          <div class="field-label">CSTB interne</div>
+          <div class="field-value">Madeleine Devys (chargée de recherche)</div>
         </div>
         <div class="field">
           <div class="field-label">Domaine</div>
-          <div class="field-value">B2B SaaS - Immobilier / Comptabilité</div>
+          <div class="field-value">B2B / B2G - Construction / Transition énergétique</div>
         </div>
         <div class="field">
           <div class="field-label">Livrable</div>
-          <div class="field-value accent">4 flux cartographiés + fiches synthèse actionnables</div>
+          <div class="field-value accent">5 profils utilisateurs - 3 parcours détaillés - 4 concepts testés avec verbatims et pistes de redesign</div>
         </div>
       </aside>
     </section>
 
     <section class="participants">
       <div class="section-label">Participants</div>
-      <h2 class="section-title">Deux groupes de 8 à 9 personnes aux profils hétérogènes.</h2>
-      <p>Les utilisateurs finaux étaient minoritaires, mais en position clé pour <strong>la vision terrain et la priorisation des flux.</strong></p>
+      <h2 class="section-title">Trois phases distinctes, trois panels de participants.</h2>
+      <p>Recrutement via les réseaux sociaux et les acteurs locaux de la rénovation, associations et organismes publics. Qualification via un sondage Tally.</p>
       <div class="participant-grid">
         <article class="participant-card">
-          <h3>Métier et produit</h3>
-          <p><span class="chip">PM</span><span class="chip">PO</span><span class="chip">CTO</span><span class="chip">Consultants métier</span><span class="chip">Formation</span><span class="chip">Support</span></p>
+          <h3>Entretiens exploratoires</h3>
+          <p><strong>18 sessions individuelles</strong> de 30 minutes, à distance via Google Meet.</p>
+          <p>Architectes (6) - Dirigeants / entreprises générales (3) - Artisans (4) - Conducteur de travaux (1) - Commerciaux distribution (3) - AMO (1)</p>
         </article>
         <article class="participant-card">
-          <h3>Utilisateurs finaux - voix clé</h3>
-          <p><span class="chip">Administrateurs de biens</span><span class="chip">2-3 par atelier</span></p>
-          <p>En position minoritaire, mais avec un rôle clé pour prioriser les flux au plus près des besoins terrain.</p>
+          <h3>Ateliers parcours utilisateurs</h3>
+          <p><strong>13 participants</strong> répartis sur 3 sessions collectives de 3 heures sur Miro.</p>
+          <p>Des profils mixtes ont cartographié l'ensemble du cycle de vie d'un projet de rénovation.</p>
+        </article>
+        <article class="participant-card">
+          <h3>Tests de concepts</h3>
+          <p><strong>3 focus groups</strong> pour évaluer 4 concepts : REX de chantier, diagnostic de faisabilité, outil de chiffrage et guide de mise en oeuvre.</p>
         </article>
       </div>
     </section>
 
     <section class="approach">
       <div class="section-label">Approche</div>
-      <h2 class="section-title">5 étapes par jour - du contexte brut à une entrée de roadmap IA.</h2>
-      <p>Chaque atelier suivait une progression structurée, de la construction collective du contexte à des livrables actionnables. La dimension <strong>prospective</strong>, imaginer les flux cibles sans contrainte de l'outil actuel, était intégrée à la phase 4 avec un focus sur les candidats à <strong>l'automatisation ou à l'assistance IA.</strong></p>
+      <h2 class="section-title">Quatre phases adaptées aux réalités de chaque profil.</h2>
+      <p>Outils : Miro - Meetgeek - Google Meet - Google Sheets - Google Slides</p>
       <div class="steps">
         <article class="step">
           <div class="step-number">01</div>
-          <h3>Introduction et icebreaker</h3>
-          <p>Objectifs, règles de co-création et alignement du groupe.</p>
+          <h3>Recrutement et qualification</h3>
+          <p>Mobilisation via les réseaux sociaux et les acteurs locaux. Qualification et logistique par sondage Tally ; grille de recrutement sous Google Sheets.</p>
         </article>
         <article class="step">
           <div class="step-number">02</div>
-          <h3>Jobs to be done et macro-flux</h3>
-          <p>Identifier les JTBD et les traduire en flux métiers candidats.</p>
+          <h3>Entretiens exploratoires</h3>
+          <p>18 entretiens individuels enregistrés et retranscrits via Meetgeek pour cartographier pratiques, irritants, veille et décision.</p>
         </article>
         <article class="step">
           <div class="step-number">03</div>
-          <h3>Priorisation par vote</h3>
-          <p>Vote des utilisateurs finaux pour classer les flux selon leur impact terrain.</p>
+          <h3>Ateliers parcours</h3>
+          <p>3 sessions collectives sur Miro : étapes, points de douleur, frictions entre acteurs et opportunités par profil.</p>
         </article>
         <article class="step">
           <div class="step-number">04</div>
-          <h3>Event Storming en sous-groupes</h3>
-          <p>Événements, commandes, acteurs, systèmes, règles, hotspots et idées IA.</p>
-        </article>
-        <article class="step">
-          <div class="step-number">05</div>
-          <h3>Pitch et débrief collectif</h3>
-          <p>Présentation de chaque sous-groupe et rétrospective à chaud.</p>
+          <h3>Tests de concepts</h3>
+          <p>4 concepts évalués en 3 focus groups : compréhension, désirabilité, adéquation aux workflows réels et pistes d'amélioration.</p>
         </article>
       </div>
     </section>
 
     <section class="evidence">
-      <div class="section-label">Preuves d'atelier</div>
-      <h2 class="section-title">Workspace Miro - vue d'ensemble de la restitution.</h2>
+      <div class="section-label">Preuves de recherche</div>
+      <h2 class="section-title">Parcours, roadmap et synthèse de recherche.</h2>
       <div class="visual-grid">
-        <figure class="visual-card overview">
-          <img src="assets/septeo/miro-overview.png" alt="Vue d'ensemble de la restitution Miro Septeo">
-          <figcaption class="caption">Board de restitution des deux journées - Syndic en haut et Gestion locative en bas. Chaque section couvre le parcours complet, des JTBD aux cartes de flux priorisées.</figcaption>
+        <figure class="visual-card map">
+          <img src="../../assets/cstb/research-roadmap.png" alt="Roadmap de recherche utilisateur RESTORE de janvier à avril 2024">
+          <figcaption class="caption">Roadmap de recherche - quatre mois de recrutement, entretiens, ateliers collaboratifs et focus groups.</figcaption>
+        </figure>
+        <figure class="visual-card map">
+          <img src="../../assets/cstb/renovation-journey.png" alt="Cycle de vie d'un projet de rénovation cartographié avec les professionnels">
+          <figcaption class="caption">Parcours projet - programmation, choix du maître d'oeuvre, conception, choix des entreprises, travaux et réception.</figcaption>
+        </figure>
+        <figure class="visual-card interview">
+          <img src="../../assets/cstb/interview-session.png" alt="Interview utilisateur avec un architecte">
+          <figcaption class="caption">Interview utilisateur, profil architecte</figcaption>
+        </figure>
+        <figure class="visual-card map">
+          <img src="../../assets/cstb/research-synthesis-extract.png" alt="Extraits de la synthèse de recherche, persona et parcours croisés">
+          <figcaption class="caption">Extraits de synthèse : agenda, wiki projet, persona, parcours croisés et cas de performance énergétique.</figcaption>
         </figure>
       </div>
     </section>
 
     <section class="results">
-      <div class="section-label">Résultats</div>
-      <h2 class="section-title">Des décisions exploitables pour la roadmap IA-centric.</h2>
-      <div class="results-layout">
-        <div class="result-list">
-        <article class="result-item">
-          <div class="result-label">Résultat 01</div>
-          <h3>Jobs-to-be-done métier</h3>
-          <p>Cartographie exhaustive de tous les jobs-to-be-done métier pour la gestion locative et les syndics (partie comptable) ; base commune construite avec les utilisateurs finaux avant toute contrainte outil.</p>
+      <div class="section-label">Impact & livrables</div>
+      <h2 class="section-title">Une recherche prolongée par des tests de prototypes.</h2>
+      <div class="results-grid">
+        <article class="result-card">
+          <h3>Livrable</h3>
+          <p>5 profils consolidés et leur écosystème - 3 parcours détaillés couvrant conception, chiffrage et exécution - 4 concepts testés avec verbatims et recommandations de redesign - synthèse complète livrée au CSTB.</p>
         </article>
-        <article class="result-item">
-          <div class="result-label">Résultat 02</div>
-          <h3>4 flux prioritaires cartographiés</h3>
-          <p>4 flux prioritaires (critiques et récurrents) cartographiés en détail via Event Storming : événements, commandes, acteurs, systèmes, règles, hotspots et opportunités d'innovation ; restitués en fiches synthèse actionnables avec candidats à l'automatisation IA flux par flux.</p>
+        <article class="result-card">
+          <h3>Impact</h3>
+          <p>La recherche a directement déclenché une mission de tests complémentaire. Deux prototypes ont été validés avec des utilisateurs : un diagnostic de faisabilité, sous forme de quiz guidé simulant une évaluation professionnelle avec un propriétaire, et un module de reconnaissance architecturale identifiant la typologie du bâti par géolocalisation et forme.</p>
         </article>
-        <article class="result-item">
-          <div class="result-label">Résultat 03</div>
-          <h3>Priorisation terrain</h3>
-          <p>Priorisation et pitch des évolutions majeures effectués par les administrateurs de biens via dot voting ; décisions de roadmap ancrées dans le terrain, pas dans les hypothèses produit.</p>
+        <article class="result-card">
+          <h3>Point de vigilance</h3>
+          <p>Plusieurs autres outils, dont un estimateur financier, ont été développés et livrés sans tests utilisateurs.</p>
         </article>
-        </div>
-        <div>
-          <div class="section-label">Cartes de flux métiers cibles</div>
-          <div class="flow-map-grid">
-            <figure class="flow-map">
-              <img src="assets/septeo/annual-balance-syndic.png" alt="Bilan annuel - Syndic">
-              <figcaption class="caption">Flux bilan annuel - Syndic</figcaption>
-            </figure>
-            <figure class="flow-map">
-              <img src="assets/septeo/annual-accounting-rental.png" alt="Traitement comptable annuel - Gestion locative">
-              <figcaption class="caption">Flux traitement comptable annuel - Gestion locative</figcaption>
-            </figure>
-          </div>
-        </div>
       </div>
-    </section>
-
-    <section class="impact-flow">
-      <div class="section-label">Impact</div>
-      <h2 class="section-title">Des flux cibles aux écarts de développement.</h2>
-      <div class="impact-flow-grid">
-        <article class="impact-flow-card">
-          <div class="impact-flow-label">Avant</div>
-          <h3>Un produit acquis à confronter au terrain</h3>
-          <p>Le logiciel couvrait une partie du périmètre, mais les écarts restants devaient être objectivés à partir des flux métiers cibles.</p>
-        </article>
-        <article class="impact-flow-card">
-          <div class="impact-flow-label">Décision</div>
-          <h3>Des fiches synthèse actionnables</h3>
-          <p>Les flux cartographiés ont permis de croiser besoins métier, fonctionnalités existantes et candidats à l'automatisation IA.</p>
-        </article>
-        <article class="impact-flow-card">
-          <div class="impact-flow-label">Effet</div>
-          <h3>Une priorisation plus opérationnelle</h3>
-          <p>Les équipes produit ont pu prioriser à l'échelle des workflows, pas sous forme de demandes abstraites. Pas de retour sur l'implémentation à ce stade.</p>
-        </article>
+      <div class="outcomes-panel">
+        <h3>Résultats clés</h3>
+        <div class="outcomes-list">
+          <div class="outcome-row"><div class="outcome-label">Segments cibles</div><div class="outcome-value">Cartographie des segments cibles professionnels : architectes, artisans, conseillers, ensembliers et entreprises BTP.</div></div>
+          <div class="outcome-row"><div class="outcome-label">Parcours comparés</div><div class="outcome-value">Parcours comparés par segment lors d'une rénovation de maison individuelle, avec identification des frictions et des moments clés.</div></div>
+          <div class="outcome-row"><div class="outcome-label">Écosystème d'outils</div><div class="outcome-value">Mapping de l'écosystème d'outils de veille professionnelle par segment.</div></div>
+          <div class="outcome-row"><div class="outcome-label">Concepts CSTB</div><div class="outcome-value">Évaluation de l'appétence pour les concepts d'outils CSTB : identification des moments d'usage opportuns et pistes d'amélioration.</div></div>
+          <div class="outcome-row"><div class="outcome-label">Transfert</div><div class="outcome-value">Transfert de compétences user research auprès des équipes client CSTB.</div></div>
+        </div>
       </div>
     </section>
 
     <section class="reflection">
       <div>
-        <div class="section-label">Apprentissages</div>
+        <div class="section-label">Retour d'expérience</div>
         <div class="quote-mark">&ldquo;</div>
       </div>
       <div>
-        <p class="quote">Séparer la cartographie de l'existant, menée avec les équipes métier et produit, de la phase prospective, menée avec davantage d'utilisateurs finaux, aurait rendu les deux exercices plus efficaces.</p>
-        <p>Une session d'interviews métier en amont, même courte, aurait réduit significativement le temps de montée en contexte. <strong>Ce sont des points de cadrage à intégrer systématiquement dans les prochaines propositions.</strong></p>
+        <p class="quote">Dans un écosystème métier fragmenté, un outil utile doit parler un langage partagé par toute la chaîne.</p>
+        <p>En rénovation, chaque métier intervient à un moment précis avec son propre vocabulaire et ses contraintes ; sans expert coordinateur, les passages de relais créent des dysfonctionnements structurels. Un outil couvrant toute la chaîne peut faire la différence, à condition de s'interfacer avec les écosystèmes déjà utilisés.</p>
+        <p><strong>Réflexion.</strong> Le recrutement a été de loin la partie la plus difficile : certains profils ont nécessité 1 à 1,5 mois de mobilisation, malgré l'appui du CSTB. Un enseignement contre-intuitif : réengager les mêmes participants sur plusieurs sessions s'est avéré bien plus facile que recruter de nouveaux profils. À l'avenir, le temps de recrutement doit être budgété séparément et de façon réaliste dans ce secteur.</p>
       </div>
     </section>
 
     <nav class="project-navigation" aria-label="Navigation entre les projets">
-      <a class="project-home" href="hub/fr/">Tous les projets</a>
-      <a class="project-next" href="insee/fr/">
+      <a class="project-home" href="../../hub/fr/">Tous les projets</a>
+      <a class="project-next" href="../../septeo/fr/">
         <span>Projet suivant</span>
-        <strong>INSEE &rarr;</strong>
+        <strong>Septeo-ADB &rarr;</strong>
       </a>
     </nav>
     <footer class="footer">
-      <span>Alina Lagarde - Portfolio de Service Design - 2026</span>
+      <span>Alina Lagarde - Portfolio UX Research - 2026</span>
       <div class="contact-cta" aria-label="Contact">
         <a class="contact-link" href="https://calendar.app.google/cZrdXorbJqAxpcS5A" target="_blank" rel="noopener noreferrer">Échangeons 30 min</a>
         <a class="contact-link" href="mailto:alinalagarde@gmail.com">alinalagarde@gmail.com</a>
         <span class="contact-text">+33 6 46 64 49 79</span>
       </div>
-      <span class="footer-mark">Septeo-ADB - Cas client</span>
+      <span class="footer-mark">CSTB - Programme RESTORE</span>
     </footer>
   </div>
 
   <div class="language-panel" lang="en" data-language-panel="en" hidden>
     <header class="topbar">
-      <a class="topbar-name" href="hub/en/">Alina Lagarde - Portfolio</a>
+      <a class="topbar-name" href="../../hub/fr/">Alina Lagarde - Portfolio</a>
       <div class="topbar-info">
-        <span>Service Design - Case Study</span>
+          <span>UX Research - Case Study</span>
         <nav class="language-switch" aria-label="Language selection">
           <button class="language-option is-active" type="button" data-language-option="en" aria-pressed="true">EN</button>
           <button class="language-option" type="button" data-language-option="fr" aria-pressed="false">FR</button>
@@ -1356,40 +1354,37 @@ h1 em {
 
     <section class="hero">
       <figure class="hero-photo">
-        <img src="assets/septeo/hero-workshop-photo.jpg" alt="Septeo participants reviewing the Event Storming workshop board">
+        <img src="../../assets/cstb/hero-ambience-detail.png" alt="Home models illustrating energy renovation research">
       </figure>
       <div class="hero-content">
-        <div class="eyebrow">Septeo-ADB x Globant - June 2025</div>
-        <h1>Prospective<br><em>Event Storming</em><br>for an AI-centric roadmap</h1>
-        <p class="hero-lead">Target business workflow mapping for a post-acquisition accounting redesign - 2 days, Miro restitution, 4 mapped flows.</p>
-        <div class="metadata has-extra-meta">
+        <div class="eyebrow">CSTB / RESTORE - User Research Strategy</div>
+        <h1><em>Mapping</em><br>a complex professional<br>ecosystem</h1>
+        <p class="hero-lead">To frame an AI-centric tool roadmap for the energy renovation of individual homes.</p>
+        <div class="metadata has-status">
           <div class="meta-cell">
             <div class="meta-label">Client</div>
-            <div class="meta-value">Septeo-ADB<br>Property management software</div>
+            <div class="meta-value">CSTB<br>Scientific and Technical Centre for Building</div>
           </div>
           <div class="meta-cell">
             <div class="meta-label">My role</div>
-            <div class="meta-value">Lead Facilitator<br>and Service Designer</div>
+            <div class="meta-value">Lead User Researcher<br>Project lead / client interface</div>
           </div>
         <div class="meta-cell">
           <div class="meta-label">Format</div>
-          <div class="meta-value">2 days - On-site</div>
+          <div class="meta-value">4 months (Jan - Apr 2024)<br>Remote only</div>
           </div>
           <div class="meta-cell">
             <div class="meta-label">Methods</div>
             <div class="meta-value">
-              <span class="chip">Event Storming</span>
-              <span class="chip">JTBD</span>
-              <span class="chip">Dot voting</span>
+              <span class="chip">Interviews</span>
+              <span class="chip">Participatory workshops</span>
+              <span class="chip">Focus groups</span>
+              <span class="chip">Concept testing</span>
             </div>
           </div>
-          <div class="meta-cell">
+          <div class="meta-cell status">
             <div class="meta-label">Status</div>
             <div class="meta-value">Complete</div>
-          </div>
-          <div class="meta-cell">
-            <div class="meta-label">Main outputs</div>
-            <div class="meta-value">JTBD mapping · 4 Event Storming flows · Actionable summary cards</div>
           </div>
         </div>
       </div>
@@ -1398,184 +1393,172 @@ h1 em {
     <section class="split">
       <div class="split-main">
         <div class="section-label">Context</div>
-        <h2 class="section-title">A post-acquisition gap to close,<br>an AI-centric vision to define.</h2>
-        <p>Septeo-ADB, the French market leader in property management software <strong>(3,200 agencies, 150,000 users)</strong>, had just acquired a new accounting product to consolidate both its core domains: co-ownership management <strong>(Syndic)</strong> and rental management.</p>
-        <p>The acquired product covered approximately <strong>90% of the Syndic scope but only 50-60% of rental management</strong>. The goal: define target business workflows independently of existing tools, identify missing features, and prioritize development in an "AI-centric" logic.</p>
+        <h2 class="section-title">Who are the real users,<br>and what do they actually need?</h2>
+        <p>Within the <strong>RESTORE</strong> programme, the CSTB needed to evaluate the technical, geographic, and commercial replicability of digital tools designed for the energy renovation of individual homes.</p>
+        <p>Before any tool could be assessed, a foundational question had to be answered: who are the real users, how do they work, and what do they actually need?</p>
+        <p>The scope covered five distinct professional profiles across the renovation chain - architects, artisans, project managers (AMO), company heads, and distributors - each operating in radically different contexts, with different processes, decision-making patterns, and pain points.</p>
         <div class="callout">
-          <p><strong>The real challenge.</strong> User interviews had been refused for budget reasons - we arrived with minimal domain knowledge. The client contact was unfamiliar with user-centered approaches.</p>
-          <p><strong>Day one pivot.</strong> The two workshops were initially identical in structure. From the first morning, Syndic and rental management use cases diverged significantly. The second workshop agenda was revised at the end of day one, with business participants attending both sessions.</p>
+          <p><strong>The real challenge.</strong> The mission required designing research across five professional profiles with fundamentally different mental models, vocabularies, and ways of working - from solo artisans to distribution managers at major retail chains.</p>
+          <p>A single protocol could not cover all of them. Every phase required adaptation by profile, from recruitment strategy to workshop structure, in a sector shaped by changing regulatory aids, uneven competencies and deep distrust between stakeholders: MAR, artisans and architects.</p>
         </div>
       </div>
       <aside class="split-side">
         <div class="field">
           <div class="field-label">Objective</div>
-          <div class="field-value">Map target accounting flows independent of existing tools, identify missing features, and frame the "AI-centric" product roadmap.</div>
+          <div class="field-value">Identify and analyze the practices, needs and constraints of renovation professionals across 5 profiles. Test 4 tool concepts against their real workflows.</div>
         </div>
         <div class="field">
-          <div class="field-label">Sourced via</div>
-          <div class="field-value">Globant</div>
+          <div class="field-label">Programme</div>
+          <div class="field-value">RESTORE - Lot 6 (CSTB)</div>
         </div>
         <div class="field">
-          <div class="field-label">Co-facilitator</div>
-          <div class="field-value">Dounia Hamza</div>
+          <div class="field-label">Co-researcher</div>
+          <div class="field-value">Johanna Meng (freelance user researcher)</div>
+        </div>
+        <div class="field">
+          <div class="field-label">CSTB internal</div>
+          <div class="field-value">Madeleine Devys (research officer)</div>
         </div>
         <div class="field">
           <div class="field-label">Domain</div>
-          <div class="field-value">B2B SaaS - Real estate / Accounting</div>
+          <div class="field-value">B2B / B2G - Construction / Energy transition</div>
         </div>
         <div class="field">
           <div class="field-label">Deliverable</div>
-          <div class="field-value accent">4 mapped flows + actionable summary cards</div>
+          <div class="field-value accent">5 user profiles - 3 detailed user journeys - 4 tool concepts tested with verbatims and redesign leads</div>
         </div>
       </aside>
     </section>
 
     <section class="participants">
       <div class="section-label">Participants</div>
-      <h2 class="section-title">Two groups of 8 to 9 people with varied profiles.</h2>
-      <p>End users were in the minority but held a key position for <strong>field insight and flow prioritization.</strong></p>
+      <h2 class="section-title">Three distinct phases, three participant pools.</h2>
+      <p>Recruitment via social networks and local renovation stakeholders, including associations and public agencies. Qualification via a Tally survey.</p>
       <div class="participant-grid">
         <article class="participant-card">
-          <h3>Business and Product</h3>
-          <p><span class="chip">PM</span><span class="chip">PO</span><span class="chip">CTO</span><span class="chip">Business consultants</span><span class="chip">Training</span><span class="chip">Support</span></p>
+          <h3>Exploratory interviews</h3>
+          <p><strong>18 individual sessions</strong> of 30 minutes, remotely via Google Meet.</p>
+          <p>Architects (6) - Company heads / general contractors (3) - Artisans (4) - Site supervisors (1) - Distribution sales reps (3) - AMO (1)</p>
         </article>
         <article class="participant-card">
-          <h3>End users - key voice</h3>
-          <p><span class="chip">Property managers</span><span class="chip">2-3 per workshop</span></p>
-          <p>In a minority position, but with a key role in prioritizing flows according to field needs.</p>
+          <h3>User journey workshops</h3>
+          <p><strong>13 participants</strong> across 3 collective sessions of 3 hours each on Miro.</p>
+          <p>Mixed profiles per group mapped against the full renovation project lifecycle.</p>
+        </article>
+        <article class="participant-card">
+          <h3>Concept testing focus groups</h3>
+          <p><strong>3 groups</strong> testing 4 tool concepts: Site REX, feasibility diagnostic, cost estimation tool and implementation guide.</p>
         </article>
       </div>
     </section>
 
     <section class="approach">
       <div class="section-label">Approach</div>
-      <h2 class="section-title">5 stages per day - from raw context to AI-ready roadmap input.</h2>
-      <p>Each workshop followed a structured arc, moving from collective sense-making to concrete actionable outputs. The <strong>prospective dimension</strong> - imagining target flows unconstrained by the current tool - was embedded in stage 4, with a focus on identifying candidates for <strong>AI automation or assistance.</strong></p>
+      <h2 class="section-title">Four phases adapted to each profile's reality.</h2>
+      <p>Tools: Miro - Meetgeek - Google Meet - Google Sheets - Google Slides</p>
       <div class="steps">
         <article class="step">
           <div class="step-number">01</div>
-          <h3>Intro and icebreaker</h3>
-          <p>Objectives, co-creation rules, getting the room aligned.</p>
+          <h3>Recruitment and qualification</h3>
+          <p>Outreach via social networks and local renovation actors. Tally survey for logistics and screening; recruitment grid managed in Google Sheets.</p>
         </article>
         <article class="step">
           <div class="step-number">02</div>
-          <h3>Jobs-to-be-done and macro flows</h3>
-          <p>Identifying JTBDs, translating into business flow candidates.</p>
+          <h3>Exploratory interviews</h3>
+          <p>18 monitored interviews to map practices, pain points, monitoring processes and decision-making patterns; recorded and transcribed via Meetgeek.</p>
         </article>
         <article class="step">
           <div class="step-number">03</div>
-          <h3>Prioritization by vote</h3>
-          <p>End users only - dot voting to rank flows by real-world impact.</p>
+          <h3>Journey workshops</h3>
+          <p>3 collective Miro sessions mapping stages, pain points, cross-actor friction and opportunities across the lifecycle.</p>
         </article>
         <article class="step">
           <div class="step-number">04</div>
-          <h3>Event Storming in sub-groups</h3>
-          <p>Events, commands, actors, systems, rules, hotspots and AI ideas.</p>
-        </article>
-        <article class="step">
-          <div class="step-number">05</div>
-          <h3>Plenary pitch and debrief</h3>
-          <p>Each sub-group presents - hot retrospective with all participants.</p>
+          <h3>Concept testing</h3>
+          <p>3 focus groups evaluating 4 concepts for comprehension, desirability, real workflow fit and improvement leads.</p>
         </article>
       </div>
     </section>
 
     <section class="evidence">
-      <div class="section-label">Workshop Evidence</div>
-      <h2 class="section-title">Miro workspace - full restitution overview.</h2>
+      <div class="section-label">Research Evidence</div>
+      <h2 class="section-title">Journeys, roadmap and research synthesis.</h2>
       <div class="visual-grid">
-        <figure class="visual-card overview">
-          <img src="assets/septeo/miro-overview.png" alt="Miro restitution overview">
-          <figcaption class="caption">Two-day restitution board - Syndic (top) and Rental management (bottom). Each section covers the full arc from JTBDs to prioritized flow maps.</figcaption>
+        <figure class="visual-card map">
+          <img src="../../assets/cstb/research-roadmap.png" alt="RESTORE user research roadmap from January to April 2024">
+          <figcaption class="caption">Research roadmap - four months of recruitment, interviews, collaborative workshops and focus groups.</figcaption>
+        </figure>
+        <figure class="visual-card map">
+          <img src="../../assets/cstb/renovation-journey.png" alt="Renovation project lifecycle mapped with professionals">
+          <figcaption class="caption">Project journey - programming, project-manager selection, design, contractor selection, works and handover.</figcaption>
+        </figure>
+        <figure class="visual-card interview">
+          <img src="../../assets/cstb/interview-session.png" alt="User interview with an architect">
+          <figcaption class="caption">User interview, architect profile</figcaption>
+        </figure>
+        <figure class="visual-card map">
+          <img src="../../assets/cstb/research-synthesis-extract.png" alt="Research synthesis excerpts with persona and journey maps">
+          <figcaption class="caption">Synthesis excerpts: agenda, project wiki, persona, cross-journeys and thermal performance case.</figcaption>
         </figure>
       </div>
     </section>
 
     <section class="results">
-      <div class="section-label">Results</div>
-      <h2 class="section-title">Directly usable input for an AI-centric roadmap.</h2>
-      <div class="results-layout">
-        <div class="result-list">
-        <article class="result-item">
-          <div class="result-label">Result 01</div>
-          <h3>Business jobs-to-be-done</h3>
-          <p>Full mapping of business jobs-to-be-done across rental management and co-ownership (accounting scope) ; shared foundation built with end users before any tool constraint.</p>
+      <div class="section-label">Impact & deliverables</div>
+      <h2 class="section-title">Research followed by prototype testing.</h2>
+      <div class="results-grid">
+        <article class="result-card">
+          <h3>Deliverable</h3>
+          <p>5 consolidated user profiles and their stakeholder ecosystem - 3 detailed user journeys covering design, cost estimation and execution - 4 concepts tested with verbatims and redesign recommendations - full synthesis delivered to CSTB.</p>
         </article>
-        <article class="result-item">
-          <div class="result-label">Result 02</div>
-          <h3>4 priority flows mapped</h3>
-          <p>4 priority flows (critical and recurring) mapped in detail via Event Storming: events, commands, actors, systems, rules, hotspots and innovation opportunities ; delivered as actionable summary cards with AI automation candidates identified step by step.</p>
+        <article class="result-card">
+          <h3>Impact</h3>
+          <p>The research directly triggered a follow-up testing mission. Two prototypes were validated with users: a feasibility diagnostic tool, a guided quiz simulating a professional site assessment with a homeowner, and an architectural recognition module identifying building typology from geolocation and shape.</p>
         </article>
-        <article class="result-item">
-          <div class="result-label">Result 03</div>
-          <h3>Field-grounded prioritization</h3>
-          <p>Major workflow improvements prioritized and pitched by property managers via dot voting ; roadmap decisions grounded in field reality, not product assumptions.</p>
+        <article class="result-card">
+          <h3>Point of attention</h3>
+          <p>Several other tools, including a financial estimator, were developed and shipped without user testing.</p>
         </article>
-        </div>
-        <div>
-          <div class="section-label">Target business flow maps</div>
-          <div class="flow-map-grid">
-            <figure class="flow-map">
-              <img src="assets/septeo/annual-balance-syndic.png" alt="Bilan annuel - Syndic">
-              <figcaption class="caption">Annual balance flow - Syndic</figcaption>
-            </figure>
-            <figure class="flow-map">
-              <img src="assets/septeo/annual-accounting-rental.png" alt="Traitement comptable annuel - Gestion locative">
-              <figcaption class="caption">Annual accounting flow - Rental management</figcaption>
-            </figure>
-          </div>
-        </div>
       </div>
-    </section>
-
-    <section class="impact-flow">
-      <div class="section-label">Impact</div>
-      <h2 class="section-title">From target flows to development gaps.</h2>
-      <div class="impact-flow-grid">
-        <article class="impact-flow-card">
-          <div class="impact-flow-label">Before</div>
-          <h3>An acquired product to confront with field reality</h3>
-          <p>The software covered part of the scope, but remaining gaps had to be objectified through target business workflows.</p>
-        </article>
-        <article class="impact-flow-card">
-          <div class="impact-flow-label">Decision</div>
-          <h3>Actionable summary cards</h3>
-          <p>The mapped flows made it possible to cross-reference business needs, existing features and AI automation candidates.</p>
-        </article>
-        <article class="impact-flow-card">
-          <div class="impact-flow-label">Effect</div>
-          <h3>More operational prioritization</h3>
-          <p>Product teams could prioritize at workflow level, not through abstract feature requests. No follow-up on implementation received since delivery.</p>
-        </article>
+      <div class="outcomes-panel">
+        <h3>Key outcomes</h3>
+        <div class="outcomes-list">
+          <div class="outcome-row"><div class="outcome-label">Target segments</div><div class="outcome-value">Mapping of professional target segments: architects, artisans, advisors, turnkey renovation providers and construction companies.</div></div>
+          <div class="outcome-row"><div class="outcome-label">Compared journeys</div><div class="outcome-value">Segment-by-segment comparison of journeys during an individual home renovation, with friction points and key moments identified.</div></div>
+          <div class="outcome-row"><div class="outcome-label">Tool ecosystem</div><div class="outcome-value">Mapping of the professional monitoring and watch-tool ecosystem by segment.</div></div>
+          <div class="outcome-row"><div class="outcome-label">CSTB concepts</div><div class="outcome-value">Evaluation of appetite for CSTB tool concepts: identification of relevant usage moments and improvement leads.</div></div>
+          <div class="outcome-row"><div class="outcome-label">Research transfer</div><div class="outcome-value">User research skills transfer to the CSTB client teams.</div></div>
+        </div>
       </div>
     </section>
 
     <section class="reflection">
       <div>
-        <div class="section-label">Learnings</div>
+        <div class="section-label">Takeaway & reflection</div>
         <div class="quote-mark">&ldquo;</div>
       </div>
       <div>
-        <p class="quote">Separating existing-state mapping with business and product teams from the prospective phase with more end users would have made both exercises more effective.</p>
-        <p>A short upfront business interview session would have significantly reduced context-building time. <strong>These are framing points to integrate systematically into future proposals.</strong></p>
+        <p class="quote">Tools in fragmented professional ecosystems need a shared language across very different user profiles.</p>
+        <p>In renovation, each trade intervenes at a specific moment with its own vocabulary and constraints. Without a coordinating expert, handoffs between trades generate structural dysfunction. A tool that speaks to the whole chain can make a difference, but only if it interfaces with every existing ecosystem its users already rely on.</p>
+        <p><strong>Reflection.</strong> Recruitment was by far the hardest part of the mission: specific profiles took 1 to 1.5 months to mobilize despite CSTB's outreach support. One counter-intuitive finding was that re-engaging the same participants across multiple sessions was significantly easier than recruiting fresh profiles. Future proposals in this sector will budget recruitment time separately and realistically.</p>
       </div>
     </section>
 
     <nav class="project-navigation" aria-label="Case study navigation">
-      <a class="project-home" href="hub/en/">All projects</a>
-      <a class="project-next" href="insee/en/">
+      <a class="project-home" href="../../hub/fr/">All projects</a>
+      <a class="project-next" href="../../septeo/fr/">
         <span>Next project</span>
-        <strong>INSEE &rarr;</strong>
+        <strong>Septeo-ADB &rarr;</strong>
       </a>
     </nav>
     <footer class="footer">
-      <span>Alina Lagarde - Service Design Portfolio - 2026</span>
+      <span>Alina Lagarde - UX Research Portfolio - 2026</span>
       <div class="contact-cta" aria-label="Contact">
         <a class="contact-link" href="https://calendar.app.google/cZrdXorbJqAxpcS5A" target="_blank" rel="noopener noreferrer">Échangeons 30 min</a>
         <a class="contact-link" href="mailto:alinalagarde@gmail.com">alinalagarde@gmail.com</a>
         <span class="contact-text">+33 6 46 64 49 79</span>
       </div>
-      <span class="footer-mark">Septeo-ADB - Case Study</span>
+      <span class="footer-mark">CSTB - RESTORE Programme</span>
     </footer>
   </div>
 </main>

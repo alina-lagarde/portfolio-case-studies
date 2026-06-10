@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Septeo ADB - Alina Lagarde</title>
-<link rel="icon" type="image/gif" href="assets/favicon.gif">
+<title>INSEE - Refonte Intranet - Alina Lagarde</title>
+<link rel="icon" type="image/gif" href="../../assets/favicon.gif">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,500&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
@@ -203,12 +203,6 @@ strong {
   z-index: 2;
 }
 
-@media (min-width: 981px) {
-  .hero-photo {
-    height: 650px;
-  }
-}
-
 .hero-content {
   display: flex;
   flex-direction: column;
@@ -298,14 +292,6 @@ h1 em {
   color: var(--ink);
   font-size: 13px;
   line-height: 1.55;
-}
-
-.metadata.has-extra-meta .meta-cell:nth-last-child(-n + 2) {
-  border-bottom: 1px solid var(--line);
-}
-
-.metadata.has-extra-meta .meta-cell:nth-last-child(-n + 2) {
-  border-bottom: 0;
 }
 
 .chip {
@@ -828,12 +814,7 @@ h1 em {
   }
 
   .hero-photo {
-    height: 390px;
     min-height: 390px;
-  }
-
-  .hero-photo img {
-    object-position: center top;
   }
 
   .hero-photo::before {
@@ -924,14 +905,6 @@ h1 em {
   .meta-cell:last-child {
     border-bottom: 0;
   }
-
-  .metadata.has-extra-meta .meta-cell:nth-last-child(-n + 2) {
-    border-bottom: 1px solid var(--line);
-  }
-
-  .metadata.has-extra-meta .meta-cell:last-child {
-    border-bottom: 0;
-  }
 }
 
 @media print {
@@ -967,12 +940,7 @@ h1 em {
   }
 
   .hero-photo {
-    height: 650px;
     min-height: 650px;
-  }
-
-  .hero-photo img {
-    object-position: center;
   }
 
   .hero-photo::before {
@@ -1105,9 +1073,9 @@ h1 em {
 <main class="page">
   <div class="language-panel" lang="fr" data-language-panel="fr">
     <header class="topbar">
-      <a class="topbar-name" href="hub/fr/">Alina Lagarde - Portfolio</a>
+      <a class="topbar-name" href="../../hub/fr/">Alina Lagarde - Portfolio</a>
       <div class="topbar-info">
-        <span>Service Design - Cas client</span>
+          <span>UX Strategy - Cas client</span>
         <nav class="language-switch" aria-label="Choix de la langue">
           <button class="language-option" type="button" data-language-option="en" aria-pressed="false">EN</button>
           <button class="language-option is-active" type="button" data-language-option="fr" aria-pressed="true">FR</button>
@@ -1118,40 +1086,51 @@ h1 em {
 
     <section class="hero">
       <figure class="hero-photo">
-        <img src="assets/septeo/hero-workshop-photo.jpg" alt="Participants Septeo devant le board d'atelier Event Storming">
+        <img src="../../assets/insee/research-extract-page.png" alt="Extraits de recherche et d'entretiens pour l'intranet INSEE">
       </figure>
       <div class="hero-content">
-        <div class="eyebrow">Septeo-ADB x Globant - Juin 2025</div>
-        <h1><em>Event Storming</em><br>prospectif pour une<br>roadmap IA-centric</h1>
-        <p class="hero-lead">Cartographie des flux métiers cibles pour une refonte comptable post-acquisition - 2 jours, restitution Miro, 4 flux cartographiés.</p>
-        <div class="metadata has-extra-meta">
+        <div class="eyebrow">INSEE via La Netscouade - 2019</div>
+        <h1><em>Refonte intranet</em><br>et communication<br>interne</h1>
+        <p class="hero-lead">Recueillir les enjeux stratégiques et les usages métiers pour accompagner la conception d'une nouvelle plateforme digitale.</p>
+        <div class="metadata">
           <div class="meta-cell">
             <div class="meta-label">Client</div>
-            <div class="meta-value">Septeo-ADB<br>Logiciel de gestion immobilière</div>
-          </div>
-          <div class="meta-cell">
-            <div class="meta-label">Mon rôle</div>
-            <div class="meta-value">Lead Facilitator<br>et Service Designer</div>
+            <div class="meta-value">INSEE<br>via La Netscouade</div>
           </div>
         <div class="meta-cell">
+          <div class="meta-label">Mon rôle</div>
+          <div class="meta-value">Recherche UX<br>UX Strategist / UX Designer</div>
+        </div>
+        <div class="meta-cell">
           <div class="meta-label">Format</div>
-          <div class="meta-value">2 jours - Présentiel</div>
+          <div class="meta-value">~2 mois · Sur site · Paris</div>
+        </div>
+        <div class="meta-cell">
+          <div class="meta-label">Statut</div>
+          <div class="meta-value">Terminé · Livré</div>
+        </div>
+        <div class="meta-cell">
+          <div class="meta-label">Livrables principaux</div>
+          <div class="meta-value">Grilles d'interviews · Restitution personae · 6 ateliers UX documentés · Recommandations stratégiques</div>
+        </div>
+        <div class="meta-cell">
+          <div class="meta-label">Sourcing</div>
+          <div class="meta-value">La Netscouade (agence)</div>
+        </div>
+        <div class="meta-cell">
+          <div class="meta-label">Équipe</div>
+          <div class="meta-value">Lead UX (Alina Lagarde) · Planneur stratégique · UX junior · Consultant UR (démarrage + synthèse) · Directrice client · Coach agile INSEE</div>
+        </div>
+        <div class="meta-cell">
+          <div class="meta-label">Périmètre</div>
+          <div class="meta-value">Intranets et outils<br>de communication interne</div>
           </div>
           <div class="meta-cell">
-            <div class="meta-label">Méthodes</div>
+            <div class="meta-label">Population</div>
             <div class="meta-value">
-              <span class="chip">Event Storming</span>
-              <span class="chip">JTBD</span>
-              <span class="chip">Dot voting</span>
+              <span class="chip">5-6000 utilisateurs</span>
+              <span class="chip">Agents INSEE</span>
             </div>
-          </div>
-          <div class="meta-cell">
-            <div class="meta-label">Statut</div>
-            <div class="meta-value">Terminé</div>
-          </div>
-          <div class="meta-cell">
-            <div class="meta-label">Livrables principaux</div>
-            <div class="meta-value">Cartographie JTBD · 4 flux Event Storming · Fiches synthèse actionnables</div>
           </div>
         </div>
       </div>
@@ -1160,192 +1139,179 @@ h1 em {
     <section class="split">
       <div class="split-main">
         <div class="section-label">Contexte</div>
-        <h2 class="section-title">Un écart post-acquisition à combler,<br>une vision IA-centric à définir.</h2>
-        <p>Septeo-ADB, leader français des logiciels pour administrateurs de biens <strong>(3 200 agences, 150 000 utilisateurs)</strong>, venait d'acquérir un nouveau produit comptable pour consolider ses deux métiers clés : la gestion de copropriété <strong>(Syndic)</strong> et la gestion locative.</p>
-        <p>Le produit acquis couvrait environ <strong>90 % du périmètre Syndic, mais seulement 50 à 60 % de la gestion locative</strong>. L'objectif : définir des flux métiers cibles indépendamment des outils existants, identifier les fonctionnalités manquantes et prioriser le développement dans une logique « IA-centric ».</p>
+        <h2 class="section-title">Concevoir une plateforme digitale<br>avec une approche centrée utilisateurs.</h2>
+        <p>Dans le cadre de la refonte des intranets et des outils de communication interne, l'INSEE a sollicité un accompagnement pour concevoir une plateforme digitale selon une approche centrée utilisateurs.</p>
+        <p>Avec un planneur stratégique, nous avons recueilli les enjeux et risques du projet à travers <strong>un atelier et 5 interviews de parties prenantes</strong>. Un recueil des usages des différents métiers a également été mené au moyen de <strong>42 interviews utilisateurs</strong>.</p>
         <div class="callout">
-          <p><strong>Le véritable défi.</strong> Les interviews utilisateurs avaient été refusées pour des raisons budgétaires : nous sommes arrivées avec une connaissance métier minimale. L'interlocuteur client était peu familier des approches centrées utilisateur.</p>
-          <p><strong>Pivot au premier jour.</strong> Les deux ateliers étaient initialement conçus selon la même structure. Dès la première matinée, les cas d'usage Syndic et Gestion locative se sont révélés nettement différents. Le programme du second atelier a été revu en fin de première journée, avec les participants métier présents sur les deux sessions.</p>
+          <p><strong>Problématique client.</strong> Faire converger la vision stratégique des parties prenantes avec les usages et besoins réels des agents INSEE, tout en adaptant la méthodologie UX au milieu administratif.</p>
+        </div>
+        <div class="callout">
+          <p><strong>Contraintes.</strong> Accès aux agents en milieu administratif complexe à organiser : grand panel de métiers avec rotation interne fréquente, disponibilités limitées. Réconcilier une vision stratégique portée par la hiérarchie avec des usages terrain parfois très éloignés ; sans que les uns invalident les autres.</p>
         </div>
       </div>
       <aside class="split-side">
         <div class="field">
-          <div class="field-label">Objectif</div>
-          <div class="field-value">Cartographier des flux comptables cibles indépendamment des outils existants, identifier les fonctionnalités manquantes et cadrer la roadmap IA-centric.</div>
+          <div class="field-label">Objectifs</div>
+          <div class="field-value">Recueillir les enjeux et risques, écouter les usages agents et faire émerger des propositions de solution.</div>
         </div>
         <div class="field">
-          <div class="field-label">Mission via</div>
-          <div class="field-value">Globant</div>
+          <div class="field-label">Recherche stratégique</div>
+          <div class="field-value">1 atelier et 5 interviews de parties prenantes.</div>
         </div>
         <div class="field">
-          <div class="field-label">Co-facilitatrice</div>
-          <div class="field-value">Dounia Hamza</div>
+          <div class="field-label">Recherche utilisateurs</div>
+          <div class="field-value">42 interviews auprès des agents et métiers INSEE.</div>
         </div>
         <div class="field">
-          <div class="field-label">Domaine</div>
-          <div class="field-value">B2B SaaS - Immobilier / Comptabilité</div>
+          <div class="field-label">Ateliers documentés</div>
+          <div class="field-value">Atelier enjeux, atelier cible, ateliers édito x2 et ateliers d'idéation x3.</div>
         </div>
         <div class="field">
-          <div class="field-label">Livrable</div>
-          <div class="field-value accent">4 flux cartographiés + fiches synthèse actionnables</div>
+          <div class="field-label">Projet pilote</div>
+          <div class="field-value accent">Processus documenté pour consolider l'offre</div>
         </div>
       </aside>
     </section>
 
     <section class="participants">
-      <div class="section-label">Participants</div>
-      <h2 class="section-title">Deux groupes de 8 à 9 personnes aux profils hétérogènes.</h2>
-      <p>Les utilisateurs finaux étaient minoritaires, mais en position clé pour <strong>la vision terrain et la priorisation des flux.</strong></p>
+      <div class="section-label">Recherche</div>
+      <h2 class="section-title">Croiser la vision des parties prenantes avec les usages des agents.</h2>
+      <p>Le dispositif associait le recueil des besoins stratégiques à une recherche utilisateur orientée usages et métiers.</p>
       <div class="participant-grid">
         <article class="participant-card">
-          <h3>Métier et produit</h3>
-          <p><span class="chip">PM</span><span class="chip">PO</span><span class="chip">CTO</span><span class="chip">Consultants métier</span><span class="chip">Formation</span><span class="chip">Support</span></p>
+          <h3>Parties prenantes</h3>
+          <p><strong>1 atelier et 5 interviews</strong> pour recueillir la vision stratégique, les enjeux et les risques du projet.</p>
         </article>
         <article class="participant-card">
-          <h3>Utilisateurs finaux - voix clé</h3>
-          <p><span class="chip">Administrateurs de biens</span><span class="chip">2-3 par atelier</span></p>
-          <p>En position minoritaire, mais avec un rôle clé pour prioriser les flux au plus près des besoins terrain.</p>
+          <h3>Agents utilisateurs</h3>
+          <p><strong>42 interviews utilisateurs</strong> pour recueillir les usages et besoins réels des différents métiers.</p>
+          <p>Les retours devaient être conciliés avec les visions portées par les parties prenantes.</p>
         </article>
       </div>
     </section>
 
     <section class="approach">
       <div class="section-label">Approche</div>
-      <h2 class="section-title">5 étapes par jour - du contexte brut à une entrée de roadmap IA.</h2>
-      <p>Chaque atelier suivait une progression structurée, de la construction collective du contexte à des livrables actionnables. La dimension <strong>prospective</strong>, imaginer les flux cibles sans contrainte de l'outil actuel, était intégrée à la phase 4 avec un focus sur les candidats à <strong>l'automatisation ou à l'assistance IA.</strong></p>
+      <h2 class="section-title">Une conception structurée en trois phases.</h2>
+      <p>Le PDF documente une première phase d'analyse de l'existant et de compréhension de la vision des parties prenantes, une deuxième phase de compréhension des besoins utilisateurs, puis une phase de proposition de solution fondée sur la co-création, les études et les usages recueillis. La deuxième phase avait été entamée fin juin 2019.</p>
       <div class="steps">
         <article class="step">
           <div class="step-number">01</div>
-          <h3>Introduction et icebreaker</h3>
-          <p>Objectifs, règles de co-création et alignement du groupe.</p>
+          <h3>Vision stratégique</h3>
+          <p>Atelier enjeux et interviews stratégiques.</p>
         </article>
         <article class="step">
           <div class="step-number">02</div>
-          <h3>Jobs to be done et macro-flux</h3>
-          <p>Identifier les JTBD et les traduire en flux métiers candidats.</p>
+          <h3>Besoins utilisateurs</h3>
+          <p>Atelier cible et interviews utilisateurs.</p>
         </article>
         <article class="step">
           <div class="step-number">03</div>
-          <h3>Priorisation par vote</h3>
-          <p>Vote des utilisateurs finaux pour classer les flux selon leur impact terrain.</p>
+          <h3>Analyse</h3>
+          <p>Analyse d'étude et restitution de personae.</p>
         </article>
         <article class="step">
           <div class="step-number">04</div>
-          <h3>Event Storming en sous-groupes</h3>
-          <p>Événements, commandes, acteurs, systèmes, règles, hotspots et idées IA.</p>
+          <h3>Éditorial</h3>
+          <p>Deux ateliers édito documentés dans la méthode.</p>
         </article>
         <article class="step">
           <div class="step-number">05</div>
-          <h3>Pitch et débrief collectif</h3>
-          <p>Présentation de chaque sous-groupe et rétrospective à chaud.</p>
+          <h3>Idéation</h3>
+          <p>Trois ateliers d'idéation sous forme de mini design sprints.</p>
         </article>
       </div>
     </section>
 
     <section class="evidence">
-      <div class="section-label">Preuves d'atelier</div>
-      <h2 class="section-title">Workspace Miro - vue d'ensemble de la restitution.</h2>
+      <div class="section-label">Extraits du projet</div>
+      <h2 class="section-title">Démarche et matériaux de recherche documentés.</h2>
       <div class="visual-grid">
-        <figure class="visual-card overview">
-          <img src="assets/septeo/miro-overview.png" alt="Vue d'ensemble de la restitution Miro Septeo">
-          <figcaption class="caption">Board de restitution des deux journées - Syndic en haut et Gestion locative en bas. Chaque section couvre le parcours complet, des JTBD aux cartes de flux priorisées.</figcaption>
+        <figure class="visual-card map">
+          <img src="../../assets/insee/approach-page.png" alt="Approche de recherche du projet intranet INSEE">
+          <figcaption class="caption">Extrait PDF : phases de conception et méthode de recherche.</figcaption>
+        </figure>
+        <figure class="visual-card map">
+          <img src="../../assets/insee/project-extracts-page.png" alt="Extraits de la grille d'entretiens utilisateurs INSEE">
+          <figcaption class="caption">Extrait PDF : grille d'entretiens et traces d'analyse utilisateurs.</figcaption>
         </figure>
       </div>
     </section>
 
     <section class="results">
-      <div class="section-label">Résultats</div>
-      <h2 class="section-title">Des décisions exploitables pour la roadmap IA-centric.</h2>
-      <div class="results-layout">
-        <div class="result-list">
-        <article class="result-item">
-          <div class="result-label">Résultat 01</div>
-          <h3>Jobs-to-be-done métier</h3>
-          <p>Cartographie exhaustive de tous les jobs-to-be-done métier pour la gestion locative et les syndics (partie comptable) ; base commune construite avec les utilisateurs finaux avant toute contrainte outil.</p>
+      <div class="section-label">Livrables montrés</div>
+      <h2 class="section-title">Des supports de recherche et de co-création.</h2>
+      <div class="results-grid">
+        <article class="result-card">
+          <h3>Grilles d'interviews</h3>
+          <p>Des guides adaptés aux parties prenantes puis aux utilisateurs.</p>
         </article>
-        <article class="result-item">
-          <div class="result-label">Résultat 02</div>
-          <h3>4 flux prioritaires cartographiés</h3>
-          <p>4 flux prioritaires (critiques et récurrents) cartographiés en détail via Event Storming : événements, commandes, acteurs, systèmes, règles, hotspots et opportunités d'innovation ; restitués en fiches synthèse actionnables avec candidats à l'automatisation IA flux par flux.</p>
+        <article class="result-card">
+          <h3>Restitution personae</h3>
+          <p>Une restitution citée dans la méthode de recherche du projet.</p>
         </article>
-        <article class="result-item">
-          <div class="result-label">Résultat 03</div>
-          <h3>Priorisation terrain</h3>
-          <p>Priorisation et pitch des évolutions majeures effectués par les administrateurs de biens via dot voting ; décisions de roadmap ancrées dans le terrain, pas dans les hypothèses produit.</p>
+        <article class="result-card">
+          <h3>Ateliers UX</h3>
+          <p>Ateliers enjeux, cible, édito et idéation documentés dans le dossier.</p>
         </article>
-        </div>
-        <div>
-          <div class="section-label">Cartes de flux métiers cibles</div>
-          <div class="flow-map-grid">
-            <figure class="flow-map">
-              <img src="assets/septeo/annual-balance-syndic.png" alt="Bilan annuel - Syndic">
-              <figcaption class="caption">Flux bilan annuel - Syndic</figcaption>
-            </figure>
-            <figure class="flow-map">
-              <img src="assets/septeo/annual-accounting-rental.png" alt="Traitement comptable annuel - Gestion locative">
-              <figcaption class="caption">Flux traitement comptable annuel - Gestion locative</figcaption>
-            </figure>
-          </div>
-        </div>
       </div>
     </section>
 
     <section class="impact-flow">
       <div class="section-label">Impact</div>
-      <h2 class="section-title">Des flux cibles aux écarts de développement.</h2>
+      <h2 class="section-title">De la recherche à une solution adaptée.</h2>
       <div class="impact-flow-grid">
         <article class="impact-flow-card">
           <div class="impact-flow-label">Avant</div>
-          <h3>Un produit acquis à confronter au terrain</h3>
-          <p>Le logiciel couvrait une partie du périmètre, mais les écarts restants devaient être objectivés à partir des flux métiers cibles.</p>
+          <h3>Une vision stratégique à réconcilier avec le terrain</h3>
+          <p>Les usages des agents et la vision portée par la hiérarchie devaient être rendus compatibles sans que l'un invalide l'autre.</p>
         </article>
         <article class="impact-flow-card">
           <div class="impact-flow-label">Décision</div>
-          <h3>Des fiches synthèse actionnables</h3>
-          <p>Les flux cartographiés ont permis de croiser besoins métier, fonctionnalités existantes et candidats à l'automatisation IA.</p>
+          <h3>Une solution marque blanche adaptée</h3>
+          <p>La solution retenue a été ajustée à partir des recommandations stratégiques issues de la recherche utilisateur.</p>
         </article>
         <article class="impact-flow-card">
           <div class="impact-flow-label">Effet</div>
-          <h3>Une priorisation plus opérationnelle</h3>
-          <p>Les équipes produit ont pu prioriser à l'échelle des workflows, pas sous forme de demandes abstraites. Pas de retour sur l'implémentation à ce stade.</p>
+          <h3>Un pilote pour 5 à 6 000 agents</h3>
+          <p>Le projet a aussi servi à consolider l'offre user research de La Netscouade : formats d'ateliers, stratégie éditoriale et adaptation de formats existants.</p>
         </article>
       </div>
     </section>
 
     <section class="reflection">
       <div>
-        <div class="section-label">Apprentissages</div>
+        <div class="section-label">Apprentissage</div>
         <div class="quote-mark">&ldquo;</div>
       </div>
       <div>
-        <p class="quote">Séparer la cartographie de l'existant, menée avec les équipes métier et produit, de la phase prospective, menée avec davantage d'utilisateurs finaux, aurait rendu les deux exercices plus efficaces.</p>
-        <p>Une session d'interviews métier en amont, même courte, aurait réduit significativement le temps de montée en contexte. <strong>Ce sont des points de cadrage à intégrer systématiquement dans les prochaines propositions.</strong></p>
+        <p class="quote">Ce projet m'a appris à adapter une méthode UX à un environnement où elle n'est pas encore la norme, et à documenter ce processus comme un livrable à part entière. Le vrai défi n'était pas la recherche elle-même : c'était de rendre les résultats utilisables par des équipes qui n'avaient jamais travaillé de cette façon.</p>
       </div>
     </section>
 
     <nav class="project-navigation" aria-label="Navigation entre les projets">
-      <a class="project-home" href="hub/fr/">Tous les projets</a>
-      <a class="project-next" href="insee/fr/">
+      <a class="project-home" href="../../hub/fr/">Tous les projets</a>
+      <a class="project-next" href="../../alain-afflelou/fr/">
         <span>Projet suivant</span>
-        <strong>INSEE &rarr;</strong>
+        <strong>Alain Afflelou &rarr;</strong>
       </a>
     </nav>
     <footer class="footer">
-      <span>Alina Lagarde - Portfolio de Service Design - 2026</span>
+      <span>Alina Lagarde - Portfolio UX Strategy - 2026</span>
       <div class="contact-cta" aria-label="Contact">
         <a class="contact-link" href="https://calendar.app.google/cZrdXorbJqAxpcS5A" target="_blank" rel="noopener noreferrer">Échangeons 30 min</a>
         <a class="contact-link" href="mailto:alinalagarde@gmail.com">alinalagarde@gmail.com</a>
         <span class="contact-text">+33 6 46 64 49 79</span>
       </div>
-      <span class="footer-mark">Septeo-ADB - Cas client</span>
+      <span class="footer-mark">INSEE - Refonte intranet</span>
     </footer>
   </div>
 
   <div class="language-panel" lang="en" data-language-panel="en" hidden>
     <header class="topbar">
-      <a class="topbar-name" href="hub/en/">Alina Lagarde - Portfolio</a>
+      <a class="topbar-name" href="../../hub/fr/">Alina Lagarde - Portfolio</a>
       <div class="topbar-info">
-        <span>Service Design - Case Study</span>
+          <span>UX Strategy - Case Study</span>
         <nav class="language-switch" aria-label="Language selection">
           <button class="language-option is-active" type="button" data-language-option="en" aria-pressed="true">EN</button>
           <button class="language-option" type="button" data-language-option="fr" aria-pressed="false">FR</button>
@@ -1356,40 +1322,51 @@ h1 em {
 
     <section class="hero">
       <figure class="hero-photo">
-        <img src="assets/septeo/hero-workshop-photo.jpg" alt="Septeo participants reviewing the Event Storming workshop board">
+        <img src="../../assets/insee/research-extract-page.png" alt="Research and interview excerpts for the INSEE intranet project">
       </figure>
       <div class="hero-content">
-        <div class="eyebrow">Septeo-ADB x Globant - June 2025</div>
-        <h1>Prospective<br><em>Event Storming</em><br>for an AI-centric roadmap</h1>
-        <p class="hero-lead">Target business workflow mapping for a post-acquisition accounting redesign - 2 days, Miro restitution, 4 mapped flows.</p>
-        <div class="metadata has-extra-meta">
+        <div class="eyebrow">INSEE via La Netscouade - 2019</div>
+        <h1><em>Intranet redesign</em><br>and internal<br>communication</h1>
+        <p class="hero-lead">Gathering strategic challenges and professional practices to support the design of a new digital platform.</p>
+        <div class="metadata">
           <div class="meta-cell">
             <div class="meta-label">Client</div>
-            <div class="meta-value">Septeo-ADB<br>Property management software</div>
-          </div>
-          <div class="meta-cell">
-            <div class="meta-label">My role</div>
-            <div class="meta-value">Lead Facilitator<br>and Service Designer</div>
+            <div class="meta-value">INSEE<br>via La Netscouade</div>
           </div>
         <div class="meta-cell">
+          <div class="meta-label">My role</div>
+          <div class="meta-value">UX Research<br>UX Strategist / UX Designer</div>
+        </div>
+        <div class="meta-cell">
           <div class="meta-label">Format</div>
-          <div class="meta-value">2 days - On-site</div>
+          <div class="meta-value">~2 months · On-site · Paris</div>
+        </div>
+        <div class="meta-cell">
+          <div class="meta-label">Status</div>
+          <div class="meta-value">Complete · Delivered</div>
+        </div>
+        <div class="meta-cell">
+          <div class="meta-label">Main outputs</div>
+          <div class="meta-value">Interview guides · Persona restitution · 6 documented UX workshops · Strategic recommendations</div>
+        </div>
+        <div class="meta-cell">
+          <div class="meta-label">Sourcing</div>
+          <div class="meta-value">La Netscouade (agency)</div>
+        </div>
+        <div class="meta-cell">
+          <div class="meta-label">Team</div>
+          <div class="meta-value">Lead UX (Alina Lagarde) · Strategic planner · Junior UX · UR consultant (kickoff + synthesis) · Client director · INSEE agile coach</div>
+        </div>
+        <div class="meta-cell">
+          <div class="meta-label">Scope</div>
+          <div class="meta-value">Intranets and internal<br>communication tools</div>
           </div>
           <div class="meta-cell">
-            <div class="meta-label">Methods</div>
+            <div class="meta-label">Audience</div>
             <div class="meta-value">
-              <span class="chip">Event Storming</span>
-              <span class="chip">JTBD</span>
-              <span class="chip">Dot voting</span>
+              <span class="chip">5-6000 users</span>
+              <span class="chip">INSEE staff</span>
             </div>
-          </div>
-          <div class="meta-cell">
-            <div class="meta-label">Status</div>
-            <div class="meta-value">Complete</div>
-          </div>
-          <div class="meta-cell">
-            <div class="meta-label">Main outputs</div>
-            <div class="meta-value">JTBD mapping · 4 Event Storming flows · Actionable summary cards</div>
           </div>
         </div>
       </div>
@@ -1398,184 +1375,171 @@ h1 em {
     <section class="split">
       <div class="split-main">
         <div class="section-label">Context</div>
-        <h2 class="section-title">A post-acquisition gap to close,<br>an AI-centric vision to define.</h2>
-        <p>Septeo-ADB, the French market leader in property management software <strong>(3,200 agencies, 150,000 users)</strong>, had just acquired a new accounting product to consolidate both its core domains: co-ownership management <strong>(Syndic)</strong> and rental management.</p>
-        <p>The acquired product covered approximately <strong>90% of the Syndic scope but only 50-60% of rental management</strong>. The goal: define target business workflows independently of existing tools, identify missing features, and prioritize development in an "AI-centric" logic.</p>
+        <h2 class="section-title">Designing a digital platform<br>with a user-centered approach.</h2>
+        <p>As part of the redesign of its intranets and internal communication tools, INSEE requested support to design a digital platform using a user-centered approach.</p>
+        <p>Working with a strategic planner, we collected project challenges and risks through <strong>one workshop and 5 stakeholder interviews</strong>. Research into practices across different roles was also conducted through <strong>42 user interviews</strong>.</p>
         <div class="callout">
-          <p><strong>The real challenge.</strong> User interviews had been refused for budget reasons - we arrived with minimal domain knowledge. The client contact was unfamiliar with user-centered approaches.</p>
-          <p><strong>Day one pivot.</strong> The two workshops were initially identical in structure. From the first morning, Syndic and rental management use cases diverged significantly. The second workshop agenda was revised at the end of day one, with business participants attending both sessions.</p>
+          <p><strong>Client question.</strong> Bring stakeholder strategic vision together with the real practices and needs of INSEE staff, while adapting UX methodology to an administrative environment.</p>
+        </div>
+        <div class="callout">
+          <p><strong>Constraints.</strong> Access to staff in an administrative environment was complex to organize: a wide range of professional roles with frequent internal rotation and limited availability. Reconciling a top-down strategic vision with field practices that sometimes diverged significantly ; without letting either invalidate the other.</p>
         </div>
       </div>
       <aside class="split-side">
         <div class="field">
-          <div class="field-label">Objective</div>
-          <div class="field-value">Map target accounting flows independent of existing tools, identify missing features, and frame the "AI-centric" product roadmap.</div>
+          <div class="field-label">Objectives</div>
+          <div class="field-value">Collect challenges and risks, listen to staff practices and support the emergence of solution proposals.</div>
         </div>
         <div class="field">
-          <div class="field-label">Sourced via</div>
-          <div class="field-value">Globant</div>
+          <div class="field-label">Strategic research</div>
+          <div class="field-value">1 workshop and 5 stakeholder interviews.</div>
         </div>
         <div class="field">
-          <div class="field-label">Co-facilitator</div>
-          <div class="field-value">Dounia Hamza</div>
+          <div class="field-label">User research</div>
+          <div class="field-value">42 interviews with INSEE staff across professional roles.</div>
         </div>
         <div class="field">
-          <div class="field-label">Domain</div>
-          <div class="field-value">B2B SaaS - Real estate / Accounting</div>
+          <div class="field-label">Documented workshops</div>
+          <div class="field-value">Challenges workshop, target workshop, 2 editorial workshops and 3 ideation workshops.</div>
         </div>
         <div class="field">
-          <div class="field-label">Deliverable</div>
-          <div class="field-value accent">4 mapped flows + actionable summary cards</div>
+          <div class="field-label">Pilot project</div>
+          <div class="field-value accent">Process documented to consolidate the service offering</div>
         </div>
       </aside>
     </section>
 
     <section class="participants">
-      <div class="section-label">Participants</div>
-      <h2 class="section-title">Two groups of 8 to 9 people with varied profiles.</h2>
-      <p>End users were in the minority but held a key position for <strong>field insight and flow prioritization.</strong></p>
+      <div class="section-label">Research</div>
+      <h2 class="section-title">Bringing stakeholder vision together with staff practices.</h2>
+      <p>The programme combined strategic requirements gathering with user research focused on real practices and professional roles.</p>
       <div class="participant-grid">
         <article class="participant-card">
-          <h3>Business and Product</h3>
-          <p><span class="chip">PM</span><span class="chip">PO</span><span class="chip">CTO</span><span class="chip">Business consultants</span><span class="chip">Training</span><span class="chip">Support</span></p>
+          <h3>Stakeholders</h3>
+          <p><strong>1 workshop and 5 interviews</strong> to collect strategic vision, project challenges and risks.</p>
         </article>
         <article class="participant-card">
-          <h3>End users - key voice</h3>
-          <p><span class="chip">Property managers</span><span class="chip">2-3 per workshop</span></p>
-          <p>In a minority position, but with a key role in prioritizing flows according to field needs.</p>
+          <h3>Staff users</h3>
+          <p><strong>42 user interviews</strong> to collect real practices and needs across different professional roles.</p>
+          <p>Feedback was intended to be reconciled with stakeholder perspectives.</p>
         </article>
       </div>
     </section>
 
     <section class="approach">
       <div class="section-label">Approach</div>
-      <h2 class="section-title">5 stages per day - from raw context to AI-ready roadmap input.</h2>
-      <p>Each workshop followed a structured arc, moving from collective sense-making to concrete actionable outputs. The <strong>prospective dimension</strong> - imagining target flows unconstrained by the current tool - was embedded in stage 4, with a focus on identifying candidates for <strong>AI automation or assistance.</strong></p>
+      <h2 class="section-title">A design process structured in three phases.</h2>
+      <p>The PDF documents a first phase analyzing the existing situation and understanding stakeholder vision, a second phase understanding user needs, and a solution-proposal phase based on co-creation, related studies and collected practices. The second phase had begun in late June 2019.</p>
       <div class="steps">
         <article class="step">
           <div class="step-number">01</div>
-          <h3>Intro and icebreaker</h3>
-          <p>Objectives, co-creation rules, getting the room aligned.</p>
+          <h3>Strategic vision</h3>
+          <p>Challenges workshop and strategic interviews.</p>
         </article>
         <article class="step">
           <div class="step-number">02</div>
-          <h3>Jobs-to-be-done and macro flows</h3>
-          <p>Identifying JTBDs, translating into business flow candidates.</p>
+          <h3>User needs</h3>
+          <p>Target workshop and user interviews.</p>
         </article>
         <article class="step">
           <div class="step-number">03</div>
-          <h3>Prioritization by vote</h3>
-          <p>End users only - dot voting to rank flows by real-world impact.</p>
+          <h3>Analysis</h3>
+          <p>Desk research analysis and persona restitution.</p>
         </article>
         <article class="step">
           <div class="step-number">04</div>
-          <h3>Event Storming in sub-groups</h3>
-          <p>Events, commands, actors, systems, rules, hotspots and AI ideas.</p>
+          <h3>Editorial work</h3>
+          <p>Two editorial workshops documented in the method.</p>
         </article>
         <article class="step">
           <div class="step-number">05</div>
-          <h3>Plenary pitch and debrief</h3>
-          <p>Each sub-group presents - hot retrospective with all participants.</p>
+          <h3>Ideation</h3>
+          <p>Three ideation workshops run as mini design sprints.</p>
         </article>
       </div>
     </section>
 
     <section class="evidence">
-      <div class="section-label">Workshop Evidence</div>
-      <h2 class="section-title">Miro workspace - full restitution overview.</h2>
+      <div class="section-label">Project excerpts</div>
+      <h2 class="section-title">Documented approach and research materials.</h2>
       <div class="visual-grid">
-        <figure class="visual-card overview">
-          <img src="assets/septeo/miro-overview.png" alt="Miro restitution overview">
-          <figcaption class="caption">Two-day restitution board - Syndic (top) and Rental management (bottom). Each section covers the full arc from JTBDs to prioritized flow maps.</figcaption>
+        <figure class="visual-card map">
+          <img src="../../assets/insee/approach-page.png" alt="INSEE intranet research approach">
+          <figcaption class="caption">PDF excerpt: design phases and research method.</figcaption>
+        </figure>
+        <figure class="visual-card map">
+          <img src="../../assets/insee/project-extracts-page.png" alt="INSEE user interview guide excerpts">
+          <figcaption class="caption">PDF excerpt: interview guide and traces of user analysis.</figcaption>
         </figure>
       </div>
     </section>
 
     <section class="results">
-      <div class="section-label">Results</div>
-      <h2 class="section-title">Directly usable input for an AI-centric roadmap.</h2>
-      <div class="results-layout">
-        <div class="result-list">
-        <article class="result-item">
-          <div class="result-label">Result 01</div>
-          <h3>Business jobs-to-be-done</h3>
-          <p>Full mapping of business jobs-to-be-done across rental management and co-ownership (accounting scope) ; shared foundation built with end users before any tool constraint.</p>
+      <div class="section-label">Shown deliverables</div>
+      <h2 class="section-title">Research and co-creation materials.</h2>
+      <div class="results-grid">
+        <article class="result-card">
+          <h3>Interview guides</h3>
+          <p>Guides adapted first to stakeholders and then to users.</p>
         </article>
-        <article class="result-item">
-          <div class="result-label">Result 02</div>
-          <h3>4 priority flows mapped</h3>
-          <p>4 priority flows (critical and recurring) mapped in detail via Event Storming: events, commands, actors, systems, rules, hotspots and innovation opportunities ; delivered as actionable summary cards with AI automation candidates identified step by step.</p>
+        <article class="result-card">
+          <h3>Persona restitution</h3>
+          <p>A restitution explicitly listed in the project's research method.</p>
         </article>
-        <article class="result-item">
-          <div class="result-label">Result 03</div>
-          <h3>Field-grounded prioritization</h3>
-          <p>Major workflow improvements prioritized and pitched by property managers via dot voting ; roadmap decisions grounded in field reality, not product assumptions.</p>
+        <article class="result-card">
+          <h3>UX workshops</h3>
+          <p>Challenges, target, editorial and ideation workshops documented in the dossier.</p>
         </article>
-        </div>
-        <div>
-          <div class="section-label">Target business flow maps</div>
-          <div class="flow-map-grid">
-            <figure class="flow-map">
-              <img src="assets/septeo/annual-balance-syndic.png" alt="Bilan annuel - Syndic">
-              <figcaption class="caption">Annual balance flow - Syndic</figcaption>
-            </figure>
-            <figure class="flow-map">
-              <img src="assets/septeo/annual-accounting-rental.png" alt="Traitement comptable annuel - Gestion locative">
-              <figcaption class="caption">Annual accounting flow - Rental management</figcaption>
-            </figure>
-          </div>
-        </div>
       </div>
     </section>
 
     <section class="impact-flow">
       <div class="section-label">Impact</div>
-      <h2 class="section-title">From target flows to development gaps.</h2>
+      <h2 class="section-title">From research to an adapted solution.</h2>
       <div class="impact-flow-grid">
         <article class="impact-flow-card">
           <div class="impact-flow-label">Before</div>
-          <h3>An acquired product to confront with field reality</h3>
-          <p>The software covered part of the scope, but remaining gaps had to be objectified through target business workflows.</p>
+          <h3>A strategic vision to reconcile with field reality</h3>
+          <p>Staff practices and top-down expectations had to be made compatible without letting either perspective invalidate the other.</p>
         </article>
         <article class="impact-flow-card">
           <div class="impact-flow-label">Decision</div>
-          <h3>Actionable summary cards</h3>
-          <p>The mapped flows made it possible to cross-reference business needs, existing features and AI automation candidates.</p>
+          <h3>An adapted white-label solution</h3>
+          <p>The selected solution was adjusted based on strategic recommendations drawn from user research.</p>
         </article>
         <article class="impact-flow-card">
           <div class="impact-flow-label">Effect</div>
-          <h3>More operational prioritization</h3>
-          <p>Product teams could prioritize at workflow level, not through abstract feature requests. No follow-up on implementation received since delivery.</p>
+          <h3>A pilot for 5,000 to 6,000 staff</h3>
+          <p>The project also helped consolidate La Netscouade's user research offer: workshop formats, editorial strategy and adaptation of existing formats.</p>
         </article>
       </div>
     </section>
 
     <section class="reflection">
       <div>
-        <div class="section-label">Learnings</div>
+        <div class="section-label">Takeaway</div>
         <div class="quote-mark">&ldquo;</div>
       </div>
       <div>
-        <p class="quote">Separating existing-state mapping with business and product teams from the prospective phase with more end users would have made both exercises more effective.</p>
-        <p>A short upfront business interview session would have significantly reduced context-building time. <strong>These are framing points to integrate systematically into future proposals.</strong></p>
+        <p class="quote">This project taught me to adapt a UX methodology to an environment where it was not yet the norm, and to treat the documentation of that process as a deliverable in its own right. The real challenge was not the research itself: it was making the findings usable for teams who had never worked this way.</p>
       </div>
     </section>
 
     <nav class="project-navigation" aria-label="Case study navigation">
-      <a class="project-home" href="hub/en/">All projects</a>
-      <a class="project-next" href="insee/en/">
+      <a class="project-home" href="../../hub/fr/">All projects</a>
+      <a class="project-next" href="../../alain-afflelou/fr/">
         <span>Next project</span>
-        <strong>INSEE &rarr;</strong>
+        <strong>Alain Afflelou &rarr;</strong>
       </a>
     </nav>
     <footer class="footer">
-      <span>Alina Lagarde - Service Design Portfolio - 2026</span>
+      <span>Alina Lagarde - UX Strategy Portfolio - 2026</span>
       <div class="contact-cta" aria-label="Contact">
         <a class="contact-link" href="https://calendar.app.google/cZrdXorbJqAxpcS5A" target="_blank" rel="noopener noreferrer">Échangeons 30 min</a>
         <a class="contact-link" href="mailto:alinalagarde@gmail.com">alinalagarde@gmail.com</a>
         <span class="contact-text">+33 6 46 64 49 79</span>
       </div>
-      <span class="footer-mark">Septeo-ADB - Case Study</span>
+      <span class="footer-mark">INSEE - Intranet redesign</span>
     </footer>
   </div>
 </main>

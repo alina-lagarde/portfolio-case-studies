@@ -146,14 +146,33 @@ function validateYaml(data, fileName) {
 
 const order = readJson(orderPath, []);
 const hubProjects = fs.existsSync(hubProjectsPath) ? readYaml(hubProjectsPath) : {};
+const cleanRouteLanguages = ["en", "fr"];
+
+if (!fs.existsSync(path.join(rootDir, "assets", "favicon.gif"))) {
+  errors.push("Missing favicon asset: assets/favicon.gif.");
+}
 
 if (!Array.isArray(order) || order.length === 0) {
   errors.push("order.json must contain at least one slug.");
 } else {
+  cleanRouteLanguages.forEach((language) => {
+    const hubRoute = path.join(rootDir, "hub", language, "index.html");
+    if (!fs.existsSync(hubRoute)) {
+      errors.push(`Missing clean hub route: hub/${language}/index.html.`);
+    }
+  });
+
   order.forEach((slug) => {
     if (!stableSlug(slug)) {
       errors.push(`order.json: "${slug}" is not a stable kebab-case slug.`);
     }
+
+    cleanRouteLanguages.forEach((language) => {
+      const cleanRoute = path.join(rootDir, slug, language, "index.html");
+      if (!fs.existsSync(cleanRoute)) {
+        errors.push(`${slug}: missing clean route "${slug}/${language}/index.html".`);
+      }
+    });
 
     if (!resolveCaseStudyFile(slug)) {
       warnings.push(`order.json: no local HTML file found for "${slug}".`);

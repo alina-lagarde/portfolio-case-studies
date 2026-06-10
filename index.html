@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Case Studies - Alina Lagarde</title>
+<link rel="icon" type="image/gif" href="assets/favicon.gif">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
@@ -52,6 +53,7 @@ a {
     radial-gradient(circle at 76% 18%, rgba(224, 173, 50, 0.07), transparent 27%),
     var(--night);
   min-height: 100vh;
+  padding-bottom: var(--hub-footer-offset, 112px);
 }
 
 .topbar {
@@ -227,6 +229,13 @@ h1 em {
 }
 
 .footer {
+  background: rgba(15, 20, 35, 0.96);
+  backdrop-filter: blur(16px);
+  bottom: 0;
+  left: 50%;
+  position: fixed;
+  transform: translateX(-50%);
+  z-index: 30;
   border-top: 1px solid var(--line);
   color: var(--quiet);
   display: flex;
@@ -424,7 +433,7 @@ h1 em {
       </div>
       <ol class="project-list">
         <li class="project-item">
-          <a class="project-link" href="orange-sosh-case-study-v2.html">
+          <a class="project-link" href="orange-sosh/fr/">
             <span class="project-number">01</span>
             <span>
               <span class="project-title">Orange &amp; Sosh</span>
@@ -434,7 +443,7 @@ h1 em {
           </a>
         </li>
         <li class="project-item">
-          <a class="project-link" href="cstb-2024-case-study.html">
+          <a class="project-link" href="cstb-2024/fr/">
             <span class="project-number">02</span>
             <span>
               <span class="project-title">CSTB / RESTORE</span>
@@ -444,7 +453,7 @@ h1 em {
           </a>
         </li>
         <li class="project-item">
-          <a class="project-link" href="septeo-case-study.html">
+          <a class="project-link" href="septeo/fr/">
             <span class="project-number">03</span>
             <span>
               <span class="project-title">Septeo-ADB</span>
@@ -454,7 +463,7 @@ h1 em {
           </a>
         </li>
         <li class="project-item">
-          <a class="project-link" href="insee-case-study.html">
+          <a class="project-link" href="insee/fr/">
             <span class="project-number">04</span>
             <span>
               <span class="project-title">INSEE</span>
@@ -464,7 +473,7 @@ h1 em {
           </a>
         </li>
         <li class="project-item">
-          <a class="project-link" href="alain-afflelou-case-study.html">
+          <a class="project-link" href="alain-afflelou/fr/">
             <span class="project-number">05</span>
             <span>
               <span class="project-title">Alain Afflelou</span>
@@ -520,7 +529,7 @@ h1 em {
       </div>
       <ol class="project-list">
         <li class="project-item">
-          <a class="project-link" href="orange-sosh-case-study-v2.html">
+          <a class="project-link" href="orange-sosh/en/">
             <span class="project-number">01</span>
             <span>
               <span class="project-title">Orange &amp; Sosh</span>
@@ -530,7 +539,7 @@ h1 em {
           </a>
         </li>
         <li class="project-item">
-          <a class="project-link" href="cstb-2024-case-study.html">
+          <a class="project-link" href="cstb-2024/en/">
             <span class="project-number">02</span>
             <span>
               <span class="project-title">CSTB / RESTORE</span>
@@ -540,7 +549,7 @@ h1 em {
           </a>
         </li>
         <li class="project-item">
-          <a class="project-link" href="septeo-case-study.html">
+          <a class="project-link" href="septeo/en/">
             <span class="project-number">03</span>
             <span>
               <span class="project-title">Septeo-ADB</span>
@@ -550,7 +559,7 @@ h1 em {
           </a>
         </li>
         <li class="project-item">
-          <a class="project-link" href="insee-case-study.html">
+          <a class="project-link" href="insee/en/">
             <span class="project-number">04</span>
             <span>
               <span class="project-title">INSEE</span>
@@ -560,7 +569,7 @@ h1 em {
           </a>
         </li>
         <li class="project-item">
-          <a class="project-link" href="alain-afflelou-case-study.html">
+          <a class="project-link" href="alain-afflelou/en/">
             <span class="project-number">05</span>
             <span>
               <span class="project-title">Alain Afflelou</span>
@@ -597,6 +606,12 @@ h1 em {
     return isSupportedLanguage(language) ? language : null;
   }
 
+  function getPathLanguage() {
+    const segments = window.location.pathname.split("/").filter(Boolean);
+    const language = segments[segments.length - 1];
+    return isSupportedLanguage(language) ? language : null;
+  }
+
   function getStoredLanguage() {
     try {
       const language = window.localStorage.getItem(languageStorageKey);
@@ -614,12 +629,31 @@ h1 em {
     }
   }
 
+  function replaceTrailingLanguagePath(pathname, language) {
+    const hasTrailingSlash = pathname.endsWith("/");
+    const segments = pathname.split("/");
+    const languageIndex = hasTrailingSlash ? segments.length - 2 : segments.length - 1;
+
+    if (languageIndex < 0 || !isSupportedLanguage(segments[languageIndex])) return null;
+
+    segments[languageIndex] = language;
+    return segments.join("/");
+  }
+
   function addLanguageToHref(href, language) {
     if (!href || href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:")) return href;
-    if (!href.includes(".html")) return href;
+    if (href.includes("://")) return href;
 
     const [beforeHash, hash = ""] = href.split("#");
     const [pathname, query = ""] = beforeHash.split("?");
+    const languagePath = replaceTrailingLanguagePath(pathname, language);
+
+    if (languagePath) {
+      return languagePath + (query ? "?" + query : "") + (hash ? "#" + hash : "");
+    }
+
+    if (!href.includes(".html")) return href;
+
     const params = new URLSearchParams(query);
     params.set("lang", language);
 
@@ -634,6 +668,13 @@ h1 em {
     });
   }
 
+  function updatePathLanguage(language) {
+    const nextPathname = replaceTrailingLanguagePath(window.location.pathname, language);
+    if (!nextPathname || nextPathname === window.location.pathname) return;
+
+    window.history.replaceState(null, "", nextPathname + window.location.search + window.location.hash);
+  }
+
 
   function updateWrappedFooters() {
     document.querySelectorAll(".footer").forEach((footer) => {
@@ -644,6 +685,11 @@ h1 em {
       const isWrapped = rightItem.offsetTop > firstItem.offsetTop + 2;
       footer.classList.toggle("is-wrapped", isWrapped);
     });
+    const activeFooter = document.querySelector(".language-panel:not([hidden]) .footer");
+    if (activeFooter) {
+      const footerOffset = Math.ceil(activeFooter.offsetHeight + 24);
+      document.documentElement.style.setProperty("--hub-footer-offset", `${footerOffset}px`);
+    }
   }
 
   function setLanguage(language) {
@@ -657,6 +703,7 @@ h1 em {
     });
     storeLanguage(nextLanguage);
     updateInternalLanguageLinks(nextLanguage);
+    updatePathLanguage(nextLanguage);
     updateWrappedFooters();
   }
 
@@ -669,7 +716,7 @@ h1 em {
   window.addEventListener("resize", updateWrappedFooters);
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(updateWrappedFooters);
 
-  setLanguage(getUrlLanguage() || getStoredLanguage() || "en");
+  setLanguage(getPathLanguage() || getUrlLanguage() || getStoredLanguage() || "en");
 </script>
 </body>
 </html>

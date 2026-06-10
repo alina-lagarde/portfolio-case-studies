@@ -288,14 +288,17 @@ function resolveCaseStudyFile(projectSlug) {
   return stablePath;
 }
 
+function cleanProjectUrl(projectSlug, language) {
+  return `${projectSlug}/${language}/`;
+}
+
 function getNavigation(currentSlug) {
   const order = readJson(orderPath, []);
   const currentIndex = order.indexOf(currentSlug);
 
   if (currentIndex === -1 || order.length === 0) {
     return {
-      nextSlug: "portfolio-case-studies",
-      nextUrl: "portfolio-case-studies.html",
+      nextSlug: "hub",
       isLoop: false
     };
   }
@@ -305,7 +308,6 @@ function getNavigation(currentSlug) {
 
   return {
     nextSlug,
-    nextUrl: resolveCaseStudyFile(nextSlug),
     isLoop
   };
 }
@@ -423,8 +425,8 @@ const replacements = {
   TAKEAWAY_EN: quoteParagraphs(data.takeaway_en),
   TAKEAWAY_FR: quoteParagraphs(data.takeaway_fr),
 
-  NEXT_PROJECT_URL_EN: nav.nextUrl,
-  NEXT_PROJECT_URL_FR: nav.nextUrl,
+  NEXT_PROJECT_URL_EN: cleanProjectUrl(nav.nextSlug, "en"),
+  NEXT_PROJECT_URL_FR: cleanProjectUrl(nav.nextSlug, "fr"),
   NEXT_PROJECT_LABEL_EN: nav.isLoop ? "Back to the first project" : "Next project",
   NEXT_PROJECT_LABEL_FR: nav.isLoop ? "Retour au premier projet" : "Projet suivant",
   NEXT_PROJECT_TITLE_EN: nextTitle,

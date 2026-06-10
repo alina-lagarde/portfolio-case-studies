@@ -46,10 +46,11 @@ function escapeHtml(value) {
 
 function projectItem(project, index, language) {
   const number = String(index + 1).padStart(2, "0");
+  const url = project[`url_${language}`] || (project.slug ? `${project.slug}/${language}/` : project.url);
 
   return [
     '        <li class="project-item">',
-    `          <a class="project-link" href="${escapeHtml(project.url)}">`,
+    `          <a class="project-link" href="${escapeHtml(url)}">`,
     `            <span class="project-number">${number}</span>`,
     "            <span>",
     `              <span class="project-title">${escapeHtml(project[`title_${language}`])}</span>`,
@@ -86,7 +87,7 @@ const projects = order.map((slug) => {
     throw new Error(`Missing hub metadata for "${slug}" in automation/hub-projects.yaml`);
   }
 
-  return hubProjects[slug];
+  return { slug, ...hubProjects[slug] };
 });
 
 let html = fs.readFileSync(sourcePath, "utf8");

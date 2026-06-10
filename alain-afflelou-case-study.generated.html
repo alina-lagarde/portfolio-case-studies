@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Alain Afflelou - Design Studio setup - Alina Lagarde</title>
+<link rel="icon" type="image/gif" href="assets/favicon.gif">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,500&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
@@ -19,7 +20,7 @@ strong { color:var(--ink); font-weight:650; }
 .language-panel[hidden] { display:none; }
 .topbar { align-items:center; background:var(--white); border-bottom:1px solid var(--line); display:flex; justify-content:space-between; padding:21px max(54px,calc((100vw - 1360px) / 2 + 54px)); }
 .topbar-name { color:var(--ink); font-size:12px; font-weight:700; letter-spacing:.17em; text-decoration:none; text-transform:uppercase; transition:color 180ms ease; }
-.topbar-name:hover, .topbar-name:focus-visible { color:var(--blue); }
+.topbar-name:hover, .topbar-name:focus-visible { color: var(--accent, var(--blue, var(--orange))); }
 .topbar-info { align-items:center; color:var(--quiet); display:flex; font-size:11px; font-weight:600; gap:17px; letter-spacing:.15em; text-transform:uppercase; }
 .language-switch { align-items:center; background:var(--paper); border:1px solid var(--line); border-radius:999px; display:flex; gap:2px; padding:3px; }
 .language-option { appearance:none; background:transparent; border:0; border-radius:999px; color:var(--quiet); cursor:pointer; font:inherit; font-size:10px; letter-spacing:.13em; padding:7px 11px; }
@@ -209,7 +210,7 @@ h1 em { color:var(--blue); font-style:italic; }
 <main class="page">
   <div class="language-panel" lang="en" data-language-panel="en">
     <header class="topbar">
-      <a class="topbar-name" href="portfolio-case-studies.html">Alina Lagarde - Portfolio</a>
+      <a class="topbar-name" href="hub/en/">Alina Lagarde - Portfolio</a>
       <div class="topbar-info">
         <span>Product Design - Case Study</span>
         <nav class="language-switch" aria-label="Language selection">
@@ -261,8 +262,8 @@ h1 em { color:var(--blue); font-style:italic; }
       <div><p>Starting with UI cleanup and quick-and-dirty fixes felt like a step down - work a junior could handle. It took time to see it for what it was: the only way in. In an organization with no design culture, you earn strategic scope by delivering on the mundane first. The design studio didn't happen despite the cleanup work - it happened because of it.</p><p class="quote">I now factor this in explicitly when scoping embedded missions: the first month buys the next six.</p></div>
     </section>
     <nav class="project-navigation" aria-label="Case study navigation">
-      <a class="project-home" href="portfolio-case-studies.html">All projects</a>
-      <a class="project-next" href="orange-sosh-case-study-v2.html"><span>Back to the first project</span><strong>Orange & Sosh &rarr;</strong></a>
+      <a class="project-home" href="hub/en/">All projects</a>
+      <a class="project-next" href="orange-sosh/en/"><span>Back to the first project</span><strong>Orange & Sosh &rarr;</strong></a>
     </nav>
     <footer class="footer"><span>Alina Lagarde - Product Design Portfolio - 2026</span>
       <div class="contact-cta" aria-label="Contact">
@@ -274,7 +275,7 @@ h1 em { color:var(--blue); font-style:italic; }
 
   <div class="language-panel" lang="fr" data-language-panel="fr" hidden>
     <header class="topbar">
-      <a class="topbar-name" href="portfolio-case-studies.html">Alina Lagarde - Portfolio</a>
+      <a class="topbar-name" href="hub/fr/">Alina Lagarde - Portfolio</a>
       <div class="topbar-info">
         <span>Product Design - Use Case</span>
         <nav class="language-switch" aria-label="Choix de la langue">
@@ -326,8 +327,8 @@ h1 em { color:var(--blue); font-style:italic; }
       <div><p>Commencer par du nettoyage UI et du quick-and-dirty ressemblait à un déclassement - un travail qu'un junior aurait pu faire. Il a fallu du temps pour comprendre ce que c'était vraiment : la seule porte d'entrée. Dans une organisation sans culture design, on gagne de la portée stratégique en livrant d'abord sur le quotidien. Le pôle design n'est pas arrivé malgré le travail de nettoyage - il est arrivé grâce à lui.</p><p class="quote">Je l'intègre maintenant explicitement dans le cadrage des missions embarquées : le premier mois achète les six suivants.</p></div>
     </section>
     <nav class="project-navigation" aria-label="Navigation entre les projets">
-      <a class="project-home" href="portfolio-case-studies.html">Tous les projets</a>
-      <a class="project-next" href="orange-sosh-case-study-v2.html"><span>Retour au premier projet</span><strong>Orange & Sosh &rarr;</strong></a>
+      <a class="project-home" href="hub/fr/">Tous les projets</a>
+      <a class="project-next" href="orange-sosh/fr/"><span>Retour au premier projet</span><strong>Orange & Sosh &rarr;</strong></a>
     </nav>
     <footer class="footer"><span>Alina Lagarde - Product Design Portfolio - 2026</span>
       <div class="contact-cta" aria-label="Contact">
@@ -352,6 +353,12 @@ h1 em { color:var(--blue); font-style:italic; }
     return isSupportedLanguage(language) ? language : null;
   }
 
+  function getPathLanguage() {
+    const segments = window.location.pathname.split("/").filter(Boolean);
+    const language = segments[segments.length - 1];
+    return isSupportedLanguage(language) ? language : null;
+  }
+
   function getStoredLanguage() {
     try {
       const language = window.localStorage.getItem(languageStorageKey);
@@ -369,12 +376,31 @@ h1 em { color:var(--blue); font-style:italic; }
     }
   }
 
+  function replaceTrailingLanguagePath(pathname, language) {
+    const hasTrailingSlash = pathname.endsWith("/");
+    const segments = pathname.split("/");
+    const languageIndex = hasTrailingSlash ? segments.length - 2 : segments.length - 1;
+
+    if (languageIndex < 0 || !isSupportedLanguage(segments[languageIndex])) return null;
+
+    segments[languageIndex] = language;
+    return segments.join("/");
+  }
+
   function addLanguageToHref(href, language) {
     if (!href || href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:")) return href;
-    if (!href.includes(".html")) return href;
+    if (href.includes("://")) return href;
 
     const [beforeHash, hash = ""] = href.split("#");
     const [pathname, query = ""] = beforeHash.split("?");
+    const languagePath = replaceTrailingLanguagePath(pathname, language);
+
+    if (languagePath) {
+      return languagePath + (query ? "?" + query : "") + (hash ? "#" + hash : "");
+    }
+
+    if (!href.includes(".html")) return href;
+
     const params = new URLSearchParams(query);
     params.set("lang", language);
 
@@ -387,6 +413,13 @@ h1 em { color:var(--blue); font-style:italic; }
       const nextHref = addLanguageToHref(href, language);
       if (nextHref !== href) link.setAttribute("href", nextHref);
     });
+  }
+
+  function updatePathLanguage(language) {
+    const nextPathname = replaceTrailingLanguagePath(window.location.pathname, language);
+    if (!nextPathname || nextPathname === window.location.pathname) return;
+
+    window.history.replaceState(null, "", nextPathname + window.location.search + window.location.hash);
   }
 
 
@@ -412,6 +445,7 @@ h1 em { color:var(--blue); font-style:italic; }
     });
     storeLanguage(nextLanguage);
     updateInternalLanguageLinks(nextLanguage);
+    updatePathLanguage(nextLanguage);
     updateWrappedFooters();
   }
 
@@ -424,7 +458,7 @@ h1 em { color:var(--blue); font-style:italic; }
   window.addEventListener("resize", updateWrappedFooters);
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(updateWrappedFooters);
 
-  setLanguage(getUrlLanguage() || getStoredLanguage() || "en");
+  setLanguage(getPathLanguage() || getUrlLanguage() || getStoredLanguage() || "en");
 </script>
 </body>
 </html>

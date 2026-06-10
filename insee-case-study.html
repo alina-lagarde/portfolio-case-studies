@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>INSEE - Refonte Intranet - Alina Lagarde</title>
+<link rel="icon" type="image/gif" href="assets/favicon.gif">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,500&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
@@ -92,7 +93,7 @@ strong {
 
 .topbar-name:hover,
 .topbar-name:focus-visible {
-  color: var(--accent);
+  color: var(--accent, var(--blue, var(--orange)));
 }
 
 .topbar-info {
@@ -1072,7 +1073,7 @@ h1 em {
 <main class="page">
   <div class="language-panel" lang="fr" data-language-panel="fr">
     <header class="topbar">
-      <a class="topbar-name" href="portfolio-case-studies.html">Alina Lagarde - Portfolio</a>
+      <a class="topbar-name" href="hub/fr/">Alina Lagarde - Portfolio</a>
       <div class="topbar-info">
           <span>UX Strategy - Cas client</span>
         <nav class="language-switch" aria-label="Choix de la langue">
@@ -1289,8 +1290,8 @@ h1 em {
     </section>
 
     <nav class="project-navigation" aria-label="Navigation entre les projets">
-      <a class="project-home" href="portfolio-case-studies.html">Tous les projets</a>
-      <a class="project-next" href="alain-afflelou-case-study.html">
+      <a class="project-home" href="hub/fr/">Tous les projets</a>
+      <a class="project-next" href="alain-afflelou/fr/">
         <span>Projet suivant</span>
         <strong>Alain Afflelou &rarr;</strong>
       </a>
@@ -1308,7 +1309,7 @@ h1 em {
 
   <div class="language-panel" lang="en" data-language-panel="en" hidden>
     <header class="topbar">
-      <a class="topbar-name" href="portfolio-case-studies.html">Alina Lagarde - Portfolio</a>
+      <a class="topbar-name" href="hub/en/">Alina Lagarde - Portfolio</a>
       <div class="topbar-info">
           <span>UX Strategy - Case Study</span>
         <nav class="language-switch" aria-label="Language selection">
@@ -1525,8 +1526,8 @@ h1 em {
     </section>
 
     <nav class="project-navigation" aria-label="Case study navigation">
-      <a class="project-home" href="portfolio-case-studies.html">All projects</a>
-      <a class="project-next" href="alain-afflelou-case-study.html">
+      <a class="project-home" href="hub/en/">All projects</a>
+      <a class="project-next" href="alain-afflelou/en/">
         <span>Next project</span>
         <strong>Alain Afflelou &rarr;</strong>
       </a>
@@ -1557,6 +1558,12 @@ h1 em {
     return isSupportedLanguage(language) ? language : null;
   }
 
+  function getPathLanguage() {
+    const segments = window.location.pathname.split("/").filter(Boolean);
+    const language = segments[segments.length - 1];
+    return isSupportedLanguage(language) ? language : null;
+  }
+
   function getStoredLanguage() {
     try {
       const language = window.localStorage.getItem(languageStorageKey);
@@ -1574,12 +1581,31 @@ h1 em {
     }
   }
 
+  function replaceTrailingLanguagePath(pathname, language) {
+    const hasTrailingSlash = pathname.endsWith("/");
+    const segments = pathname.split("/");
+    const languageIndex = hasTrailingSlash ? segments.length - 2 : segments.length - 1;
+
+    if (languageIndex < 0 || !isSupportedLanguage(segments[languageIndex])) return null;
+
+    segments[languageIndex] = language;
+    return segments.join("/");
+  }
+
   function addLanguageToHref(href, language) {
     if (!href || href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:")) return href;
-    if (!href.includes(".html")) return href;
+    if (href.includes("://")) return href;
 
     const [beforeHash, hash = ""] = href.split("#");
     const [pathname, query = ""] = beforeHash.split("?");
+    const languagePath = replaceTrailingLanguagePath(pathname, language);
+
+    if (languagePath) {
+      return languagePath + (query ? "?" + query : "") + (hash ? "#" + hash : "");
+    }
+
+    if (!href.includes(".html")) return href;
+
     const params = new URLSearchParams(query);
     params.set("lang", language);
 
@@ -1592,6 +1618,13 @@ h1 em {
       const nextHref = addLanguageToHref(href, language);
       if (nextHref !== href) link.setAttribute("href", nextHref);
     });
+  }
+
+  function updatePathLanguage(language) {
+    const nextPathname = replaceTrailingLanguagePath(window.location.pathname, language);
+    if (!nextPathname || nextPathname === window.location.pathname) return;
+
+    window.history.replaceState(null, "", nextPathname + window.location.search + window.location.hash);
   }
 
 
@@ -1617,6 +1650,7 @@ h1 em {
     });
     storeLanguage(nextLanguage);
     updateInternalLanguageLinks(nextLanguage);
+    updatePathLanguage(nextLanguage);
     updateWrappedFooters();
   }
 
@@ -1629,7 +1663,7 @@ h1 em {
   window.addEventListener("resize", updateWrappedFooters);
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(updateWrappedFooters);
 
-  setLanguage(getUrlLanguage() || getStoredLanguage() || "en");
+  setLanguage(getPathLanguage() || getUrlLanguage() || getStoredLanguage() || "en");
 </script>
 </body>
 </html>
