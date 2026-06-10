@@ -1,0 +1,296 @@
+slug: insee
+template: standard-case-study
+language_default: en
+page_title: INSEE - Refonte Intranet - Alina Lagarde
+
+title_fr: Refonte intranet et communication interne
+title_en: Intranet redesign and internal communication
+
+client: INSEE
+sector_fr: via La Netscouade
+sector_en: via La Netscouade
+role_fr: Recherche UX / UX Strategist / UX Designer
+role_en: UX Research / UX Strategist / UX Designer
+format_fr: ~2 mois · Sur site · Paris
+format_en: ~2 months · On-site · Paris
+status_fr: Terminé · Livré
+status_en: Complete · Delivered
+sourcing_fr: La Netscouade (agence)
+sourcing_en: La Netscouade (agency)
+team_fr: Lead UX (Alina Lagarde) · Planneur stratégique · UX junior · Consultant UR · Directrice client · Coach agile INSEE
+team_en: Lead UX (Alina Lagarde) · Strategic planner · Junior UX · UR consultant · Client director · INSEE agile coach
+domain_fr: Intranets et outils de communication interne
+domain_en: Intranets and internal communication tools
+main_outputs_fr: Grilles d'interviews · Restitution personae · 6 ateliers UX documentés · Recommandations stratégiques
+main_outputs_en: Interview guides · Persona restitution · 6 documented UX workshops · Strategic recommendations
+
+labels:
+  topbar_fr: UX Strategy - Cas client
+  topbar_en: UX Strategy - Case Study
+  participants_fr: Recherche
+  participants_en: Research
+  approach_fr: Approche
+  approach_en: Approach
+  evidence_fr: Extraits du projet
+  evidence_en: Project excerpts
+  results_fr: Livrables montrés
+  results_en: Shown deliverables
+  reflection_fr: Apprentissage
+  reflection_en: Takeaway
+
+hero:
+  image: assets/insee/research-extract-page.png
+  alt_fr: Extraits de recherche et d'entretiens pour l'intranet INSEE
+  alt_en: Research and interview excerpts for the INSEE intranet project
+  eyebrow_fr: INSEE via La Netscouade - 2019
+  eyebrow_en: INSEE via La Netscouade - 2019
+  title_fr_html: <em>Refonte intranet</em><br>et communication<br>interne
+  title_en_html: <em>Intranet redesign</em><br>and internal<br>communication
+  lead_fr: Recueillir les enjeux stratégiques et les usages métiers pour accompagner la conception d'une nouvelle plateforme digitale.
+  lead_en: Gathering strategic challenges and professional practices to support the design of a new digital platform.
+
+meta_cells_fr:
+  - label: Client
+    value: "INSEE\nvia La Netscouade"
+  - label: Mon rôle
+    value: "Recherche UX\nUX Strategist / UX Designer"
+  - label: Format
+    value: ~2 mois · Sur site · Paris
+  - label: Statut
+    value: Terminé · Livré
+  - label: Livrables principaux
+    value: Grilles d'interviews · Restitution personae · 6 ateliers UX documentés · Recommandations stratégiques
+  - label: Sourcing
+    value: La Netscouade (agence)
+  - label: Équipe
+    value: Lead UX (Alina Lagarde) · Planneur stratégique · UX junior · Consultant UR (démarrage + synthèse) · Directrice client · Coach agile INSEE
+  - label: Périmètre
+    value: "Intranets et outils\nde communication interne"
+  - label: Population
+    chips:
+      - 5-6000 utilisateurs
+      - Agents INSEE
+meta_cells_en:
+  - label: Client
+    value: "INSEE\nvia La Netscouade"
+  - label: My role
+    value: "UX Research\nUX Strategist / UX Designer"
+  - label: Format
+    value: ~2 months · On-site · Paris
+  - label: Status
+    value: Complete · Delivered
+  - label: Main outputs
+    value: Interview guides · Persona restitution · 6 documented UX workshops · Strategic recommendations
+  - label: Sourcing
+    value: La Netscouade (agency)
+  - label: Team
+    value: Lead UX (Alina Lagarde) · Strategic planner · Junior UX · UR consultant (kickoff + synthesis) · Client director · INSEE agile coach
+  - label: Scope
+    value: "Intranets and internal\ncommunication tools"
+  - label: Audience
+    chips:
+      - 5-6000 users
+      - INSEE staff
+
+context:
+  separate_callouts: true
+  title_fr: Concevoir une plateforme digitale avec une approche centrée utilisateurs.
+  title_en: Designing a digital platform with a user-centered approach.
+  title_fr_html: Concevoir une plateforme digitale<br>avec une approche centrée utilisateurs.
+  title_en_html: Designing a digital platform<br>with a user-centered approach.
+  paragraphs_fr_html:
+    - Dans le cadre de la refonte des intranets et des outils de communication interne, l'INSEE a sollicité un accompagnement pour concevoir une plateforme digitale selon une approche centrée utilisateurs.
+    - Avec un planneur stratégique, nous avons recueilli les enjeux et risques du projet à travers <strong>un atelier et 5 interviews de parties prenantes</strong>. Un recueil des usages des différents métiers a également été mené au moyen de <strong>42 interviews utilisateurs</strong>.
+  paragraphs_en_html:
+    - As part of the redesign of its intranets and internal communication tools, INSEE requested support to design a digital platform using a user-centered approach.
+    - Working with a strategic planner, we collected project challenges and risks through <strong>one workshop and 5 stakeholder interviews</strong>. Research into practices across different roles was also conducted through <strong>42 user interviews</strong>.
+  challenge_fr: Faire converger la vision stratégique des parties prenantes avec les usages et besoins réels des agents INSEE.
+  challenge_en: Bring stakeholder strategic vision together with the real practices and needs of INSEE staff.
+  callout_fr:
+    - label: Problématique client.
+      text: Faire converger la vision stratégique des parties prenantes avec les usages et besoins réels des agents INSEE, tout en adaptant la méthodologie UX au milieu administratif.
+    - label: Contraintes.
+      text: "Accès aux agents en milieu administratif complexe à organiser : grand panel de métiers avec rotation interne fréquente, disponibilités limitées. Réconcilier une vision stratégique portée par la hiérarchie avec des usages terrain parfois très éloignés ; sans que les uns invalident les autres."
+  callout_en:
+    - label: Client question.
+      text: Bring stakeholder strategic vision together with the real practices and needs of INSEE staff, while adapting UX methodology to an administrative environment.
+    - label: Constraints.
+      text: "Access to staff in an administrative environment was complex to organize: a wide range of professional roles with frequent internal rotation and limited availability. Reconciling a top-down strategic vision with field practices that sometimes diverged significantly ; without letting either invalidate the other."
+
+objective_fr: Recueillir les enjeux et risques, écouter les usages agents et faire émerger des propositions de solution.
+objective_en: Collect challenges and risks, listen to staff practices and support the emergence of solution proposals.
+constraints_fr: Accès complexe aux agents · métiers nombreux · disponibilités limitées · vision stratégique à réconcilier avec les usages terrain.
+constraints_en: Complex staff access · many professional roles · limited availability · strategic vision to reconcile with field practices.
+
+side_fields_fr:
+  - label: Objectifs
+    value: Recueillir les enjeux et risques, écouter les usages agents et faire émerger des propositions de solution.
+  - label: Recherche stratégique
+    value: 1 atelier et 5 interviews de parties prenantes.
+  - label: Recherche utilisateurs
+    value: 42 interviews auprès des agents et métiers INSEE.
+  - label: Ateliers documentés
+    value: Atelier enjeux, atelier cible, ateliers édito x2 et ateliers d'idéation x3.
+  - label: Projet pilote
+    value: Processus documenté pour consolider l'offre
+    highlight: true
+side_fields_en:
+  - label: Objectives
+    value: Collect challenges and risks, listen to staff practices and support the emergence of solution proposals.
+  - label: Strategic research
+    value: 1 workshop and 5 stakeholder interviews.
+  - label: User research
+    value: 42 interviews with INSEE staff across professional roles.
+  - label: Documented workshops
+    value: Challenges workshop, target workshop, 2 editorial workshops and 3 ideation workshops.
+  - label: Pilot project
+    value: Process documented to consolidate the service offering
+    highlight: true
+
+participants:
+  title_fr: Croiser la vision des parties prenantes avec les usages des agents.
+  title_en: Bringing stakeholder vision together with staff practices.
+  intro_fr: Le dispositif associait le recueil des besoins stratégiques à une recherche utilisateur orientée usages et métiers.
+  intro_en: The programme combined strategic requirements gathering with user research focused on real practices and professional roles.
+  cards_fr:
+    - title: Parties prenantes
+      text: 1 atelier et 5 interviews pour recueillir la vision stratégique, les enjeux et les risques du projet.
+    - title: Agents utilisateurs
+      text:
+        - 42 interviews utilisateurs pour recueillir les usages et besoins réels des différents métiers.
+        - Les retours devaient être conciliés avec les visions portées par les parties prenantes.
+  cards_en:
+    - title: Stakeholders
+      text: 1 workshop and 5 interviews to collect strategic vision, project challenges and risks.
+    - title: Staff users
+      text:
+        - 42 user interviews to collect real practices and needs across different professional roles.
+        - Feedback was intended to be reconciled with stakeholder perspectives.
+
+approach:
+  title_fr: Une conception structurée en trois phases.
+  title_en: A design process structured in three phases.
+  title_fr_html: Une conception structurée en trois phases.
+  title_en_html: A design process structured in three phases.
+  intro_fr: Le PDF documente une première phase d'analyse de l'existant et de compréhension de la vision des parties prenantes, une deuxième phase de compréhension des besoins utilisateurs, puis une phase de proposition de solution fondée sur la co-création, les études et les usages recueillis. La deuxième phase avait été entamée fin juin 2019.
+  intro_en: The PDF documents a first phase analyzing the existing situation and understanding stakeholder vision, a second phase understanding user needs, and a solution-proposal phase based on co-creation, related studies and collected practices. The second phase had begun in late June 2019.
+  show_tools_line: false
+  tools_fr: Entretiens · Ateliers UX · Personae · Recommandations stratégiques
+  tools_en: Interviews · UX workshops · Personae · Strategic recommendations
+  steps:
+    - step: "01"
+      title_fr: Vision stratégique
+      title_en: Strategic vision
+      text_fr: Atelier enjeux et interviews stratégiques.
+      text_en: Challenges workshop and strategic interviews.
+    - step: "02"
+      title_fr: Besoins utilisateurs
+      title_en: User needs
+      text_fr: Atelier cible et interviews utilisateurs.
+      text_en: Target workshop and user interviews.
+    - step: "03"
+      title_fr: Analyse
+      title_en: Analysis
+      text_fr: Analyse d'étude et restitution de personae.
+      text_en: Desk research analysis and persona restitution.
+    - step: "04"
+      title_fr: Éditorial
+      title_en: Editorial work
+      text_fr: Deux ateliers édito documentés dans la méthode.
+      text_en: Two editorial workshops documented in the method.
+    - step: "05"
+      title_fr: Idéation
+      title_en: Ideation
+      text_fr: Trois ateliers d'idéation sous forme de mini design sprints.
+      text_en: Three ideation workshops run as mini design sprints.
+
+evidence:
+  title_fr: Démarche et matériaux de recherche documentés.
+  title_en: Documented approach and research materials.
+  title_fr_html: Démarche et matériaux de recherche documentés.
+  title_en_html: Documented approach and research materials.
+
+evidence_images:
+  - file: assets/insee/approach-page.png
+    class: map
+    alt_fr: Approche de recherche du projet intranet INSEE
+    alt_en: INSEE intranet research approach
+    caption_fr: "Extrait PDF : phases de conception et méthode de recherche."
+    caption_en: "PDF excerpt: design phases and research method."
+  - file: assets/insee/project-extracts-page.png
+    class: map
+    alt_fr: Extraits de la grille d'entretiens utilisateurs INSEE
+    alt_en: INSEE user interview guide excerpts
+    caption_fr: "Extrait PDF : grille d'entretiens et traces d'analyse utilisateurs."
+    caption_en: "PDF excerpt: interview guide and traces of user analysis."
+
+results:
+  show_key_outcomes: false
+  title_fr: Des supports de recherche et de co-création.
+  title_en: Research and co-creation materials.
+  title_fr_html: Des supports de recherche et de co-création.
+  title_en_html: Research and co-creation materials.
+  blocks_fr:
+    - title: Grilles d'interviews
+      text: Des guides adaptés aux parties prenantes puis aux utilisateurs.
+    - title: Restitution personae
+      text: Une restitution citée dans la méthode de recherche du projet.
+    - title: Ateliers UX
+      text: Ateliers enjeux, cible, édito et idéation documentés dans le dossier.
+  blocks_en:
+    - title: Interview guides
+      text: Guides adapted first to stakeholders and then to users.
+    - title: Persona restitution
+      text: A restitution explicitly listed in the project's research method.
+    - title: UX workshops
+      text: Challenges, target, editorial and ideation workshops documented in the dossier.
+
+key_outcomes_fr:
+  - label: Livrables
+    text: Grilles d'interviews, restitution personae, ateliers UX documentés et recommandations stratégiques.
+key_outcomes_en:
+  - label: Deliverables
+    text: Interview guides, persona restitution, documented UX workshops and strategic recommendations.
+
+impact:
+  style: flow
+  title_fr: De la recherche à une solution adaptée.
+  title_en: From research to an adapted solution.
+  title_fr_html: De la recherche à une solution adaptée.
+  title_en_html: From research to an adapted solution.
+  before_fr: Les usages des agents et la vision portée par la hiérarchie devaient être rendus compatibles sans que l'un invalide l'autre.
+  before_en: Staff practices and top-down expectations had to be made compatible without letting either perspective invalidate the other.
+  decision_fr: La solution retenue a été ajustée à partir des recommandations stratégiques issues de la recherche utilisateur.
+  decision_en: The selected solution was adjusted based on strategic recommendations drawn from user research.
+  effect_fr: Le projet a aussi servi à consolider l'offre user research de La Netscouade.
+  effect_en: The project also helped consolidate La Netscouade's user research offer.
+  cards_fr:
+    - label: Avant
+      title: Une vision stratégique à réconcilier avec le terrain
+      text: Les usages des agents et la vision portée par la hiérarchie devaient être rendus compatibles sans que l'un invalide l'autre.
+    - label: Décision
+      title: Une solution marque blanche adaptée
+      text: La solution retenue a été ajustée à partir des recommandations stratégiques issues de la recherche utilisateur.
+    - label: Effet
+      title: Un pilote pour 5 à 6 000 agents
+      text: "Le projet a aussi servi à consolider l'offre user research de La Netscouade : formats d'ateliers, stratégie éditoriale et adaptation de formats existants."
+  cards_en:
+    - label: Before
+      title: A strategic vision to reconcile with field reality
+      text: Staff practices and top-down expectations had to be made compatible without letting either perspective invalidate the other.
+    - label: Decision
+      title: An adapted white-label solution
+      text: The selected solution was adjusted based on strategic recommendations drawn from user research.
+    - label: Effect
+      title: A pilot for 5,000 to 6,000 staff
+      text: "The project also helped consolidate La Netscouade's user research offer: workshop formats, editorial strategy and adaptation of existing formats."
+
+takeaway_fr:
+  - "Ce projet m'a appris à adapter une méthode UX à un environnement où elle n'est pas encore la norme, et à documenter ce processus comme un livrable à part entière. Le vrai défi n'était pas la recherche elle-même : c'était de rendre les résultats utilisables par des équipes qui n'avaient jamais travaillé de cette façon."
+takeaway_en:
+  - "This project taught me to adapt a UX methodology to an environment where it was not yet the norm, and to treat the documentation of that process as a deliverable in its own right. The real challenge was not the research itself: it was making the findings usable for teams who had never worked this way."
+
+footer_mark_fr: INSEE - Refonte intranet
+footer_mark_en: INSEE - Intranet redesign
+footer_text_fr: Alina Lagarde - Portfolio UX Strategy - 2026
+footer_text_en: Alina Lagarde - UX Strategy Portfolio - 2026

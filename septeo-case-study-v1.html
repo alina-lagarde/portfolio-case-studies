@@ -299,14 +299,6 @@ h1 em {
   line-height: 1.55;
 }
 
-.metadata.has-extra-meta .meta-cell:nth-last-child(-n + 2) {
-  border-bottom: 1px solid var(--line);
-}
-
-.metadata.has-extra-meta .meta-cell:nth-last-child(-n + 2) {
-  border-bottom: 0;
-}
-
 .chip {
   background: var(--accent-soft);
   border-radius: 999px;
@@ -675,51 +667,6 @@ h1 em {
   margin-bottom: 20px;
 }
 
-.impact-flow {
-  border-bottom: 1px solid var(--line);
-  margin: 0 auto;
-  max-width: 1360px;
-  padding: 57px 54px;
-}
-
-.impact-flow-grid {
-  display: grid;
-  gap: 16px;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin-top: 26px;
-}
-
-.impact-flow-card {
-  background: var(--white);
-  border: 1px solid var(--line);
-  min-height: 210px;
-  padding: 24px 24px 25px;
-}
-
-.impact-flow-label {
-  color: var(--accent);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  margin-bottom: 17px;
-  text-transform: uppercase;
-}
-
-.impact-flow-card h3 {
-  color: var(--ink);
-  font-family: "Fraunces", Georgia, serif;
-  font-size: 23px;
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  line-height: 1.25;
-  margin-bottom: 13px;
-}
-
-.impact-flow-card p {
-  font-size: 14px;
-  line-height: 1.72;
-}
-
 .project-navigation {
   align-items: center;
   background: transparent;
@@ -824,7 +771,6 @@ h1 em {
   .results-grid,
   .results-layout,
   .flow-map-grid,
-  .impact-flow-grid,
   .reflection {
     display: block;
   }
@@ -855,7 +801,6 @@ h1 em {
   .approach,
   .evidence,
   .results,
-  .impact-flow,
   .reflection {
     padding: 40px 28px;
   }
@@ -875,10 +820,6 @@ h1 em {
   .step,
   .flow-map,
   .result-card {
-    margin-bottom: 17px;
-  }
-
-  .impact-flow-card {
     margin-bottom: 17px;
   }
 
@@ -928,14 +869,6 @@ h1 em {
   }
 
   .meta-cell:last-child {
-    border-bottom: 0;
-  }
-
-  .metadata.has-extra-meta .meta-cell:nth-last-child(-n + 2) {
-    border-bottom: 1px solid var(--line);
-  }
-
-  .metadata.has-extra-meta .meta-cell:last-child {
     border-bottom: 0;
   }
 }
@@ -1093,7 +1026,7 @@ h1 em {
         <div class="eyebrow">Septeo-ADB x Globant - Juin 2025</div>
         <h1><em>Event Storming</em><br>prospectif pour une<br>roadmap IA-centric</h1>
         <p class="hero-lead">Cartographie des flux métiers cibles pour une refonte comptable post-acquisition - 2 jours, restitution Miro, 4 flux cartographiés.</p>
-        <div class="metadata has-extra-meta">
+        <div class="metadata">
           <div class="meta-cell">
             <div class="meta-label">Client</div>
             <div class="meta-value">Septeo-ADB<br>Logiciel de gestion immobilière</div>
@@ -1113,14 +1046,6 @@ h1 em {
               <span class="chip">JTBD</span>
               <span class="chip">Dot voting</span>
             </div>
-          </div>
-          <div class="meta-cell">
-            <div class="meta-label">Statut</div>
-            <div class="meta-value">Terminé</div>
-          </div>
-          <div class="meta-cell">
-            <div class="meta-label">Livrables principaux</div>
-            <div class="meta-value">Cartographie JTBD · 4 flux Event Storming · Fiches synthèse actionnables</div>
           </div>
         </div>
       </div>
@@ -1228,19 +1153,19 @@ h1 em {
       <div class="results-layout">
         <div class="result-list">
         <article class="result-item">
-          <div class="result-label">Résultat 01</div>
-          <h3>Jobs-to-be-done métier</h3>
-          <p>Cartographie exhaustive de tous les jobs-to-be-done métier pour la gestion locative et les syndics (partie comptable) ; base commune construite avec les utilisateurs finaux avant toute contrainte outil.</p>
+          <div class="result-label">Livrables</div>
+          <h3>4 flux métiers cartographiés</h3>
+          <p>Pour chacun : une fiche synthèse avec objectif métier, fonctionnalités prioritaires des utilisateurs finaux, registre des hotspots et inventaire d'automatisation IA étape par étape.</p>
         </article>
         <article class="result-item">
-          <div class="result-label">Résultat 02</div>
-          <h3>4 flux prioritaires cartographiés</h3>
-          <p>4 flux prioritaires (critiques et récurrents) cartographiés en détail via Event Storming : événements, commandes, acteurs, systèmes, règles, hotspots et opportunités d'innovation ; restitués en fiches synthèse actionnables avec candidats à l'automatisation IA flux par flux.</p>
+          <div class="result-label">Impact</div>
+          <h3>Une entrée directe pour la roadmap IA</h3>
+          <p>Des candidats à l'automatisation au niveau des workflows, et non des demandes de fonctionnalités abstraites. Les équipes produit pouvaient croiser les flux cibles avec le logiciel acquis et identifier précisément les écarts de développement restants.</p>
         </article>
         <article class="result-item">
-          <div class="result-label">Résultat 03</div>
-          <h3>Priorisation terrain</h3>
-          <p>Priorisation et pitch des évolutions majeures effectués par les administrateurs de biens via dot voting ; décisions de roadmap ancrées dans le terrain, pas dans les hypothèses produit.</p>
+          <div class="result-label">À retenir</div>
+          <h3>Une base pour prioriser le MVP</h3>
+          <p>Les fiches synthèse ont alimenté la priorisation du MVP : les équipes produit ont pu croiser les flux métiers cibles avec les fonctionnalités du logiciel acquis et identifier les écarts de développement restants.</p>
         </article>
         </div>
         <div>
@@ -1256,28 +1181,6 @@ h1 em {
             </figure>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section class="impact-flow">
-      <div class="section-label">Impact</div>
-      <h2 class="section-title">Des flux cibles aux écarts de développement.</h2>
-      <div class="impact-flow-grid">
-        <article class="impact-flow-card">
-          <div class="impact-flow-label">Avant</div>
-          <h3>Un produit acquis à confronter au terrain</h3>
-          <p>Le logiciel couvrait une partie du périmètre, mais les écarts restants devaient être objectivés à partir des flux métiers cibles.</p>
-        </article>
-        <article class="impact-flow-card">
-          <div class="impact-flow-label">Décision</div>
-          <h3>Des fiches synthèse actionnables</h3>
-          <p>Les flux cartographiés ont permis de croiser besoins métier, fonctionnalités existantes et candidats à l'automatisation IA.</p>
-        </article>
-        <article class="impact-flow-card">
-          <div class="impact-flow-label">Effet</div>
-          <h3>Une priorisation plus opérationnelle</h3>
-          <p>Les équipes produit ont pu prioriser à l'échelle des workflows, pas sous forme de demandes abstraites. Pas de retour sur l'implémentation à ce stade.</p>
-        </article>
       </div>
     </section>
 
@@ -1326,7 +1229,7 @@ h1 em {
         <div class="eyebrow">Septeo-ADB x Globant - June 2025</div>
         <h1>Prospective<br><em>Event Storming</em><br>for an AI-centric roadmap</h1>
         <p class="hero-lead">Target business workflow mapping for a post-acquisition accounting redesign - 2 days, Miro restitution, 4 mapped flows.</p>
-        <div class="metadata has-extra-meta">
+        <div class="metadata">
           <div class="meta-cell">
             <div class="meta-label">Client</div>
             <div class="meta-value">Septeo-ADB<br>Property management software</div>
@@ -1346,14 +1249,6 @@ h1 em {
               <span class="chip">JTBD</span>
               <span class="chip">Dot voting</span>
             </div>
-          </div>
-          <div class="meta-cell">
-            <div class="meta-label">Status</div>
-            <div class="meta-value">Complete</div>
-          </div>
-          <div class="meta-cell">
-            <div class="meta-label">Main outputs</div>
-            <div class="meta-value">JTBD mapping · 4 Event Storming flows · Actionable summary cards</div>
           </div>
         </div>
       </div>
@@ -1461,19 +1356,19 @@ h1 em {
       <div class="results-layout">
         <div class="result-list">
         <article class="result-item">
-          <div class="result-label">Result 01</div>
-          <h3>Business jobs-to-be-done</h3>
-          <p>Full mapping of business jobs-to-be-done across rental management and co-ownership (accounting scope) ; shared foundation built with end users before any tool constraint.</p>
+          <div class="result-label">Deliverable</div>
+          <h3>4 business flows mapped in detail</h3>
+          <p>For each: a summary card with business objective, end-user priority features, hotspot register, and AI automation inventory step by step.</p>
         </article>
         <article class="result-item">
-          <div class="result-label">Result 02</div>
-          <h3>4 priority flows mapped</h3>
-          <p>4 priority flows (critical and recurring) mapped in detail via Event Storming: events, commands, actors, systems, rules, hotspots and innovation opportunities ; delivered as actionable summary cards with AI automation candidates identified step by step.</p>
+          <div class="result-label">Impact</div>
+          <h3>Workflow-level AI opportunities</h3>
+          <p>Directly usable AI roadmap input - automation candidates at workflow level, not as abstract feature requests. Product teams could cross-reference target flows against the acquired software and identify remaining development gaps with precision.</p>
         </article>
         <article class="result-item">
-          <div class="result-label">Result 03</div>
-          <h3>Field-grounded prioritization</h3>
-          <p>Major workflow improvements prioritized and pitched by property managers via dot voting ; roadmap decisions grounded in field reality, not product assumptions.</p>
+          <div class="result-label">Takeaway</div>
+          <h3>A basis for MVP prioritization</h3>
+          <p>Summary cards fed MVP prioritization: product teams could compare target business flows with the acquired software features and identify remaining development gaps.</p>
         </article>
         </div>
         <div>
@@ -1489,28 +1384,6 @@ h1 em {
             </figure>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section class="impact-flow">
-      <div class="section-label">Impact</div>
-      <h2 class="section-title">From target flows to development gaps.</h2>
-      <div class="impact-flow-grid">
-        <article class="impact-flow-card">
-          <div class="impact-flow-label">Before</div>
-          <h3>An acquired product to confront with field reality</h3>
-          <p>The software covered part of the scope, but remaining gaps had to be objectified through target business workflows.</p>
-        </article>
-        <article class="impact-flow-card">
-          <div class="impact-flow-label">Decision</div>
-          <h3>Actionable summary cards</h3>
-          <p>The mapped flows made it possible to cross-reference business needs, existing features and AI automation candidates.</p>
-        </article>
-        <article class="impact-flow-card">
-          <div class="impact-flow-label">Effect</div>
-          <h3>More operational prioritization</h3>
-          <p>Product teams could prioritize at workflow level, not through abstract feature requests. No follow-up on implementation received since delivery.</p>
-        </article>
       </div>
     </section>
 
@@ -1541,66 +1414,18 @@ h1 em {
 <script>
   const languagePanels = document.querySelectorAll("[data-language-panel]");
   const languageOptions = document.querySelectorAll("[data-language-option]");
-  const languageStorageKey = "portfolioLanguage";
-  const supportedLanguages = ["en", "fr"];
-
-  function isSupportedLanguage(language) {
-    return supportedLanguages.includes(language);
-  }
-
-  function getUrlLanguage() {
-    const language = new URLSearchParams(window.location.search).get("lang");
-    return isSupportedLanguage(language) ? language : null;
-  }
-
-  function getStoredLanguage() {
-    try {
-      const language = window.localStorage.getItem(languageStorageKey);
-      return isSupportedLanguage(language) ? language : null;
-    } catch (error) {
-      return null;
-    }
-  }
-
-  function storeLanguage(language) {
-    try {
-      window.localStorage.setItem(languageStorageKey, language);
-    } catch (error) {
-      // Ignore storage errors so the language switch still works in restricted contexts.
-    }
-  }
-
-  function addLanguageToHref(href, language) {
-    if (!href || href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:")) return href;
-    if (!href.includes(".html")) return href;
-
-    const [beforeHash, hash = ""] = href.split("#");
-    const [pathname, query = ""] = beforeHash.split("?");
-    const params = new URLSearchParams(query);
-    params.set("lang", language);
-
-    return pathname + "?" + params.toString() + (hash ? "#" + hash : "");
-  }
-
-  function updateInternalLanguageLinks(language) {
-    document.querySelectorAll("a[href]").forEach((link) => {
-      const href = link.getAttribute("href");
-      const nextHref = addLanguageToHref(href, language);
-      if (nextHref !== href) link.setAttribute("href", nextHref);
-    });
-  }
 
   function setLanguage(language) {
-    const nextLanguage = isSupportedLanguage(language) ? language : "en";
-    document.documentElement.lang = nextLanguage;
-    languagePanels.forEach((panel) => { panel.hidden = panel.dataset.languagePanel !== nextLanguage; });
+    document.documentElement.lang = language;
+    languagePanels.forEach((panel) => {
+      panel.hidden = panel.dataset.languagePanel !== language;
+    });
+
     languageOptions.forEach((option) => {
-      const isActive = option.dataset.languageOption === nextLanguage;
+      const isActive = option.dataset.languageOption === language;
       option.classList.toggle("is-active", isActive);
       option.setAttribute("aria-pressed", String(isActive));
     });
-    storeLanguage(nextLanguage);
-    updateInternalLanguageLinks(nextLanguage);
   }
 
   languageOptions.forEach((option) => {
@@ -1609,7 +1434,7 @@ h1 em {
     });
   });
 
-  setLanguage(getUrlLanguage() || getStoredLanguage() || "en");
+  setLanguage("en");
 </script>
 </body>
 </html>

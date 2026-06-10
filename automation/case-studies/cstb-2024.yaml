@@ -1,0 +1,303 @@
+slug: cstb-2024
+template: standard-case-study
+language_default: en
+page_title: CSTB - Programme RESTORE - Alina Lagarde
+
+labels:
+  topbar_fr: UX Research - Cas client
+  topbar_en: UX Research - Case Study
+  approach_fr: Approche
+  approach_en: Approach
+  evidence_fr: Preuves de recherche
+  evidence_en: Research Evidence
+  results_fr: Impact & livrables
+  results_en: Impact & deliverables
+  reflection_fr: Retour d'expérience
+  reflection_en: Takeaway & reflection
+
+title_fr: Cartographier un écosystème métier complexe
+title_en: Mapping a complex professional ecosystem
+
+client: CSTB
+sector_fr: Centre Scientifique et Technique du Bâtiment
+sector_en: Scientific and Technical Centre for Building
+role_fr: Lead User Researcher / Lead projet / interface client
+role_en: Lead User Researcher / Project lead / client interface
+format_fr: 4 mois (janv. - avr. 2024) · À distance uniquement
+format_en: 4 months (Jan - Apr 2024) · Remote only
+status_fr: Terminé
+status_en: Complete
+sourcing_fr: Non précisé dans la page actuelle
+sourcing_en: Not specified in current page
+team_fr: Johanna Meng · Madeleine Devys · CSTB
+team_en: Johanna Meng · Madeleine Devys · CSTB
+domain_fr: B2B / B2G - Construction / Transition énergétique
+domain_en: B2B / B2G - Construction / Energy transition
+main_outputs_fr: 5 profils utilisateurs · 3 parcours détaillés · 4 concepts testés
+main_outputs_en: 5 user profiles · 3 detailed user journeys · 4 concepts tested
+
+hero:
+  image: assets/cstb/hero-ambience-detail.png
+  alt_fr: Modèles de maisons illustrant la rénovation énergétique
+  alt_en: Home models illustrating energy renovation research
+  eyebrow_fr: CSTB / RESTORE - User Research Strategy
+  eyebrow_en: CSTB / RESTORE - User Research Strategy
+  title_fr_html: <em>Cartographier</em><br>un écosystème métier<br>complexe
+  title_en_html: <em>Mapping</em><br>a complex professional<br>ecosystem
+  lead_fr: Pour cadrer une roadmap d'outils IA-centric destinés à la rénovation énergétique des maisons individuelles.
+  lead_en: To frame an AI-centric tool roadmap for the energy renovation of individual homes.
+
+meta_cells_fr:
+  - label: Client
+    value: "CSTB\nCentre Scientifique et Technique du Bâtiment"
+  - label: Mon rôle
+    value: "Lead User Researcher\nLead projet / interface client"
+  - label: Format
+    value: "4 mois (janv. - avr. 2024)\nÀ distance uniquement"
+  - label: Méthodes
+    chips:
+      - Entretiens
+      - Ateliers participatifs
+      - Focus groups
+      - Concept testing
+  - label: Statut
+    value: Terminé
+meta_cells_en:
+  - label: Client
+    value: "CSTB\nScientific and Technical Centre for Building"
+  - label: My role
+    value: "Lead User Researcher\nProject lead / client interface"
+  - label: Format
+    value: "4 months (Jan - Apr 2024)\nRemote only"
+  - label: Methods
+    chips:
+      - Interviews
+      - Participatory workshops
+      - Focus groups
+      - Concept testing
+  - label: Status
+    value: Complete
+
+context:
+  title_fr: Qui utilise réellement ces outils, et de quoi a-t-il besoin ?
+  title_en: Who are the real users, and what do they actually need?
+  title_fr_html: Qui utilise réellement ces outils,<br>et de quoi a-t-il besoin ?
+  title_en_html: Who are the real users,<br>and what do they actually need?
+  paragraphs_fr:
+    - Dans le cadre du programme RESTORE, le CSTB devait évaluer la réplicabilité technique, géographique et commerciale d'outils numériques conçus pour la rénovation énergétique de maisons individuelles.
+    - "Avant de pouvoir évaluer un outil, une question fondatrice devait être résolue : qui sont les utilisateurs réels, comment travaillent-ils et de quoi ont-ils effectivement besoin ?"
+    - "Le périmètre couvrait cinq profils professionnels distincts de la chaîne de rénovation : architectes, artisans, assistants à maîtrise d'ouvrage (AMO), dirigeants d'entreprise et distributeurs. Chacun travaillait dans un contexte radicalement différent, avec ses propres processus, modes de décision et irritants."
+  paragraphs_en:
+    - Within the RESTORE programme, the CSTB needed to evaluate the technical, geographic, and commercial replicability of digital tools designed for the energy renovation of individual homes.
+    - "Before any tool could be assessed, a foundational question had to be answered: who are the real users, how do they work, and what do they actually need?"
+    - The scope covered five distinct professional profiles across the renovation chain - architects, artisans, project managers (AMO), company heads, and distributors - each operating in radically different contexts, with different processes, decision-making patterns, and pain points.
+  challenge_fr: >-
+    Concevoir une recherche couvrant cinq profils avec des modèles mentaux, vocabulaires
+    et façons de travailler très différents : de l'artisan indépendant au manager de
+    distribution d'une grande enseigne. Un protocole unique ne pouvait pas convenir à tous.
+    Chaque phase devait être adaptée par profil, du recrutement à la structure des ateliers,
+    dans un secteur fragmenté par des aides changeantes, des compétences variables et une
+    défiance profonde entre acteurs : MAR, artisans et architectes.
+  challenge_en: >-
+    The mission required designing research across five professional profiles with
+    fundamentally different mental models, vocabularies, and ways of working - from solo
+    artisans to distribution managers at major retail chains. A single protocol could not
+    cover all of them. Every phase required adaptation by profile, from recruitment strategy
+    to workshop structure, in a sector shaped by changing regulatory aids, uneven competencies
+    and deep distrust between stakeholders: MAR, artisans and architects.
+
+objective_fr: Identifier et analyser les pratiques, besoins et contraintes de professionnels de la rénovation sur 5 profils. Tester 4 concepts d'outils face à leurs workflows réels.
+objective_en: Identify and analyze the practices, needs and constraints of renovation professionals across 5 profiles. Test 4 tool concepts against their real workflows.
+constraints_fr: Secteur fragmenté · profils hétérogènes · recrutement difficile · protocoles à adapter par profil.
+constraints_en: Fragmented sector · heterogeneous profiles · difficult recruitment · protocols adapted by profile.
+
+side_fields_fr:
+  - label: Objectif
+    value: Identifier et analyser les pratiques, besoins et contraintes de professionnels de la rénovation sur 5 profils. Tester 4 concepts d'outils face à leurs workflows réels.
+  - label: Programme
+    value: RESTORE - Lot 6 (CSTB)
+  - label: Co-recherche
+    value: Johanna Meng (freelance user researcher)
+  - label: CSTB interne
+    value: Madeleine Devys (chargée de recherche)
+  - label: Domaine
+    value: B2B / B2G - Construction / Transition énergétique
+  - label: Livrable
+    value: 5 profils utilisateurs - 3 parcours détaillés - 4 concepts testés avec verbatims et pistes de redesign
+    highlight: true
+side_fields_en:
+  - label: Objective
+    value: Identify and analyze the practices, needs and constraints of renovation professionals across 5 profiles. Test 4 tool concepts against their real workflows.
+  - label: Programme
+    value: RESTORE - Lot 6 (CSTB)
+  - label: Co-researcher
+    value: Johanna Meng (freelance user researcher)
+  - label: CSTB internal
+    value: Madeleine Devys (research officer)
+  - label: Domain
+    value: B2B / B2G - Construction / Energy transition
+  - label: Deliverable
+    value: 5 user profiles - 3 detailed user journeys - 4 tool concepts tested with verbatims and redesign leads
+    highlight: true
+
+participants:
+  title_fr: Trois phases distinctes, trois panels de participants.
+  title_en: Three distinct phases, three participant pools.
+  intro_fr: Recrutement via les réseaux sociaux et les acteurs locaux de la rénovation, associations et organismes publics. Qualification via un sondage Tally.
+  intro_en: Recruitment via social networks and local renovation stakeholders, including associations and public agencies. Qualification via a Tally survey.
+  cards_fr:
+    - title: Entretiens exploratoires
+      text: 18 sessions individuelles de 30 minutes, à distance via Google Meet. Architectes (6) - Dirigeants / entreprises générales (3) - Artisans (4) - Conducteur de travaux (1) - Commerciaux distribution (3) - AMO (1)
+    - title: Ateliers parcours utilisateurs
+      text: 13 participants répartis sur 3 sessions collectives de 3 heures sur Miro. Des profils mixtes ont cartographié l'ensemble du cycle de vie d'un projet de rénovation.
+    - title: Tests de concepts
+      text: "3 focus groups pour évaluer 4 concepts : REX de chantier, diagnostic de faisabilité, outil de chiffrage et guide de mise en oeuvre."
+  cards_en:
+    - title: Exploratory interviews
+      text: 18 individual sessions of 30 minutes, remotely via Google Meet. Architects (6) - Company heads / general contractors (3) - Artisans (4) - Site supervisors (1) - Distribution sales reps (3) - AMO (1)
+    - title: User journey workshops
+      text: 13 participants across 3 collective sessions of 3 hours each on Miro. Mixed profiles per group mapped against the full renovation project lifecycle.
+    - title: Concept testing focus groups
+      text: "3 groups testing 4 tool concepts: Site REX, feasibility diagnostic, cost estimation tool and implementation guide."
+
+approach:
+  title_fr: Quatre phases adaptées aux réalités de chaque profil.
+  title_en: Four phases adapted to each profile's reality.
+  title_fr_html: Quatre phases adaptées aux réalités de chaque profil.
+  title_en_html: Four phases adapted to each profile's reality.
+  intro_fr: "Outils : Miro - Meetgeek - Google Meet - Google Sheets - Google Slides"
+  intro_en: "Tools: Miro - Meetgeek - Google Meet - Google Sheets - Google Slides"
+  show_tools_line: false
+  steps:
+    - step: "01"
+      title_fr: Recrutement et qualification
+      title_en: Recruitment and qualification
+      text_fr: Mobilisation via les réseaux sociaux et les acteurs locaux. Qualification et logistique par sondage Tally ; grille de recrutement sous Google Sheets.
+      text_en: Outreach via social networks and local renovation actors. Tally survey for logistics and screening; recruitment grid managed in Google Sheets.
+    - step: "02"
+      title_fr: Entretiens exploratoires
+      title_en: Exploratory interviews
+      text_fr: 18 entretiens individuels enregistrés et retranscrits via Meetgeek pour cartographier pratiques, irritants, veille et décision.
+      text_en: 18 monitored interviews to map practices, pain points, monitoring processes and decision-making patterns; recorded and transcribed via Meetgeek.
+    - step: "03"
+      title_fr: Ateliers parcours
+      title_en: Journey workshops
+      text_fr: "3 sessions collectives sur Miro : étapes, points de douleur, frictions entre acteurs et opportunités par profil."
+      text_en: 3 collective Miro sessions mapping stages, pain points, cross-actor friction and opportunities across the lifecycle.
+    - step: "04"
+      title_fr: Tests de concepts
+      title_en: Concept testing
+      text_fr: "4 concepts évalués en 3 focus groups : compréhension, désirabilité, adéquation aux workflows réels et pistes d'amélioration."
+      text_en: 3 focus groups evaluating 4 concepts for comprehension, desirability, real workflow fit and improvement leads.
+  tools_fr: Miro - Meetgeek - Google Meet - Google Sheets - Google Slides
+  tools_en: Miro - Meetgeek - Google Meet - Google Sheets - Google Slides
+
+evidence:
+  title_fr: Parcours, roadmap et synthèse de recherche.
+  title_en: Journeys, roadmap and research synthesis.
+  title_fr_html: Parcours, roadmap et synthèse de recherche.
+  title_en_html: Journeys, roadmap and research synthesis.
+
+evidence_images:
+  - file: assets/cstb/research-roadmap.png
+    class: map
+    alt_fr: Roadmap de recherche utilisateur RESTORE de janvier à avril 2024
+    alt_en: RESTORE user research roadmap from January to April 2024
+    caption_fr: Roadmap de recherche - quatre mois de recrutement, entretiens, ateliers collaboratifs et focus groups.
+    caption_en: Research roadmap - four months of recruitment, interviews, collaborative workshops and focus groups.
+  - file: assets/cstb/renovation-journey.png
+    class: map
+    alt_fr: Cycle de vie d'un projet de rénovation cartographié avec les professionnels
+    alt_en: Renovation project lifecycle mapped with professionals
+    caption_fr: Parcours projet - programmation, choix du maître d'oeuvre, conception, choix des entreprises, travaux et réception.
+    caption_en: Project journey - programming, project-manager selection, design, contractor selection, works and handover.
+  - file: assets/cstb/interview-session.png
+    class: interview
+    alt_fr: Interview utilisateur avec un architecte
+    alt_en: User interview with an architect
+    caption_fr: Interview utilisateur, profil architecte
+    caption_en: User interview, architect profile
+  - file: assets/cstb/research-synthesis-extract.png
+    class: map
+    alt_fr: Extraits de la synthèse de recherche, persona et parcours croisés
+    alt_en: Research synthesis excerpts with persona and journey maps
+    caption_fr: "Extraits de synthèse : agenda, wiki projet, persona, parcours croisés et cas de performance énergétique."
+    caption_en: "Synthesis excerpts: agenda, project wiki, persona, cross-journeys and thermal performance case."
+
+results:
+  title_fr: Une recherche prolongée par des tests de prototypes.
+  title_en: Research followed by prototype testing.
+  title_fr_html: Une recherche prolongée par des tests de prototypes.
+  title_en_html: Research followed by prototype testing.
+  blocks_fr:
+    - title: Livrable
+      text: 5 profils consolidés et leur écosystème - 3 parcours détaillés couvrant conception, chiffrage et exécution - 4 concepts testés avec verbatims et recommandations de redesign - synthèse complète livrée au CSTB.
+    - title: Impact
+      text: "La recherche a directement déclenché une mission de tests complémentaire. Deux prototypes ont été validés avec des utilisateurs : un diagnostic de faisabilité, sous forme de quiz guidé simulant une évaluation professionnelle avec un propriétaire, et un module de reconnaissance architecturale identifiant la typologie du bâti par géolocalisation et forme."
+    - title: Point de vigilance
+      text: Plusieurs autres outils, dont un estimateur financier, ont été développés et livrés sans tests utilisateurs.
+  blocks_en:
+    - title: Deliverable
+      text: 5 consolidated user profiles and their stakeholder ecosystem - 3 detailed user journeys covering design, cost estimation and execution - 4 concepts tested with verbatims and redesign recommendations - full synthesis delivered to CSTB.
+    - title: Impact
+      text: "The research directly triggered a follow-up testing mission. Two prototypes were validated with users: a feasibility diagnostic tool, a guided quiz simulating a professional site assessment with a homeowner, and an architectural recognition module identifying building typology from geolocation and shape."
+    - title: Point of attention
+      text: Several other tools, including a financial estimator, were developed and shipped without user testing.
+
+key_outcomes_fr:
+  - label: Segments cibles
+    text: "Cartographie des segments cibles professionnels : architectes, artisans, conseillers, ensembliers et entreprises BTP."
+  - label: Parcours comparés
+    text: Parcours comparés par segment lors d'une rénovation de maison individuelle, avec identification des frictions et des moments clés.
+  - label: Écosystème d'outils
+    text: Mapping de l'écosystème d'outils de veille professionnelle par segment.
+  - label: Concepts CSTB
+    text: "Évaluation de l'appétence pour les concepts d'outils CSTB : identification des moments d'usage opportuns et pistes d'amélioration."
+  - label: Transfert
+    text: Transfert de compétences user research auprès des équipes client CSTB.
+key_outcomes_en:
+  - label: Target segments
+    text: "Mapping of professional target segments: architects, artisans, advisors, turnkey renovation providers and construction companies."
+  - label: Compared journeys
+    text: Segment-by-segment comparison of journeys during an individual home renovation, with friction points and key moments identified.
+  - label: Tool ecosystem
+    text: Mapping of the professional monitoring and watch-tool ecosystem by segment.
+  - label: CSTB concepts
+    text: "Evaluation of appetite for CSTB tool concepts: identification of relevant usage moments and improvement leads."
+  - label: Research transfer
+    text: User research skills transfer to the CSTB client teams.
+
+impact:
+  show_section: false
+  before_fr: Le CSTB devait évaluer des outils sans disposer encore d'une vision consolidée des utilisateurs réels, de leurs pratiques et de leurs contraintes.
+  before_en: CSTB needed to evaluate tools without yet having a consolidated view of real users, practices and constraints.
+  decision_fr: Déployer une recherche en quatre phases, adaptée aux cinq profils professionnels du secteur.
+  decision_en: Run a four-phase research strategy adapted to the five professional profiles in the sector.
+  effect_fr: La recherche a livré les profils, parcours et concepts testés, puis déclenché une mission complémentaire de tests de prototypes.
+  effect_en: The research delivered profiles, journeys and tested concepts, then triggered a follow-up prototype testing mission.
+  title_fr: Une recherche prolongée par des tests de prototypes.
+  title_en: Research followed by prototype testing.
+  title_fr_html: Une recherche prolongée par des tests de prototypes.
+  title_en_html: Research followed by prototype testing.
+  paragraphs_fr:
+    - La recherche a directement déclenché une mission de tests complémentaire. Deux prototypes ont été validés avec des utilisateurs.
+    - Plusieurs autres outils, dont un estimateur financier, ont été développés et livrés sans tests utilisateurs.
+  paragraphs_en:
+    - The research directly triggered a follow-up testing mission. Two prototypes were validated with users.
+    - Several other tools, including a financial estimator, were developed and shipped without user testing.
+
+takeaway_fr:
+  - text: Dans un écosystème métier fragmenté, un outil utile doit parler un langage partagé par toute la chaîne.
+    highlight: true
+  - text: En rénovation, chaque métier intervient à un moment précis avec son propre vocabulaire et ses contraintes ; sans expert coordinateur, les passages de relais créent des dysfonctionnements structurels. Un outil couvrant toute la chaîne peut faire la différence, à condition de s'interfacer avec les écosystèmes déjà utilisés.
+  - html: "<strong>Réflexion.</strong> Le recrutement a été de loin la partie la plus difficile : certains profils ont nécessité 1 à 1,5 mois de mobilisation, malgré l'appui du CSTB. Un enseignement contre-intuitif : réengager les mêmes participants sur plusieurs sessions s'est avéré bien plus facile que recruter de nouveaux profils. À l'avenir, le temps de recrutement doit être budgété séparément et de façon réaliste dans ce secteur."
+takeaway_en:
+  - text: Tools in fragmented professional ecosystems need a shared language across very different user profiles.
+    highlight: true
+  - text: In renovation, each trade intervenes at a specific moment with its own vocabulary and constraints. Without a coordinating expert, handoffs between trades generate structural dysfunction. A tool that speaks to the whole chain can make a difference, but only if it interfaces with every existing ecosystem its users already rely on.
+  - html: "<strong>Reflection.</strong> Recruitment was by far the hardest part of the mission: specific profiles took 1 to 1.5 months to mobilize despite CSTB's outreach support. One counter-intuitive finding was that re-engaging the same participants across multiple sessions was significantly easier than recruiting fresh profiles. Future proposals in this sector will budget recruitment time separately and realistically."
+
+footer_mark_fr: CSTB - Programme RESTORE
+footer_mark_en: CSTB - RESTORE Programme
+footer_text_fr: Alina Lagarde - Portfolio UX Research - 2026
+footer_text_en: Alina Lagarde - UX Research Portfolio - 2026

@@ -668,20 +668,12 @@ h1 em {
 .testing-results {
   border-bottom: 1px solid var(--line);
   display: grid;
-  grid-template-columns: minmax(520px, 0.85fr) minmax(0, 1.15fr);
-  margin: 0 auto;
-  max-width: 1360px;
-  overflow: hidden;
-  position: relative;
+  grid-template-columns: 0.93fr 1.07fr;
 }
 
 .testing {
-  background: var(--paper);
   border-right: 1px solid var(--line);
-  min-width: 0;
   padding: 55px 48px 55px 56px;
-  position: relative;
-  z-index: 2;
 }
 
 .test-cards {
@@ -697,7 +689,6 @@ h1 em {
   font-size: 12px;
   font-weight: 600;
   line-height: 1.4;
-  max-width: 100%;
   padding: 10px 13px;
 }
 
@@ -707,23 +698,17 @@ h1 em {
   color: var(--copy);
   font-size: 12.5px;
   line-height: 1.72;
-  overflow-wrap: anywhere;
   padding: 18px 20px;
 }
 
 .results {
-  background: var(--white);
+  background: transparent;
   border-bottom: 1px solid var(--line);
   margin: 0 auto;
   max-width: 1360px;
-  min-width: 0;
   padding: 55px 56px 55px 48px;
   position: relative;
-  z-index: 1;
-}
-
-.testing-results .results::before {
-  display: none;
+  z-index: 0;
 }
 
 .results::before {
@@ -761,30 +746,6 @@ h1 em {
   line-height: 1.72;
 }
 
-.result-bullets {
-  display: grid;
-  gap: 10px;
-  list-style: none;
-}
-
-.result-bullets li {
-  color: var(--copy);
-  font-size: 14px;
-  line-height: 1.68;
-  padding-left: 18px;
-  position: relative;
-}
-
-.result-bullets li::before {
-  background: var(--orange);
-  content: "";
-  height: 5px;
-  left: 0;
-  position: absolute;
-  top: 0.75em;
-  width: 5px;
-}
-
 .reflection {
   border-bottom: 1px solid var(--line);
   display: grid;
@@ -810,51 +771,6 @@ h1 em {
   letter-spacing: -0.02em;
   line-height: 1.4;
   margin-bottom: 21px;
-}
-
-.impact-flow {
-  border-bottom: 1px solid var(--line);
-  margin: 0 auto;
-  max-width: 1360px;
-  padding: 57px 56px;
-}
-
-.impact-flow-grid {
-  display: grid;
-  gap: 16px;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin-top: 26px;
-}
-
-.impact-flow-card {
-  background: var(--white);
-  border: 1px solid var(--line);
-  min-height: 210px;
-  padding: 24px 24px 25px;
-}
-
-.impact-flow-label {
-  color: var(--orange);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  margin-bottom: 17px;
-  text-transform: uppercase;
-}
-
-.impact-flow-card h3 {
-  color: var(--ink);
-  font-family: "Fraunces", Georgia, serif;
-  font-size: 23px;
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  line-height: 1.25;
-  margin-bottom: 13px;
-}
-
-.impact-flow-card p {
-  font-size: 14px;
-  line-height: 1.72;
 }
 
 .project-navigation {
@@ -982,7 +898,6 @@ h1 em {
   .scope-content,
   .testing,
   .results,
-  .impact-flow,
   .reflection {
     padding: 40px 28px;
   }
@@ -999,8 +914,7 @@ h1 em {
 
   .visual-grid,
   .decisions,
-  .role-actions,
-  .impact-flow-grid {
+  .role-actions {
     grid-template-columns: 1fr;
   }
 
@@ -1239,24 +1153,16 @@ h1 em {
           <div class="meta-value">Design Thinking Coach<br>and Design Strategist</div>
         </div>
         <div class="meta-cell">
-          <div class="meta-label">Format</div>
-          <div class="meta-value">3 months · Hybrid · Bagneux</div>
+          <div class="meta-label">Focus</div>
+          <div class="meta-value">Support convergence<br>SEO &amp; Djingo</div>
         </div>
         <div class="meta-cell">
-          <div class="meta-label">Status</div>
-          <div class="meta-value">Complete · Delivered</div>
-        </div>
-        <div class="meta-cell">
-          <div class="meta-label">Main outputs</div>
-          <div class="meta-value">Prioritised MVP scope · 5 structured test cards · Sequenced V01 &rarr; V02 vision</div>
-        </div>
-        <div class="meta-cell">
-          <div class="meta-label">Sourcing</div>
-          <div class="meta-value">Freelance via Viséo (ESN)</div>
-        </div>
-        <div class="meta-cell">
-          <div class="meta-label">Team</div>
-          <div class="meta-value">PM · PO · Lead UX · UX Designer · UI Designer · Data scientist (occasional) · Customer knowledge (occasional)</div>
+          <div class="meta-label">Methods</div>
+          <div class="meta-value">
+            <span class="chip">Value Thinking</span>
+            <span class="chip">MVP</span>
+            <span class="chip">Test Cards</span>
+          </div>
         </div>
       </div>
     </div>
@@ -1443,46 +1349,12 @@ h1 em {
       <h2 class="section-title">From conceptual debate to a controlled product trajectory.</h2>
       <div class="result-item">
         <div class="result-label">Short-term</div>
-        <div class="result-copy">
-          <ul class="result-bullets">
-            <li>MVP scope prioritized and delivered across 6 structural building blocks; exclusion decisions as documented as inclusions.</li>
-            <li>Core team aligned on a sequenced V01 &rarr; V02 trajectory, from an initial scope disagreement.</li>
-            <li>Consolidation risk reduced before any development; incremental approach validated in steering committee.</li>
-          </ul>
-        </div>
+        <div class="result-copy">MVP scope clearly prioritised; core team aligned; consolidation risk reduced; sequenced V01 &rarr; V02 vision activated.</div>
       </div>
       <div class="result-item">
         <div class="result-label">Medium-term</div>
-        <div class="result-copy">
-          <ul class="result-bullets">
-            <li>Progressive, tested convergence between Orange and Sosh.</li>
-            <li>Better articulation between SEO, Djingo chatbot and the contact journey.</li>
-            <li>Decisions grounded in measurable hypotheses; 5 test cards with defined KPIs: contact rate, SEO performance, SAT/CES.</li>
-          </ul>
-        </div>
+        <div class="result-copy">Progressive, tested convergence; better articulation between SEO, chatbot and contact journey; decisions grounded in measurable hypotheses.</div>
       </div>
-    </div>
-  </section>
-
-  <section class="impact-flow">
-    <div class="section-label">Impact</div>
-    <h2 class="section-title">From debate to a validated trajectory.</h2>
-    <div class="impact-flow-grid">
-      <article class="impact-flow-card">
-        <div class="impact-flow-label">Before</div>
-        <h3>A conceptual scope debate</h3>
-        <p>The Orange/Sosh convergence was initially envisioned as a big bang, with a high risk of reopening trade-offs at every step.</p>
-      </article>
-      <article class="impact-flow-card">
-        <div class="impact-flow-label">Decision</div>
-        <h3>Two testable increments</h3>
-        <p>The trajectory was resequenced into V01 and V02, with exclusion decisions documented as carefully as inclusions.</p>
-      </article>
-      <article class="impact-flow-card">
-        <div class="impact-flow-label">Effect</div>
-        <h3>Validated in steering committee</h3>
-        <p>The full team could commit to a shared vision and move forward without restarting the scope debate at each stage.</p>
-      </article>
     </div>
   </section>
 
@@ -1492,8 +1364,8 @@ h1 em {
       <div class="quote-mark">&ldquo;</div>
     </div>
     <div>
-      <p class="quote">I didn't correct the team's blind spots head-on. I built a process that would let reality surface on its own.</p>
-      <p>That's what I don't know how to put in a portfolio.</p>
+      <p class="quote">The MVP was not a "lite" version. It was a learning instrument: moving from an abstract global vision to a testable trajectory.</p>
+      <p>The project moved from a conceptual debate to a controlled product trajectory.</p>
     </div>
   </section>
 
@@ -1541,24 +1413,16 @@ h1 em {
           <div class="meta-value">Coach en Design Thinking<br>et Design Strategist</div>
         </div>
         <div class="meta-cell">
-          <div class="meta-label">Format</div>
-          <div class="meta-value">3 mois · Hybride · Bagneux</div>
+          <div class="meta-label">Enjeu</div>
+          <div class="meta-value">Convergence du support<br>SEO &amp; Djingo</div>
         </div>
         <div class="meta-cell">
-          <div class="meta-label">Statut</div>
-          <div class="meta-value">Terminé · Livré</div>
-        </div>
-        <div class="meta-cell">
-          <div class="meta-label">Livrables principaux</div>
-          <div class="meta-value">Périmètre MVP priorisé · 5 cartes de test structurées · Vision séquencée V01 &rarr; V02</div>
-        </div>
-        <div class="meta-cell">
-          <div class="meta-label">Sourcing</div>
-          <div class="meta-value">Freelance via Viséo (ESN)</div>
-        </div>
-        <div class="meta-cell">
-          <div class="meta-label">Équipe</div>
-          <div class="meta-value">PM · PO · Lead UX · UX Designer · UI Designer · Data scientist (ponctuel) · Connaissance client (ponctuel)</div>
+          <div class="meta-label">Méthodes</div>
+          <div class="meta-value">
+            <span class="chip">Value Thinking</span>
+            <span class="chip">MVP</span>
+            <span class="chip">Cartes de test</span>
+          </div>
         </div>
       </div>
     </div>
@@ -1745,46 +1609,12 @@ h1 em {
       <h2 class="section-title">Du débat conceptuel à une trajectoire produit maîtrisée.</h2>
       <div class="result-item">
         <div class="result-label">Court terme</div>
-        <div class="result-copy">
-          <ul class="result-bullets">
-            <li>Périmètre MVP priorisé et livré en 6 briques structurantes ; décisions d'exclusion aussi documentées que les inclusions.</li>
-            <li>Équipe cœur alignée sur une trajectoire séquencée V01 &rarr; V02, là où le point de départ était un désaccord de périmètre.</li>
-            <li>Risque de mutualisation réduit avant tout développement ; approche incrémentale validée en comité.</li>
-          </ul>
-        </div>
+        <div class="result-copy">Périmètre MVP clairement priorisé ; équipe coeur alignée ; risque de consolidation réduit ; vision séquencée V01 &rarr; V02 activée.</div>
       </div>
       <div class="result-item">
         <div class="result-label">Moyen terme</div>
-        <div class="result-copy">
-          <ul class="result-bullets">
-            <li>Convergence progressive et testée entre Orange et Sosh.</li>
-            <li>Meilleure articulation entre SEO, chatbot Djingo et parcours de contact.</li>
-            <li>Décisions fondées sur des hypothèses mesurables ; 5 cartes de test avec KPIs définis : taux de contact, performance SEO, SAT/CES.</li>
-          </ul>
-        </div>
+        <div class="result-copy">Convergence progressive et testée ; meilleure articulation entre SEO, chatbot et parcours de contact ; décisions fondées sur des hypothèses mesurables.</div>
       </div>
-    </div>
-  </section>
-
-  <section class="impact-flow">
-    <div class="section-label">Impact</div>
-    <h2 class="section-title">Du débat à une trajectoire validée.</h2>
-    <div class="impact-flow-grid">
-      <article class="impact-flow-card">
-        <div class="impact-flow-label">Avant</div>
-        <h3>Un débat conceptuel sur le périmètre</h3>
-        <p>La convergence Orange/Sosh était initialement envisagée en big bang, avec un risque fort de rouvrir les arbitrages à chaque étape.</p>
-      </article>
-      <article class="impact-flow-card">
-        <div class="impact-flow-label">Décision</div>
-        <h3>Deux incréments testables</h3>
-        <p>La trajectoire a été reséquencée en V01 et V02, avec des décisions d'exclusion documentées aussi précisément que les inclusions.</p>
-      </article>
-      <article class="impact-flow-card">
-        <div class="impact-flow-label">Effet</div>
-        <h3>Validation en comité</h3>
-        <p>L'équipe a pu s'aligner sur une vision commune et avancer sans relancer le débat de périmètre à chaque étape.</p>
-      </article>
     </div>
   </section>
 
@@ -1794,8 +1624,8 @@ h1 em {
       <div class="quote-mark">&ldquo;</div>
     </div>
     <div>
-      <p class="quote">Je n'ai pas corrigé les angles morts de l'équipe frontalement. J'ai construit un processus qui permettrait à la réalité d'émerger d'elle-même.</p>
-      <p>C'est ça que je ne sais pas mettre dans un portfolio.</p>
+      <p class="quote">Le MVP n'était pas une version « allégée ». C'était un instrument d'apprentissage : passer d'une vision globale abstraite à une trajectoire testable.</p>
+      <p>Le projet est passé d'un débat conceptuel à une trajectoire produit maîtrisée.</p>
     </div>
   </section>
 
@@ -1815,66 +1645,24 @@ h1 em {
 <script>
   const languagePanels = document.querySelectorAll("[data-language-panel]");
   const languageOptions = document.querySelectorAll("[data-language-option]");
-  const languageStorageKey = "portfolioLanguage";
-  const supportedLanguages = ["en", "fr"];
-
-  function isSupportedLanguage(language) {
-    return supportedLanguages.includes(language);
-  }
-
-  function getUrlLanguage() {
-    const language = new URLSearchParams(window.location.search).get("lang");
-    return isSupportedLanguage(language) ? language : null;
-  }
-
-  function getStoredLanguage() {
-    try {
-      const language = window.localStorage.getItem(languageStorageKey);
-      return isSupportedLanguage(language) ? language : null;
-    } catch (error) {
-      return null;
-    }
-  }
-
-  function storeLanguage(language) {
-    try {
-      window.localStorage.setItem(languageStorageKey, language);
-    } catch (error) {
-      // Ignore storage errors so the language switch still works in restricted contexts.
-    }
-  }
-
-  function addLanguageToHref(href, language) {
-    if (!href || href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:")) return href;
-    if (!href.includes(".html")) return href;
-
-    const [beforeHash, hash = ""] = href.split("#");
-    const [pathname, query = ""] = beforeHash.split("?");
-    const params = new URLSearchParams(query);
-    params.set("lang", language);
-
-    return pathname + "?" + params.toString() + (hash ? "#" + hash : "");
-  }
-
-  function updateInternalLanguageLinks(language) {
-    document.querySelectorAll("a[href]").forEach((link) => {
-      const href = link.getAttribute("href");
-      const nextHref = addLanguageToHref(href, language);
-      if (nextHref !== href) link.setAttribute("href", nextHref);
-    });
-  }
+  const pageTitles = {
+    en: "Orange & Sosh - Alina Lagarde",
+    fr: "Orange & Sosh - Alina Lagarde"
+  };
 
   function setLanguage(language) {
-    const nextLanguage = isSupportedLanguage(language) ? language : "en";
-    document.documentElement.lang = nextLanguage;
-    languagePanels.forEach((panel) => { panel.hidden = panel.dataset.languagePanel !== nextLanguage; });
+    document.documentElement.lang = language;
+    document.title = pageTitles[language];
+
+    languagePanels.forEach((panel) => {
+      panel.hidden = panel.dataset.languagePanel !== language;
+    });
+
     languageOptions.forEach((option) => {
-      const isActive = option.dataset.languageOption === nextLanguage;
+      const isActive = option.dataset.languageOption === language;
       option.classList.toggle("is-active", isActive);
       option.setAttribute("aria-pressed", String(isActive));
     });
-    storeLanguage(nextLanguage);
-    updateInternalLanguageLinks(nextLanguage);
   }
 
   languageOptions.forEach((option) => {
@@ -1883,7 +1671,7 @@ h1 em {
     });
   });
 
-  setLanguage(getUrlLanguage() || getStoredLanguage() || "en");
+  setLanguage("en");
 </script>
 </body>
 </html>

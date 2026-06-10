@@ -1,0 +1,44 @@
+orange-sosh:
+  url: orange-sosh-case-study-v2.html
+  title_fr: Orange & Sosh
+  title_en: Orange & Sosh
+  description_fr: Structurer une trajectoire produit progressive.
+  description_en: Structuring an incremental product trajectory.
+  discipline_fr: Stratégie produit & Service Design
+  discipline_en: Product Strategy & Service Design
+
+cstb-2024:
+  url: cstb-2024-case-study.html
+  title_fr: CSTB / RESTORE
+  title_en: CSTB / RESTORE
+  description_fr: Cartographier un écosystème métier complexe.
+  description_en: Mapping a complex professional ecosystem.
+  discipline_fr: UX Research
+  discipline_en: UX Research
+
+septeo:
+  url: septeo-case-study.html
+  title_fr: Septeo-ADB
+  title_en: Septeo-ADB
+  description_fr: Event Storming prospectif pour une roadmap IA-centric.
+  description_en: Prospective Event Storming for an AI-centric roadmap.
+  discipline_fr: Service Design
+  discipline_en: Service Design
+
+insee:
+  url: insee-case-study.html
+  title_fr: INSEE
+  title_en: INSEE
+  description_fr: Refonte intranet et communication interne.
+  description_en: Intranet redesign and internal communication.
+  discipline_fr: UX Strategy
+  discipline_en: UX Strategy
+
+alain-afflelou:
+  url: alain-afflelou-case-study.html
+  title_fr: Alain Afflelou
+  title_en: Alain Afflelou
+  description_fr: Construire une pratique product design à partir de zéro.
+  description_en: Building a product design practice from scratch.
+  discipline_fr: Product Design
+  discipline_en: Product Design

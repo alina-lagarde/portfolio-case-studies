@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>INSEE - Refonte Intranet - Alina Lagarde</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,500&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root { --paper:#f8f5f0; --white:#fff; --ink:#131b24; --copy:#46515e; --quiet:#737d87; --line:#ddd6cb; --blue:#287db8; --blue-deep:#103a64; --blue-soft:#eaf5fc; --orange:#f28a2c; --peach:#fff0e8; --shadow:0 16px 45px rgba(17,27,39,.07); }
+body { background:var(--paper); color:var(--ink); font-family:"Manrope","Helvetica Neue",sans-serif; line-height:1.65; -webkit-font-smoothing:antialiased; }
+img { display:block; max-width:100%; }
+p { color:var(--copy); font-size:15px; line-height:1.78; margin-bottom:15px; }
+p:last-child { margin-bottom:0; }
+strong { color:var(--ink); font-weight:650; }
+.page { background:var(--paper); margin:0; overflow:hidden; width:100%; }
+.language-panel[hidden] { display:none; }
+.topbar { align-items:center; background:var(--white); border-bottom:1px solid var(--line); display:flex; justify-content:space-between; padding:21px max(54px,calc((100vw - 1360px) / 2 + 54px)); }
+.topbar-name { color:var(--ink); font-size:12px; font-weight:700; letter-spacing:.17em; text-decoration:none; text-transform:uppercase; transition:color 180ms ease; }
+.topbar-name:hover, .topbar-name:focus-visible { color:var(--blue); }
+.topbar-info { align-items:center; color:var(--quiet); display:flex; font-size:11px; font-weight:600; gap:17px; letter-spacing:.15em; text-transform:uppercase; }
+.language-switch { align-items:center; background:var(--paper); border:1px solid var(--line); border-radius:999px; display:flex; gap:2px; padding:3px; }
+.language-option { appearance:none; background:transparent; border:0; border-radius:999px; color:var(--quiet); cursor:pointer; font:inherit; font-size:10px; letter-spacing:.13em; padding:7px 11px; }
+.language-option.is-active { background:var(--ink); color:var(--white); }
+.brand-pips { display:flex; gap:5px; }
+.brand-pips span { border-radius:50%; display:block; height:7px; width:7px; }
+.brand-pips span:first-child { background:var(--blue); }
+.brand-pips span:last-child { background:var(--orange); }
+.hero { border-bottom:1px solid var(--line); display:grid; grid-template-columns:minmax(390px,47vw) minmax(0,1fr); min-height:650px; }
+.hero-photo { background:var(--blue-deep); min-height:650px; overflow:hidden; position:relative; }
+.hero-photo img { height:100%; object-fit:cover; object-position:center; transform:scale(1.12); width:100%; }
+.hero-photo::before { background:linear-gradient(to right,transparent 66%,rgba(248,245,240,.32) 80%,var(--paper) 100%),linear-gradient(180deg,transparent 55%,rgba(16,58,100,.24) 100%); content:""; inset:0; position:absolute; z-index:1; }
+.hero-photo::after { background:var(--orange); bottom:34px; content:""; height:5px; left:42px; position:absolute; width:75px; z-index:2; }
+.hero-content { display:flex; flex-direction:column; justify-content:center; max-width:740px; padding:50px max(54px,calc((100vw - 1360px) / 2 + 54px)) 48px 52px; }
+.eyebrow,.section-label { align-items:center; color:var(--blue); display:flex; font-size:11px; font-weight:700; gap:12px; letter-spacing:.19em; margin-bottom:19px; text-transform:uppercase; }
+.eyebrow::before,.section-label::before { background:var(--blue); content:""; height:1px; width:34px; }
+h1 { font-family:"Fraunces",Georgia,serif; font-size:clamp(39px,4.1vw,56px); font-weight:500; letter-spacing:-.035em; line-height:1.06; margin-bottom:23px; }
+h1 em { color:var(--blue); font-style:italic; }
+.hero-lead { font-size:16px; line-height:1.75; margin-bottom:30px; max-width:560px; }
+.metadata { background:var(--white); border:1px solid var(--line); display:grid; grid-template-columns:repeat(2,1fr); }
+.meta-cell { border-bottom:1px solid var(--line); border-right:1px solid var(--line); min-height:84px; padding:16px 17px; }
+.meta-cell:nth-child(2n) { border-right:0; }
+.meta-cell:nth-last-child(-n + 2) { border-bottom:0; }
+.meta-label,.field-label,.result-label { color:var(--quiet); font-size:10px; font-weight:700; letter-spacing:.16em; margin-bottom:7px; text-transform:uppercase; }
+.meta-value,.field-value { color:var(--ink); font-size:13px; line-height:1.55; }
+.chip { background:var(--blue-soft); border-radius:999px; color:var(--blue); display:inline-block; font-size:11px; font-weight:600; margin:2px 5px 2px 0; padding:3px 9px; }
+.split { border-bottom:1px solid var(--line); display:grid; grid-template-columns:1.36fr .84fr; margin:0 auto; max-width:1360px; }
+.split-main { border-right:1px solid var(--line); padding:57px 58px 56px 54px; }
+.split-side { background:var(--white); padding:55px 45px; }
+.section-title { font-family:"Fraunces",Georgia,serif; font-size:clamp(28px,2.7vw,36px); font-weight:500; letter-spacing:-.025em; line-height:1.25; margin-bottom:25px; }
+.callout { background:var(--blue-soft); border-left:3px solid var(--blue); margin-top:28px; padding:21px 23px; }
+.field { border-bottom:1px solid var(--line); padding:0 0 24px; }
+.field + .field { padding-top:24px; }
+.field:last-child { border-bottom:0; }
+.field-value.accent { color:var(--blue); font-weight:600; }
+.participants { border-bottom:1px solid var(--line); margin:0 auto; max-width:1360px; padding:57px 54px; }
+.participant-grid { display:grid; gap:18px; grid-template-columns:repeat(auto-fit,minmax(280px,360px)); justify-content:center; margin:30px auto 0; max-width:1120px; }
+.participant-card { background:var(--white); border:1px solid var(--line); padding:27px 25px; }
+.participant-card h3 { color:var(--ink); font-size:17px; font-weight:600; line-height:1.4; margin-bottom:12px; }
+.participant-card p { font-size:14px; }
+.approach,.evidence,.results { border-bottom:1px solid var(--line); margin:0 auto; max-width:1360px; padding:57px 54px; }
+.steps { display:grid; gap:14px; grid-template-columns:repeat(auto-fit,minmax(168px,198px)); justify-content:center; margin:31px auto 0; max-width:1120px; }
+.step,.result-card,.visual-card { background:var(--white); border:1px solid var(--line); }
+.step { padding:23px 19px; }
+.step-number { color:var(--blue); font-family:"Fraunces",Georgia,serif; font-size:28px; line-height:1; margin-bottom:14px; opacity:.7; }
+.step h3,.result-card h3 { font-size:14px; font-weight:650; line-height:1.42; margin-bottom:9px; }
+.step p { font-size:12px; line-height:1.62; }
+.visual-grid { display:grid; gap:18px; grid-template-columns:repeat(2,minmax(0,1fr)); margin-top:30px; }
+.visual-card { overflow:visible; }
+.visual-card.wide,.visual-card.map,.visual-card.overview { grid-column:1 / -1; }
+.visual-card img { background:var(--white); height:auto; object-fit:contain; padding:16px; width:100%; }
+.visual-card.wide img,.visual-card.map img,.visual-card.overview img { padding:0; }
+.visual-card figcaption { background:var(--white); color:var(--quiet); font-size:12px; line-height:1.65; padding:15px 18px 18px; }
+.results { background:transparent; position:relative; z-index:0; }
+.results::before { background:var(--white); bottom:0; content:""; left:50%; position:absolute; top:0; transform:translateX(-50%); width:100vw; z-index:-1; }
+.results-grid { display:grid; gap:18px; grid-template-columns:repeat(3,1fr); margin-top:29px; }
+.result-card { background:var(--paper); padding:27px 25px; }
+.result-card p { font-size:14px; }
+.results-layout { align-items:stretch; display:grid; gap:42px; grid-template-columns:minmax(340px,.72fr) minmax(560px,1.18fr); justify-content:center; margin:30px auto 0; max-width:1120px; }
+.result-list { border:1px solid var(--line); display:grid; grid-template-rows:repeat(3,1fr); }
+.result-item { background:var(--paper); border-bottom:1px solid var(--line); display:flex; flex-direction:column; justify-content:center; padding:28px 25px; }
+.result-item:last-child { border-bottom:0; }
+.result-item p { font-size:13px; }
+.result-item h3 { color:var(--ink); font-size:16px; font-weight:600; line-height:1.45; margin-bottom:10px; }
+.flow-map-grid { display:grid; gap:17px; }
+.flow-map { background:var(--paper); border:1px solid var(--line); overflow:hidden; }
+.flow-map img { background:var(--white); display:block; height:auto; width:100%; }
+.flow-map .caption { margin:0; padding:13px 16px 16px; }
+.outcomes-panel { background:var(--paper); border:1px solid var(--line); margin-top:28px; padding:27px 30px 22px; }
+.outcomes-panel h3 { font-family:"Fraunces",Georgia,serif; font-size:25px; font-weight:500; letter-spacing:-.02em; line-height:1.25; margin-bottom:18px; }
+.outcomes-list { border-top:1px solid var(--line); }
+.outcome-row { align-items:start; border-bottom:1px solid var(--line); display:grid; gap:24px; grid-template-columns:235px 1fr; padding:15px 0; }
+.outcome-row:last-child { border-bottom:0; padding-bottom:0; }
+.outcome-label { color:var(--blue); font-size:10px; font-weight:700; letter-spacing:.15em; line-height:1.45; text-transform:uppercase; }
+.outcome-value { color:var(--copy); font-size:14px; line-height:1.65; }
+.impact { border-bottom:1px solid var(--line); display:grid; gap:34px; grid-template-columns:.82fr 1.18fr; margin:0 auto; max-width:1360px; padding:57px 54px; }
+.impact-copy { background:var(--blue-soft); border-left:3px solid var(--blue); padding:23px 25px; }
+.impact-copy p { font-size:15px; }
+.impact-flow { border-bottom:1px solid var(--line); margin:0 auto; max-width:1360px; padding:57px 54px; }
+.impact-flow-grid { display:grid; gap:16px; grid-template-columns:repeat(3,minmax(0,1fr)); margin-top:26px; }
+.impact-flow-card { background:var(--white); border:1px solid var(--line); min-height:210px; padding:24px 24px 25px; }
+.impact-flow-label { color:var(--blue); font-size:10px; font-weight:700; letter-spacing:.18em; margin-bottom:17px; text-transform:uppercase; }
+.impact-flow-card h3 { color:var(--ink); font-family:"Fraunces",Georgia,serif; font-size:23px; font-weight:500; letter-spacing:-.02em; line-height:1.25; margin-bottom:13px; }
+.impact-flow-card p { font-size:14px; line-height:1.72; }
+.reflection { border-bottom:1px solid var(--line); display:grid; gap:38px; grid-template-columns:215px 1fr; margin:0 auto; max-width:1360px; padding:57px 54px; }
+.quote-mark { color:var(--orange); font-family:"Fraunces",Georgia,serif; font-size:104px; line-height:.6; opacity:.45; }
+.reflection p:not(.quote) { max-width:760px; }
+.quote { color:var(--ink); font-family:"Fraunces",Georgia,serif; font-size:clamp(23px,2.35vw,30px); letter-spacing:-.02em; line-height:1.42; margin-bottom:20px; }
+.project-navigation { align-items:center; background:transparent; border-bottom:1px solid var(--line); display:flex; gap:28px; justify-content:space-between; margin:0 auto; max-width:1360px; padding:30px 54px; position:relative; z-index:0; }
+.project-navigation::before { background:var(--white); bottom:0; content:""; left:50%; position:absolute; top:0; transform:translateX(-50%); width:100vw; z-index:-1; }
+.project-home { color:var(--blue); font-size:11px; font-weight:700; letter-spacing:.17em; text-decoration:none; text-transform:uppercase; }
+.project-next { color:var(--ink); display:flex; flex-direction:column; gap:7px; text-align:right; text-decoration:none; }
+.project-next span { color:var(--quiet); font-size:10px; font-weight:700; letter-spacing:.17em; text-decoration:none; text-transform:uppercase; }
+.project-next strong { font-family:"Fraunces",Georgia,serif; font-size:24px; font-weight:500; text-decoration:none; }
+.project-home:hover,.project-next:hover strong { color:var(--blue); }
+.footer { align-items:center; color:var(--quiet); display:flex; font-size:12px; justify-content:space-between; margin:0 auto; max-width:1360px; padding:28px 54px; }
+.footer-mark { align-items:center; display:flex; gap:13px; }
+.footer-mark::before { background:var(--orange); content:""; display:block; height:2px; width:28px; }
+@media (max-width:980px) {
+  .topbar,.footer { padding-left:28px; padding-right:28px; }
+  .hero,.split,.participant-grid,.results-grid,.results-layout,.flow-map-grid,.impact,.impact-flow-grid,.reflection { display:block; }
+  .steps { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .hero-photo { min-height:390px; }
+  .hero-photo::before { background:linear-gradient(to bottom,transparent 60%,rgba(248,245,240,.22) 78%,var(--paper) 100%),linear-gradient(180deg,transparent 52%,rgba(16,58,100,.24) 100%); }
+  .hero-content,.split-main,.split-side,.participants,.approach,.evidence,.results,.impact,.impact-flow,.reflection { padding:40px 28px; }
+  .split-main { border-bottom:1px solid var(--line); border-right:0; }
+  .result-card { margin-bottom:17px; }
+  .outcome-row { grid-template-columns:210px 1fr; }
+  .project-navigation { padding:28px; }
+}
+@media (max-width:620px) {
+  .topbar { align-items:flex-start; flex-direction:column; gap:13px; }
+  .topbar-info { flex-wrap:wrap; }
+  .metadata,.steps,.visual-grid { display:block; }
+  .meta-cell { border-right:0; }
+  .meta-cell:nth-last-child(-n + 2) { border-bottom:1px solid var(--line); }
+  .meta-cell:last-child { border-bottom:0; }
+  .step,.participant-card,.visual-card,.flow-map,.impact-flow-card { margin-bottom:17px; }
+  .outcomes-panel { padding:24px 22px 20px; }
+  .outcome-row { display:block; padding:16px 0; }
+  .outcome-label { margin-bottom:7px; }
+  .project-navigation { align-items:flex-start; flex-direction:column; }
+  .project-next { text-align:left; }
+}
+@media print {
+  @page { margin:0; size:A4 landscape; }
+  body { background:var(--white); }
+  .page { box-shadow:none; }
+  .project-navigation { display:none; }
+  .hero { display:grid; grid-template-columns:minmax(390px,47%) 1fr; min-height:650px; }
+  .hero-photo { min-height:650px; }
+  .split { display:grid; grid-template-columns:1.36fr .84fr; }
+  .steps { display:grid; grid-template-columns:repeat(auto-fit,minmax(168px,198px)); justify-content:center; }
+  .results-grid { display:grid; grid-template-columns:repeat(3,1fr); }
+  .impact,.reflection { display:grid; }
+  .impact { grid-template-columns:.82fr 1.18fr; }
+  .reflection { grid-template-columns:215px 1fr; }
+}
+</style>
+</head>
+<body>
+<main class="page">
+  <div class="language-panel" lang="en" data-language-panel="en">
+    <header class="topbar">
+      <a class="topbar-name" href="portfolio-case-studies.html">Alina Lagarde - Portfolio</a>
+      <div class="topbar-info">
+        <span>UX Strategy - Case Study</span>
+        <nav class="language-switch" aria-label="Language selection">
+          <button class="language-option is-active" type="button" data-language-option="en" aria-pressed="true">EN</button>
+          <button class="language-option" type="button" data-language-option="fr" aria-pressed="false">FR</button>
+        </nav>
+        <div class="brand-pips" aria-hidden="true"><span></span><span></span></div>
+      </div>
+    </header>
+    <section class="hero">
+      <figure class="hero-photo"><img src="assets/insee/research-extract-page.png" alt="Research and interview excerpts for the INSEE intranet project"></figure>
+      <div class="hero-content">
+        <div class="eyebrow">INSEE via La Netscouade - 2019</div>
+        <h1><em>Intranet redesign</em><br>and internal<br>communication</h1>
+        <p class="hero-lead">Gathering strategic challenges and professional practices to support the design of a new digital platform.</p>
+        <div class="metadata"><div class="meta-cell"><div class="meta-label">Client</div><div class="meta-value">INSEE<br>via La Netscouade</div></div><div class="meta-cell"><div class="meta-label">My role</div><div class="meta-value">UX Research<br>UX Strategist / UX Designer</div></div><div class="meta-cell"><div class="meta-label">Format</div><div class="meta-value">~2 months · On-site · Paris</div></div><div class="meta-cell"><div class="meta-label">Status</div><div class="meta-value">Complete · Delivered</div></div><div class="meta-cell"><div class="meta-label">Main outputs</div><div class="meta-value">Interview guides · Persona restitution · 6 documented UX workshops · Strategic recommendations</div></div><div class="meta-cell"><div class="meta-label">Sourcing</div><div class="meta-value">La Netscouade (agency)</div></div><div class="meta-cell"><div class="meta-label">Team</div><div class="meta-value">Lead UX (Alina Lagarde) · Strategic planner · Junior UX · UR consultant (kickoff + synthesis) · Client director · INSEE agile coach</div></div><div class="meta-cell"><div class="meta-label">Scope</div><div class="meta-value">Intranets and internal<br>communication tools</div></div><div class="meta-cell"><div class="meta-label">Audience</div><div class="meta-value"><span class="chip">5-6000 users</span><span class="chip">INSEE staff</span></div></div></div>
+      </div>
+    </section>
+    <section class="split">
+      <div class="split-main">
+        <div class="section-label">Context</div>
+        <h2 class="section-title">Designing a digital platform<br>with a user-centered approach.</h2>
+        <p>As part of the redesign of its intranets and internal communication tools, INSEE requested support to design a digital platform using a user-centered approach.</p><p>Working with a strategic planner, we collected project challenges and risks through <strong>one workshop and 5 stakeholder interviews</strong>. Research into practices across different roles was also conducted through <strong>42 user interviews</strong>.</p>
+        <div class="callout"><p><strong>Client question.</strong> Bring stakeholder strategic vision together with the real practices and needs of INSEE staff, while adapting UX methodology to an administrative environment.</p></div><div class="callout"><p><strong>Constraints.</strong> Access to staff in an administrative environment was complex to organize: a wide range of professional roles with frequent internal rotation and limited availability. Reconciling a top-down strategic vision with field practices that sometimes diverged significantly ; without letting either invalidate the other.</p></div>
+      </div>
+      <aside class="split-side"><div class="field"><div class="field-label">Objectives</div><div class="field-value">Collect challenges and risks, listen to staff practices and support the emergence of solution proposals.</div></div><div class="field"><div class="field-label">Strategic research</div><div class="field-value">1 workshop and 5 stakeholder interviews.</div></div><div class="field"><div class="field-label">User research</div><div class="field-value">42 interviews with INSEE staff across professional roles.</div></div><div class="field"><div class="field-label">Documented workshops</div><div class="field-value">Challenges workshop, target workshop, 2 editorial workshops and 3 ideation workshops.</div></div><div class="field"><div class="field-label">Pilot project</div><div class="field-value accent">Process documented to consolidate the service offering</div></div></aside>
+    </section>
+    <section class="participants"><div class="section-label">Research</div><h2 class="section-title">Bringing stakeholder vision together with staff practices.</h2><p>The programme combined strategic requirements gathering with user research focused on real practices and professional roles.</p><div class="participant-grid"><article class="participant-card"><h3>Stakeholders</h3><p>1 workshop and 5 interviews to collect strategic vision, project challenges and risks.</p></article><article class="participant-card"><h3>Staff users</h3><p>42 user interviews to collect real practices and needs across different professional roles.</p><p>Feedback was intended to be reconciled with stakeholder perspectives.</p></article></div></section>
+    <section class="approach">
+      <div class="section-label">Approach</div>
+      <h2 class="section-title">A design process structured in three phases.</h2>
+      <p>The PDF documents a first phase analyzing the existing situation and understanding stakeholder vision, a second phase understanding user needs, and a solution-proposal phase based on co-creation, related studies and collected practices. The second phase had begun in late June 2019.</p>
+      <div class="steps"><article class="step"><div class="step-number">01</div><h3>Strategic vision</h3><p>Challenges workshop and strategic interviews.</p></article><article class="step"><div class="step-number">02</div><h3>User needs</h3><p>Target workshop and user interviews.</p></article><article class="step"><div class="step-number">03</div><h3>Analysis</h3><p>Desk research analysis and persona restitution.</p></article><article class="step"><div class="step-number">04</div><h3>Editorial work</h3><p>Two editorial workshops documented in the method.</p></article><article class="step"><div class="step-number">05</div><h3>Ideation</h3><p>Three ideation workshops run as mini design sprints.</p></article></div>
+      
+    </section>
+    <section class="evidence">
+      <div class="section-label">Project excerpts</div>
+      <h2 class="section-title">Documented approach and research materials.</h2>
+      <div class="visual-grid"><figure class="visual-card map"><img src="assets/insee/approach-page.png" alt="INSEE intranet research approach"><figcaption>PDF excerpt: design phases and research method.</figcaption></figure><figure class="visual-card map"><img src="assets/insee/project-extracts-page.png" alt="INSEE user interview guide excerpts"><figcaption>PDF excerpt: interview guide and traces of user analysis.</figcaption></figure></div>
+    </section>
+    <section class="results">
+      <div class="section-label">Shown deliverables</div>
+      <h2 class="section-title">Research and co-creation materials.</h2>
+      <div class="results-grid"><article class="result-card"><h3>Interview guides</h3><p>Guides adapted first to stakeholders and then to users.</p></article><article class="result-card"><h3>Persona restitution</h3><p>A restitution explicitly listed in the project's research method.</p></article><article class="result-card"><h3>UX workshops</h3><p>Challenges, target, editorial and ideation workshops documented in the dossier.</p></article></div>
+    </section>
+    <section class="impact-flow"><div class="section-label">Impact</div><h2 class="section-title">From research to an adapted solution.</h2><div class="impact-flow-grid"><article class="impact-flow-card"><div class="impact-flow-label">Before</div><h3>A strategic vision to reconcile with field reality</h3><p>Staff practices and top-down expectations had to be made compatible without letting either perspective invalidate the other.</p></article><article class="impact-flow-card"><div class="impact-flow-label">Decision</div><h3>An adapted white-label solution</h3><p>The selected solution was adjusted based on strategic recommendations drawn from user research.</p></article><article class="impact-flow-card"><div class="impact-flow-label">Effect</div><h3>A pilot for 5,000 to 6,000 staff</h3><p>The project also helped consolidate La Netscouade's user research offer: workshop formats, editorial strategy and adaptation of existing formats.</p></article></div></section>
+    <section class="reflection">
+      <div><div class="section-label">Takeaway</div><div class="quote-mark">&ldquo;</div></div>
+      <div><p class="quote">This project taught me to adapt a UX methodology to an environment where it was not yet the norm, and to treat the documentation of that process as a deliverable in its own right. The real challenge was not the research itself: it was making the findings usable for teams who had never worked this way.</p></div>
+    </section>
+    <nav class="project-navigation" aria-label="Case study navigation">
+      <a class="project-home" href="portfolio-case-studies.html">All projects</a>
+      <a class="project-next" href="alain-afflelou-case-study.html"><span>Next project</span><strong>Alain Afflelou &rarr;</strong></a>
+    </nav>
+    <footer class="footer"><span>Alina Lagarde - UX Strategy Portfolio - 2026</span><span class="footer-mark">INSEE - Intranet redesign</span></footer>
+  </div>
+
+  <div class="language-panel" lang="fr" data-language-panel="fr" hidden>
+    <header class="topbar">
+      <a class="topbar-name" href="portfolio-case-studies.html">Alina Lagarde - Portfolio</a>
+      <div class="topbar-info">
+        <span>UX Strategy - Cas client</span>
+        <nav class="language-switch" aria-label="Choix de la langue">
+          <button class="language-option" type="button" data-language-option="en" aria-pressed="false">EN</button>
+          <button class="language-option is-active" type="button" data-language-option="fr" aria-pressed="true">FR</button>
+        </nav>
+        <div class="brand-pips" aria-hidden="true"><span></span><span></span></div>
+      </div>
+    </header>
+    <section class="hero">
+      <figure class="hero-photo"><img src="assets/insee/research-extract-page.png" alt="Extraits de recherche et d'entretiens pour l'intranet INSEE"></figure>
+      <div class="hero-content">
+        <div class="eyebrow">INSEE via La Netscouade - 2019</div>
+        <h1><em>Refonte intranet</em><br>et communication<br>interne</h1>
+        <p class="hero-lead">Recueillir les enjeux stratégiques et les usages métiers pour accompagner la conception d'une nouvelle plateforme digitale.</p>
+        <div class="metadata"><div class="meta-cell"><div class="meta-label">Client</div><div class="meta-value">INSEE<br>via La Netscouade</div></div><div class="meta-cell"><div class="meta-label">Mon rôle</div><div class="meta-value">Recherche UX<br>UX Strategist / UX Designer</div></div><div class="meta-cell"><div class="meta-label">Format</div><div class="meta-value">~2 mois · Sur site · Paris</div></div><div class="meta-cell"><div class="meta-label">Statut</div><div class="meta-value">Terminé · Livré</div></div><div class="meta-cell"><div class="meta-label">Livrables principaux</div><div class="meta-value">Grilles d'interviews · Restitution personae · 6 ateliers UX documentés · Recommandations stratégiques</div></div><div class="meta-cell"><div class="meta-label">Sourcing</div><div class="meta-value">La Netscouade (agence)</div></div><div class="meta-cell"><div class="meta-label">Équipe</div><div class="meta-value">Lead UX (Alina Lagarde) · Planneur stratégique · UX junior · Consultant UR (démarrage + synthèse) · Directrice client · Coach agile INSEE</div></div><div class="meta-cell"><div class="meta-label">Périmètre</div><div class="meta-value">Intranets et outils<br>de communication interne</div></div><div class="meta-cell"><div class="meta-label">Population</div><div class="meta-value"><span class="chip">5-6000 utilisateurs</span><span class="chip">Agents INSEE</span></div></div></div>
+      </div>
+    </section>
+    <section class="split">
+      <div class="split-main">
+        <div class="section-label">Contexte</div>
+        <h2 class="section-title">Concevoir une plateforme digitale<br>avec une approche centrée utilisateurs.</h2>
+        <p>Dans le cadre de la refonte des intranets et des outils de communication interne, l'INSEE a sollicité un accompagnement pour concevoir une plateforme digitale selon une approche centrée utilisateurs.</p><p>Avec un planneur stratégique, nous avons recueilli les enjeux et risques du projet à travers <strong>un atelier et 5 interviews de parties prenantes</strong>. Un recueil des usages des différents métiers a également été mené au moyen de <strong>42 interviews utilisateurs</strong>.</p>
+        <div class="callout"><p><strong>Problématique client.</strong> Faire converger la vision stratégique des parties prenantes avec les usages et besoins réels des agents INSEE, tout en adaptant la méthodologie UX au milieu administratif.</p></div><div class="callout"><p><strong>Contraintes.</strong> Accès aux agents en milieu administratif complexe à organiser : grand panel de métiers avec rotation interne fréquente, disponibilités limitées. Réconcilier une vision stratégique portée par la hiérarchie avec des usages terrain parfois très éloignés ; sans que les uns invalident les autres.</p></div>
+      </div>
+      <aside class="split-side"><div class="field"><div class="field-label">Objectifs</div><div class="field-value">Recueillir les enjeux et risques, écouter les usages agents et faire émerger des propositions de solution.</div></div><div class="field"><div class="field-label">Recherche stratégique</div><div class="field-value">1 atelier et 5 interviews de parties prenantes.</div></div><div class="field"><div class="field-label">Recherche utilisateurs</div><div class="field-value">42 interviews auprès des agents et métiers INSEE.</div></div><div class="field"><div class="field-label">Ateliers documentés</div><div class="field-value">Atelier enjeux, atelier cible, ateliers édito x2 et ateliers d'idéation x3.</div></div><div class="field"><div class="field-label">Projet pilote</div><div class="field-value accent">Processus documenté pour consolider l'offre</div></div></aside>
+    </section>
+    <section class="participants"><div class="section-label">Recherche</div><h2 class="section-title">Croiser la vision des parties prenantes avec les usages des agents.</h2><p>Le dispositif associait le recueil des besoins stratégiques à une recherche utilisateur orientée usages et métiers.</p><div class="participant-grid"><article class="participant-card"><h3>Parties prenantes</h3><p>1 atelier et 5 interviews pour recueillir la vision stratégique, les enjeux et les risques du projet.</p></article><article class="participant-card"><h3>Agents utilisateurs</h3><p>42 interviews utilisateurs pour recueillir les usages et besoins réels des différents métiers.</p><p>Les retours devaient être conciliés avec les visions portées par les parties prenantes.</p></article></div></section>
+    <section class="approach">
+      <div class="section-label">Approche</div>
+      <h2 class="section-title">Une conception structurée en trois phases.</h2>
+      <p>Le PDF documente une première phase d'analyse de l'existant et de compréhension de la vision des parties prenantes, une deuxième phase de compréhension des besoins utilisateurs, puis une phase de proposition de solution fondée sur la co-création, les études et les usages recueillis. La deuxième phase avait été entamée fin juin 2019.</p>
+      <div class="steps"><article class="step"><div class="step-number">01</div><h3>Vision stratégique</h3><p>Atelier enjeux et interviews stratégiques.</p></article><article class="step"><div class="step-number">02</div><h3>Besoins utilisateurs</h3><p>Atelier cible et interviews utilisateurs.</p></article><article class="step"><div class="step-number">03</div><h3>Analyse</h3><p>Analyse d'étude et restitution de personae.</p></article><article class="step"><div class="step-number">04</div><h3>Éditorial</h3><p>Deux ateliers édito documentés dans la méthode.</p></article><article class="step"><div class="step-number">05</div><h3>Idéation</h3><p>Trois ateliers d'idéation sous forme de mini design sprints.</p></article></div>
+      
+    </section>
+    <section class="evidence">
+      <div class="section-label">Extraits du projet</div>
+      <h2 class="section-title">Démarche et matériaux de recherche documentés.</h2>
+      <div class="visual-grid"><figure class="visual-card map"><img src="assets/insee/approach-page.png" alt="Approche de recherche du projet intranet INSEE"><figcaption>Extrait PDF : phases de conception et méthode de recherche.</figcaption></figure><figure class="visual-card map"><img src="assets/insee/project-extracts-page.png" alt="Extraits de la grille d'entretiens utilisateurs INSEE"><figcaption>Extrait PDF : grille d'entretiens et traces d'analyse utilisateurs.</figcaption></figure></div>
+    </section>
+    <section class="results">
+      <div class="section-label">Livrables montrés</div>
+      <h2 class="section-title">Des supports de recherche et de co-création.</h2>
+      <div class="results-grid"><article class="result-card"><h3>Grilles d'interviews</h3><p>Des guides adaptés aux parties prenantes puis aux utilisateurs.</p></article><article class="result-card"><h3>Restitution personae</h3><p>Une restitution citée dans la méthode de recherche du projet.</p></article><article class="result-card"><h3>Ateliers UX</h3><p>Ateliers enjeux, cible, édito et idéation documentés dans le dossier.</p></article></div>
+    </section>
+    <section class="impact-flow"><div class="section-label">Impact</div><h2 class="section-title">De la recherche à une solution adaptée.</h2><div class="impact-flow-grid"><article class="impact-flow-card"><div class="impact-flow-label">Avant</div><h3>Une vision stratégique à réconcilier avec le terrain</h3><p>Les usages des agents et la vision portée par la hiérarchie devaient être rendus compatibles sans que l'un invalide l'autre.</p></article><article class="impact-flow-card"><div class="impact-flow-label">Décision</div><h3>Une solution marque blanche adaptée</h3><p>La solution retenue a été ajustée à partir des recommandations stratégiques issues de la recherche utilisateur.</p></article><article class="impact-flow-card"><div class="impact-flow-label">Effet</div><h3>Un pilote pour 5 à 6 000 agents</h3><p>Le projet a aussi servi à consolider l'offre user research de La Netscouade : formats d'ateliers, stratégie éditoriale et adaptation de formats existants.</p></article></div></section>
+    <section class="reflection">
+      <div><div class="section-label">Apprentissage</div><div class="quote-mark">&ldquo;</div></div>
+      <div><p class="quote">Ce projet m'a appris à adapter une méthode UX à un environnement où elle n'est pas encore la norme, et à documenter ce processus comme un livrable à part entière. Le vrai défi n'était pas la recherche elle-même : c'était de rendre les résultats utilisables par des équipes qui n'avaient jamais travaillé de cette façon.</p></div>
+    </section>
+    <nav class="project-navigation" aria-label="Navigation entre les projets">
+      <a class="project-home" href="portfolio-case-studies.html">Tous les projets</a>
+      <a class="project-next" href="alain-afflelou-case-study.html"><span>Projet suivant</span><strong>Alain Afflelou &rarr;</strong></a>
+    </nav>
+    <footer class="footer"><span>Alina Lagarde - Portfolio UX Strategy - 2026</span><span class="footer-mark">INSEE - Refonte intranet</span></footer>
+  </div>
+</main>
+<script>
+  const languagePanels = document.querySelectorAll("[data-language-panel]");
+  const languageOptions = document.querySelectorAll("[data-language-option]");
+  const languageStorageKey = "portfolioLanguage";
+  const supportedLanguages = ["en", "fr"];
+
+  function isSupportedLanguage(language) {
+    return supportedLanguages.includes(language);
+  }
+
+  function getUrlLanguage() {
+    const language = new URLSearchParams(window.location.search).get("lang");
+    return isSupportedLanguage(language) ? language : null;
+  }
+
+  function getStoredLanguage() {
+    try {
+      const language = window.localStorage.getItem(languageStorageKey);
+      return isSupportedLanguage(language) ? language : null;
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function storeLanguage(language) {
+    try {
+      window.localStorage.setItem(languageStorageKey, language);
+    } catch (error) {
+      // Ignore storage errors so the language switch still works in restricted contexts.
+    }
+  }
+
+  function addLanguageToHref(href, language) {
+    if (!href || href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:")) return href;
+    if (!href.includes(".html")) return href;
+
+    const [beforeHash, hash = ""] = href.split("#");
+    const [pathname, query = ""] = beforeHash.split("?");
+    const params = new URLSearchParams(query);
+    params.set("lang", language);
+
+    return pathname + "?" + params.toString() + (hash ? "#" + hash : "");
+  }
+
+  function updateInternalLanguageLinks(language) {
+    document.querySelectorAll("a[href]").forEach((link) => {
+      const href = link.getAttribute("href");
+      const nextHref = addLanguageToHref(href, language);
+      if (nextHref !== href) link.setAttribute("href", nextHref);
+    });
+  }
+
+  function setLanguage(language) {
+    const nextLanguage = isSupportedLanguage(language) ? language : "en";
+    document.documentElement.lang = nextLanguage;
+    languagePanels.forEach((panel) => { panel.hidden = panel.dataset.languagePanel !== nextLanguage; });
+    languageOptions.forEach((option) => {
+      const isActive = option.dataset.languageOption === nextLanguage;
+      option.classList.toggle("is-active", isActive);
+      option.setAttribute("aria-pressed", String(isActive));
+    });
+    storeLanguage(nextLanguage);
+    updateInternalLanguageLinks(nextLanguage);
+  }
+
+  languageOptions.forEach((option) => {
+    option.addEventListener("click", () => {
+      setLanguage(document.documentElement.lang === "en" ? "fr" : "en");
+    });
+  });
+
+  setLanguage(getUrlLanguage() || getStoredLanguage() || "en");
+</script>
+</body>
+</html>

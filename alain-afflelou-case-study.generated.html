@@ -45,6 +45,7 @@ h1 em { color:var(--blue); font-style:italic; }
 .meta-cell:nth-last-child(-n + 2) { border-bottom:0; }
 .meta-label,.field-label,.result-label { color:var(--quiet); font-size:10px; font-weight:700; letter-spacing:.16em; margin-bottom:7px; text-transform:uppercase; }
 .meta-value,.field-value { color:var(--ink); font-size:13px; line-height:1.55; }
+.chip { background:var(--blue-soft); border-radius:999px; color:var(--blue); display:inline-block; font-size:11px; font-weight:600; margin:2px 5px 2px 0; padding:3px 9px; }
 .split { border-bottom:1px solid var(--line); display:grid; grid-template-columns:1.36fr .84fr; margin:0 auto; max-width:1360px; }
 .split-main { border-right:1px solid var(--line); padding:57px 58px 56px 54px; }
 .split-side { background:var(--white); padding:55px 45px; }
@@ -53,23 +54,40 @@ h1 em { color:var(--blue); font-style:italic; }
 .field { border-bottom:1px solid var(--line); padding:0 0 24px; }
 .field + .field { padding-top:24px; }
 .field:last-child { border-bottom:0; }
+.field-value.accent { color:var(--blue); font-weight:600; }
+.participants { border-bottom:1px solid var(--line); margin:0 auto; max-width:1360px; padding:57px 54px; }
+.participant-grid { display:grid; gap:18px; grid-template-columns:repeat(auto-fit,minmax(280px,360px)); justify-content:center; margin:30px auto 0; max-width:1120px; }
+.participant-card { background:var(--white); border:1px solid var(--line); padding:27px 25px; }
+.participant-card h3 { color:var(--ink); font-size:17px; font-weight:600; line-height:1.4; margin-bottom:12px; }
+.participant-card p { font-size:14px; }
 .approach,.evidence,.results { border-bottom:1px solid var(--line); margin:0 auto; max-width:1360px; padding:57px 54px; }
-.steps { display:grid; gap:13px; grid-template-columns:repeat(5,minmax(0,1fr)); margin-top:31px; }
+.steps { display:grid; gap:14px; grid-template-columns:repeat(auto-fit,minmax(168px,198px)); justify-content:center; margin:31px auto 0; max-width:1120px; }
 .step,.result-card,.visual-card { background:var(--white); border:1px solid var(--line); }
 .step { padding:23px 19px; }
 .step-number { color:var(--blue); font-family:"Fraunces",Georgia,serif; font-size:28px; line-height:1; margin-bottom:14px; opacity:.7; }
-.step h3,.result-card h3 { font-size:15px; font-weight:650; line-height:1.45; margin-bottom:9px; }
+.step h3,.result-card h3 { font-size:14px; font-weight:650; line-height:1.42; margin-bottom:9px; }
 .step p { font-size:12px; line-height:1.62; }
 .visual-grid { display:grid; gap:18px; grid-template-columns:repeat(2,minmax(0,1fr)); margin-top:30px; }
 .visual-card { overflow:visible; }
-.visual-card.wide { grid-column:1 / -1; }
+.visual-card.wide,.visual-card.map,.visual-card.overview { grid-column:1 / -1; }
 .visual-card img { background:var(--white); height:auto; object-fit:contain; padding:16px; width:100%; }
+.visual-card.wide img,.visual-card.map img,.visual-card.overview img { padding:0; }
 .visual-card figcaption { background:var(--white); color:var(--quiet); font-size:12px; line-height:1.65; padding:15px 18px 18px; }
 .results { background:transparent; position:relative; z-index:0; }
 .results::before { background:var(--white); bottom:0; content:""; left:50%; position:absolute; top:0; transform:translateX(-50%); width:100vw; z-index:-1; }
 .results-grid { display:grid; gap:18px; grid-template-columns:repeat(3,1fr); margin-top:29px; }
 .result-card { background:var(--paper); padding:27px 25px; }
 .result-card p { font-size:14px; }
+.results-layout { align-items:stretch; display:grid; gap:42px; grid-template-columns:minmax(340px,.72fr) minmax(560px,1.18fr); justify-content:center; margin:30px auto 0; max-width:1120px; }
+.result-list { border:1px solid var(--line); display:grid; grid-template-rows:repeat(3,1fr); }
+.result-item { background:var(--paper); border-bottom:1px solid var(--line); display:flex; flex-direction:column; justify-content:center; padding:28px 25px; }
+.result-item:last-child { border-bottom:0; }
+.result-item p { font-size:13px; }
+.result-item h3 { color:var(--ink); font-size:16px; font-weight:600; line-height:1.45; margin-bottom:10px; }
+.flow-map-grid { display:grid; gap:17px; }
+.flow-map { background:var(--paper); border:1px solid var(--line); overflow:hidden; }
+.flow-map img { background:var(--white); display:block; height:auto; width:100%; }
+.flow-map .caption { margin:0; padding:13px 16px 16px; }
 .outcomes-panel { background:var(--paper); border:1px solid var(--line); margin-top:28px; padding:27px 30px 22px; }
 .outcomes-panel h3 { font-family:"Fraunces",Georgia,serif; font-size:25px; font-weight:500; letter-spacing:-.02em; line-height:1.25; margin-bottom:18px; }
 .outcomes-list { border-top:1px solid var(--line); }
@@ -80,8 +98,15 @@ h1 em { color:var(--blue); font-style:italic; }
 .impact { border-bottom:1px solid var(--line); display:grid; gap:34px; grid-template-columns:.82fr 1.18fr; margin:0 auto; max-width:1360px; padding:57px 54px; }
 .impact-copy { background:var(--blue-soft); border-left:3px solid var(--blue); padding:23px 25px; }
 .impact-copy p { font-size:15px; }
+.impact-flow { border-bottom:1px solid var(--line); margin:0 auto; max-width:1360px; padding:57px 54px; }
+.impact-flow-grid { display:grid; gap:16px; grid-template-columns:repeat(3,minmax(0,1fr)); margin-top:26px; }
+.impact-flow-card { background:var(--white); border:1px solid var(--line); min-height:210px; padding:24px 24px 25px; }
+.impact-flow-label { color:var(--blue); font-size:10px; font-weight:700; letter-spacing:.18em; margin-bottom:17px; text-transform:uppercase; }
+.impact-flow-card h3 { color:var(--ink); font-family:"Fraunces",Georgia,serif; font-size:23px; font-weight:500; letter-spacing:-.02em; line-height:1.25; margin-bottom:13px; }
+.impact-flow-card p { font-size:14px; line-height:1.72; }
 .reflection { border-bottom:1px solid var(--line); display:grid; gap:38px; grid-template-columns:215px 1fr; margin:0 auto; max-width:1360px; padding:57px 54px; }
 .quote-mark { color:var(--orange); font-family:"Fraunces",Georgia,serif; font-size:104px; line-height:.6; opacity:.45; }
+.reflection p:not(.quote) { max-width:760px; }
 .quote { color:var(--ink); font-family:"Fraunces",Georgia,serif; font-size:clamp(23px,2.35vw,30px); letter-spacing:-.02em; line-height:1.42; margin-bottom:20px; }
 .project-navigation { align-items:center; background:transparent; border-bottom:1px solid var(--line); display:flex; gap:28px; justify-content:space-between; margin:0 auto; max-width:1360px; padding:30px 54px; position:relative; z-index:0; }
 .project-navigation::before { background:var(--white); bottom:0; content:""; left:50%; position:absolute; top:0; transform:translateX(-50%); width:100vw; z-index:-1; }
@@ -95,11 +120,11 @@ h1 em { color:var(--blue); font-style:italic; }
 .footer-mark::before { background:var(--orange); content:""; display:block; height:2px; width:28px; }
 @media (max-width:980px) {
   .topbar,.footer { padding-left:28px; padding-right:28px; }
-  .hero,.split,.results-grid,.impact,.reflection { display:block; }
+  .hero,.split,.participant-grid,.results-grid,.results-layout,.flow-map-grid,.impact,.impact-flow-grid,.reflection { display:block; }
   .steps { grid-template-columns:repeat(2,minmax(0,1fr)); }
   .hero-photo { min-height:390px; }
   .hero-photo::before { background:linear-gradient(to bottom,transparent 60%,rgba(248,245,240,.22) 78%,var(--paper) 100%),linear-gradient(180deg,transparent 52%,rgba(16,58,100,.24) 100%); }
-  .hero-content,.split-main,.split-side,.approach,.evidence,.results,.impact,.reflection { padding:40px 28px; }
+  .hero-content,.split-main,.split-side,.participants,.approach,.evidence,.results,.impact,.impact-flow,.reflection { padding:40px 28px; }
   .split-main { border-bottom:1px solid var(--line); border-right:0; }
   .result-card { margin-bottom:17px; }
   .outcome-row { grid-template-columns:210px 1fr; }
@@ -112,7 +137,7 @@ h1 em { color:var(--blue); font-style:italic; }
   .meta-cell { border-right:0; }
   .meta-cell:nth-last-child(-n + 2) { border-bottom:1px solid var(--line); }
   .meta-cell:last-child { border-bottom:0; }
-  .step,.visual-card { margin-bottom:17px; }
+  .step,.participant-card,.visual-card,.flow-map,.impact-flow-card { margin-bottom:17px; }
   .outcomes-panel { padding:24px 22px 20px; }
   .outcome-row { display:block; padding:16px 0; }
   .outcome-label { margin-bottom:7px; }
@@ -127,7 +152,7 @@ h1 em { color:var(--blue); font-style:italic; }
   .hero { display:grid; grid-template-columns:minmax(390px,47%) 1fr; min-height:650px; }
   .hero-photo { min-height:650px; }
   .split { display:grid; grid-template-columns:1.36fr .84fr; }
-  .steps { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); }
+  .steps { display:grid; grid-template-columns:repeat(auto-fit,minmax(168px,198px)); justify-content:center; }
   .results-grid { display:grid; grid-template-columns:repeat(3,1fr); }
   .impact,.reflection { display:grid; }
   .impact { grid-template-columns:.82fr 1.18fr; }
@@ -136,7 +161,8 @@ h1 em { color:var(--blue); font-style:italic; }
 </style>
 </head>
 <body>
-<main class="page"><div class="language-panel" lang="en" data-language-panel="en">
+<main class="page">
+  <div class="language-panel" lang="en" data-language-panel="en">
     <header class="topbar">
       <a class="topbar-name" href="portfolio-case-studies.html">Alina Lagarde - Portfolio</a>
       <div class="topbar-info">
@@ -166,6 +192,7 @@ h1 em { color:var(--blue); font-style:italic; }
       </div>
       <aside class="split-side"><div class="field"><div class="field-label">Objective</div><div class="field-value">Launch optical e-commerce, build a contact lens subscription flow, and stand up a functioning product design team.</div></div><div class="field"><div class="field-label">Sourced via</div><div class="field-value">UX Republic</div></div><div class="field"><div class="field-label">Team</div><div class="field-value">Afflelou Digital internal team: PO, developers, marketing, change, and process.</div></div><div class="field"><div class="field-label">Domain</div><div class="field-value">B2C · Retail / Optics · E-commerce</div></div><div class="field"><div class="field-label">Constraints</div><div class="field-value">Franchise-first business model · external providers · no existing design tooling or culture · frequent management pivots.</div></div></aside>
     </section>
+    
     <section class="approach">
       <div class="section-label">Method and approach</div>
       <h2 class="section-title">An iterative design practice embedded<br>inside the delivery cycle.</h2>
@@ -176,44 +203,26 @@ h1 em { color:var(--blue); font-style:italic; }
     <section class="evidence">
       <div class="section-label">Project evidence</div>
       <h2 class="section-title">Research, co-design, and production<br>in the same operating rhythm.</h2>
-      <div class="visual-grid">
-        <figure class="visual-card workshop"><img src="assets/alain-afflelou/AA01.png" alt="Co-design workshop with internal stakeholders and field contributors."><figcaption>Co-design workshop with internal stakeholders and field contributors.</figcaption></figure>
-        <figure class="visual-card"><img src="assets/alain-afflelou/AA02.png" alt="Guerilla testing protocol and synthesis for the Magic eyewear journey."><figcaption>Guerilla testing protocol and synthesis for the Magic eyewear journey.</figcaption></figure>
-        <figure class="visual-card wide"><img src="assets/alain-afflelou/AA03.png" alt="Contact lens subscription experience, workshop evidence, user flows, and UI specifications."><figcaption>Contact lens subscription experience, workshop evidence, user flows, and UI specifications.</figcaption></figure>
-        <figure class="visual-card"><img src="assets/alain-afflelou/AA04.png" alt="Flow mapping used to make a complex purchasing journey visible and actionable."><figcaption>Flow mapping used to make a complex purchasing journey visible and actionable.</figcaption></figure>
-        <figure class="visual-card"><img src="assets/alain-afflelou/AA05.png" alt="Mobile Magic eyewear journey and high-fidelity interface variants."><figcaption>Mobile Magic eyewear journey and high-fidelity interface variants.</figcaption></figure>
-      </div>
+      <div class="visual-grid"><figure class="visual-card workshop"><img src="assets/alain-afflelou/AA01.png" alt="Co-design workshop with internal stakeholders and field contributors."><figcaption>Co-design workshop with internal stakeholders and field contributors.</figcaption></figure><figure class="visual-card"><img src="assets/alain-afflelou/AA02.png" alt="Guerilla testing protocol and synthesis for the Magic eyewear journey."><figcaption>Guerilla testing protocol and synthesis for the Magic eyewear journey.</figcaption></figure><figure class="visual-card wide"><img src="assets/alain-afflelou/AA03.png" alt="Contact lens subscription experience, workshop evidence, user flows, and UI specifications."><figcaption>Contact lens subscription experience, workshop evidence, user flows, and UI specifications.</figcaption></figure><figure class="visual-card"><img src="assets/alain-afflelou/AA04.png" alt="Flow mapping used to make a complex purchasing journey visible and actionable."><figcaption>Flow mapping used to make a complex purchasing journey visible and actionable.</figcaption></figure><figure class="visual-card"><img src="assets/alain-afflelou/AA05.png" alt="Mobile Magic eyewear journey and high-fidelity interface variants."><figcaption>Mobile Magic eyewear journey and high-fidelity interface variants.</figcaption></figure></div>
     </section>
     <section class="results">
       <div class="section-label">Results</div>
       <h2 class="section-title">A design capability built while<br>shipping product journeys.</h2>
-      <div class="results-grid"><article class="result-card"><h3>Delivered product scope</h3><p>Optical e-commerce flows · contact lens subscription · Malentille.com redesign.</p></article><article class="result-card"><h3>Shared design foundation</h3><p>UI Kit and design system with reusable components, patterns, principles, and UX/UI specifications.</p></article><article class="result-card"><h3>Operational practice</h3><p>Audit and roadmaps · research synthesis · workshop facilitation · provider handoffs · team coaching.</p></article></div>
-      <div class="outcomes-panel">
-        <h3>Key outcomes</h3>
-        <div class="outcomes-list">
-          <div class="outcome-row"><div class="outcome-label">Design practice</div><div class="outcome-value">Built from zero - 2 people trained and operational on Figma</div></div>
-          <div class="outcome-row"><div class="outcome-label">Front-end devs + POs</div><div class="outcome-value">Upskilled on product design, user research, and guerilla testing</div></div>
-          <div class="outcome-row"><div class="outcome-label">E-commerce flows shipped</div><div class="outcome-value">Contact lens subscription (Malentille.com) + Magic glasses offer</div></div>
-          <div class="outcome-row"><div class="outcome-label">Research strategy</div><div class="outcome-value">Designed for hearing aids launch - omnichannel, elderly users and caregivers</div></div>
-          <div class="outcome-row"><div class="outcome-label">Design system</div><div class="outcome-value">Initiated and formalized as a UI Kit - components, patterns, UX and UI specs</div></div>
-          <div class="outcome-row"><div class="outcome-label">Middle management</div><div class="outcome-value">Acculturated to UX, user research, design thinking, and lean</div></div>
-        </div>
-      </div>
+      <div class="results-grid"><article class="result-card"><h3>Delivered product scope</h3><p>Optical e-commerce flows · contact lens subscription · Malentille.com redesign.</p></article><article class="result-card"><h3>Shared design foundation</h3><p>UI Kit and design system with reusable components, patterns, principles, and UX/UI specifications.</p></article><article class="result-card"><h3>Operational practice</h3><p>Audit and roadmaps · research synthesis · workshop facilitation · provider handoffs · team coaching.</p></article></div><div class="outcomes-panel"><h3>Key outcomes</h3><div class="outcomes-list"><div class="outcome-row"><div class="outcome-label">Design practice</div><div class="outcome-value">Built from zero - 2 people trained and operational on Figma</div></div><div class="outcome-row"><div class="outcome-label">Front-end devs + POs</div><div class="outcome-value">Upskilled on product design, user research, and guerilla testing</div></div><div class="outcome-row"><div class="outcome-label">E-commerce flows shipped</div><div class="outcome-value">Contact lens subscription (Malentille.com) + Magic glasses offer</div></div><div class="outcome-row"><div class="outcome-label">Research strategy</div><div class="outcome-value">Designed for hearing aids launch - omnichannel, elderly users and caregivers</div></div><div class="outcome-row"><div class="outcome-label">Design system</div><div class="outcome-value">Initiated and formalized as a UI Kit - components, patterns, UX and UI specs</div></div><div class="outcome-row"><div class="outcome-label">Middle management</div><div class="outcome-value">Acculturated to UX, user research, design thinking, and lean</div></div></div></div>
     </section>
-    <section class="impact">
-      <div><div class="section-label">Impact</div><h2 class="section-title">From zero design practice<br>to an operational internal team.</h2></div>
-      <div class="impact-copy"><p>At the end of the mission, the team had a shared design reference, reusable tooling, production rituals, and people able to keep the practice moving.</p><p>The strongest signal that the foundation held: after the contractual clause period, Afflelou came back directly - without going through an agency - to finalize the design system and UI handoffs. The practice ran without the original designer.</p></div>
-    </section>
+    <section class="impact"><div><div class="section-label">Impact</div><h2 class="section-title">From zero design practice<br>to an operational internal team.</h2></div><div class="impact-copy"><p>At the end of the mission, the team had a shared design reference, reusable tooling, production rituals, and people able to keep the practice moving.</p><p>The strongest signal that the foundation held: after the contractual clause period, Afflelou came back directly - without going through an agency - to finalize the design system and UI handoffs. The practice ran without the original designer.</p></div></section>
     <section class="reflection">
       <div><div class="section-label">Takeaway</div><div class="quote-mark">&ldquo;</div></div>
-      <div><p class="quote">Starting with UI cleanup and quick-and-dirty fixes felt like a step down - work a junior could handle. It took time to see it for what it was: the only way in. In an organization with no design culture, you earn strategic scope by delivering on the mundane first. The design studio didn't happen despite the cleanup work - it happened because of it.</p><p>I now factor this in explicitly when scoping embedded missions: the first month buys the next six.</p></div>
+      <div><p>Starting with UI cleanup and quick-and-dirty fixes felt like a step down - work a junior could handle. It took time to see it for what it was: the only way in. In an organization with no design culture, you earn strategic scope by delivering on the mundane first. The design studio didn't happen despite the cleanup work - it happened because of it.</p><p class="quote">I now factor this in explicitly when scoping embedded missions: the first month buys the next six.</p></div>
     </section>
     <nav class="project-navigation" aria-label="Case study navigation">
       <a class="project-home" href="portfolio-case-studies.html">All projects</a>
       <a class="project-next" href="orange-sosh-case-study-v2.html"><span>Back to the first project</span><strong>Orange & Sosh &rarr;</strong></a>
     </nav>
     <footer class="footer"><span>Alina Lagarde - Product Design Portfolio - 2026</span><span class="footer-mark">Alain Afflelou - Design Studio setup</span></footer>
-  </div><div class="language-panel" lang="fr" data-language-panel="fr" hidden>
+  </div>
+
+  <div class="language-panel" lang="fr" data-language-panel="fr" hidden>
     <header class="topbar">
       <a class="topbar-name" href="portfolio-case-studies.html">Alina Lagarde - Portfolio</a>
       <div class="topbar-info">
@@ -243,6 +252,7 @@ h1 em { color:var(--blue); font-style:italic; }
       </div>
       <aside class="split-side"><div class="field"><div class="field-label">Objectif</div><div class="field-value">Lancer l'e-commerce optique, construire le parcours d'abonnement aux lentilles et mettre en place une équipe product design opérationnelle.</div></div><div class="field"><div class="field-label">Sourcé via</div><div class="field-value">UX Republic</div></div><div class="field"><div class="field-label">Équipe</div><div class="field-value">Équipe interne Afflelou Digital : PO, développeurs, marketing, conduite du changement et process.</div></div><div class="field"><div class="field-label">Domaine</div><div class="field-value">BtoC · Retail / Optique · E-commerce</div></div><div class="field"><div class="field-label">Contraintes</div><div class="field-value">Modèle centré franchises · prestataires externes · aucun outil ni culture design en place · pivots fréquents du management.</div></div></aside>
     </section>
+    
     <section class="approach">
       <div class="section-label">Méthode et approche</div>
       <h2 class="section-title">Une pratique design itérative intégrée<br>au cycle de livraison.</h2>
@@ -253,44 +263,25 @@ h1 em { color:var(--blue); font-style:italic; }
     <section class="evidence">
       <div class="section-label">Extraits du projet</div>
       <h2 class="section-title">Recherche, co-design et production<br>dans un même rythme opérationnel.</h2>
-      <div class="visual-grid">
-        <figure class="visual-card workshop"><img src="assets/alain-afflelou/AA01.png" alt="Atelier de co-design avec les parties prenantes internes et des contributeurs terrain."><figcaption>Atelier de co-design avec les parties prenantes internes et des contributeurs terrain.</figcaption></figure>
-        <figure class="visual-card"><img src="assets/alain-afflelou/AA02.png" alt="Protocole et synthèse de tests guerilla pour le parcours lunettes Magic."><figcaption>Protocole et synthèse de tests guerilla pour le parcours lunettes Magic.</figcaption></figure>
-        <figure class="visual-card wide"><img src="assets/alain-afflelou/AA03.png" alt="Expérience d'abonnement aux lentilles, traces d'atelier, parcours et spécifications UI."><figcaption>Expérience d'abonnement aux lentilles, traces d'atelier, parcours et spécifications UI.</figcaption></figure>
-        <figure class="visual-card"><img src="assets/alain-afflelou/AA04.png" alt="Cartographie du flow pour rendre visible et actionnable un parcours d'achat complexe."><figcaption>Cartographie du flow pour rendre visible et actionnable un parcours d'achat complexe.</figcaption></figure>
-        <figure class="visual-card"><img src="assets/alain-afflelou/AA05.png" alt="Parcours mobile Magic et variantes d'interfaces haute fidélité."><figcaption>Parcours mobile Magic et variantes d'interfaces haute fidélité.</figcaption></figure>
-      </div>
+      <div class="visual-grid"><figure class="visual-card workshop"><img src="assets/alain-afflelou/AA01.png" alt="Atelier de co-design avec les parties prenantes internes et des contributeurs terrain."><figcaption>Atelier de co-design avec les parties prenantes internes et des contributeurs terrain.</figcaption></figure><figure class="visual-card"><img src="assets/alain-afflelou/AA02.png" alt="Protocole et synthèse de tests guerilla pour le parcours lunettes Magic."><figcaption>Protocole et synthèse de tests guerilla pour le parcours lunettes Magic.</figcaption></figure><figure class="visual-card wide"><img src="assets/alain-afflelou/AA03.png" alt="Expérience d'abonnement aux lentilles, traces d'atelier, parcours et spécifications UI."><figcaption>Expérience d'abonnement aux lentilles, traces d'atelier, parcours et spécifications UI.</figcaption></figure><figure class="visual-card"><img src="assets/alain-afflelou/AA04.png" alt="Cartographie du flow pour rendre visible et actionnable un parcours d'achat complexe."><figcaption>Cartographie du flow pour rendre visible et actionnable un parcours d'achat complexe.</figcaption></figure><figure class="visual-card"><img src="assets/alain-afflelou/AA05.png" alt="Parcours mobile Magic et variantes d'interfaces haute fidélité."><figcaption>Parcours mobile Magic et variantes d'interfaces haute fidélité.</figcaption></figure></div>
     </section>
     <section class="results">
       <div class="section-label">Résultats</div>
       <h2 class="section-title">Construire une capacité design<br>tout en livrant les parcours produit.</h2>
-      <div class="results-grid"><article class="result-card"><h3>Scope produit livré</h3><p>Parcours e-commerce optique · abonnement lentilles · refonte Malentille.com.</p></article><article class="result-card"><h3>Socle design commun</h3><p>UI Kit et design system avec composants, patterns, principes et spécifications UX/UI réutilisables.</p></article><article class="result-card"><h3>Pratique opérationnelle</h3><p>Audit et roadmaps · synthèses de recherche · facilitation d'ateliers · handoffs prestataires · coaching d'équipe.</p></article></div>
-      <div class="outcomes-panel">
-        <h3>Résultats clés</h3>
-        <div class="outcomes-list">
-          <div class="outcome-row"><div class="outcome-label">Pôle design</div><div class="outcome-value">Constitué de zéro - 2 personnes formées et opérationnelles sur Figma</div></div>
-          <div class="outcome-row"><div class="outcome-label">Devs front + PO</div><div class="outcome-value">Montée en compétences sur le product design, la user research et le guerilla testing</div></div>
-          <div class="outcome-row"><div class="outcome-label">Parcours e-commerce livrés</div><div class="outcome-value">Abonnement lentilles (Malentille.com) + parcours offre lunettes Magic</div></div>
-          <div class="outcome-row"><div class="outcome-label">Stratégie de test</div><div class="outcome-value">Conçue pour la sortie prothèses auditives - omnicanal, personnes âgées et accompagnants</div></div>
-          <div class="outcome-row"><div class="outcome-label">Design system</div><div class="outcome-value">Initié et formalisé sous forme d'UI Kit - composants, patterns, spécifications UX/UI</div></div>
-          <div class="outcome-row"><div class="outcome-label">Middle management</div><div class="outcome-value">Acculturé à l'UX, la user research, le design thinking et le lean</div></div>
-        </div>
-      </div>
+      <div class="results-grid"><article class="result-card"><h3>Scope produit livré</h3><p>Parcours e-commerce optique · abonnement lentilles · refonte Malentille.com.</p></article><article class="result-card"><h3>Socle design commun</h3><p>UI Kit et design system avec composants, patterns, principes et spécifications UX/UI réutilisables.</p></article><article class="result-card"><h3>Pratique opérationnelle</h3><p>Audit et roadmaps · synthèses de recherche · facilitation d'ateliers · handoffs prestataires · coaching d'équipe.</p></article></div><div class="outcomes-panel"><h3>Résultats clés</h3><div class="outcomes-list"><div class="outcome-row"><div class="outcome-label">Pôle design</div><div class="outcome-value">Constitué de zéro - 2 personnes formées et opérationnelles sur Figma</div></div><div class="outcome-row"><div class="outcome-label">Devs front + PO</div><div class="outcome-value">Montée en compétences sur le product design, la user research et le guerilla testing</div></div><div class="outcome-row"><div class="outcome-label">Parcours e-commerce livrés</div><div class="outcome-value">Abonnement lentilles (Malentille.com) + parcours offre lunettes Magic</div></div><div class="outcome-row"><div class="outcome-label">Stratégie de test</div><div class="outcome-value">Conçue pour la sortie prothèses auditives - omnicanal, personnes âgées et accompagnants</div></div><div class="outcome-row"><div class="outcome-label">Design system</div><div class="outcome-value">Initié et formalisé sous forme d'UI Kit - composants, patterns, spécifications UX/UI</div></div><div class="outcome-row"><div class="outcome-label">Middle management</div><div class="outcome-value">Acculturé à l'UX, la user research, le design thinking et le lean</div></div></div></div>
     </section>
-    <section class="impact">
-      <div><div class="section-label">Impact</div><h2 class="section-title">De zéro pratique design<br>à une équipe interne opérationnelle.</h2></div>
-      <div class="impact-copy"><p>À la fin de la mission, l'équipe disposait d'une référence design commune, d'outils réutilisables, de rituels de production et de personnes capables de poursuivre la pratique.</p><p>Le signal le plus fort que les fondations ont tenu : après la période de clause contractuelle, Afflelou est revenu directement - sans passer par une agence - pour finaliser les parcours et les handoffs UI. La pratique a tenu sans la designer d'origine.</p></div>
-    </section>
+    <section class="impact"><div><div class="section-label">Impact</div><h2 class="section-title">De zéro pratique design<br>à une équipe interne opérationnelle.</h2></div><div class="impact-copy"><p>À la fin de la mission, l'équipe disposait d'une référence design commune, d'outils réutilisables, de rituels de production et de personnes capables de poursuivre la pratique.</p><p>Le signal le plus fort que les fondations ont tenu : après la période de clause contractuelle, Afflelou est revenu directement - sans passer par une agence - pour finaliser les parcours et les handoffs UI. La pratique a tenu sans la designer d'origine.</p></div></section>
     <section class="reflection">
       <div><div class="section-label">Apprentissage</div><div class="quote-mark">&ldquo;</div></div>
-      <div><p class="quote">Commencer par du nettoyage UI et du quick-and-dirty ressemblait à un déclassement - un travail qu'un junior aurait pu faire. Il a fallu du temps pour comprendre ce que c'était vraiment : la seule porte d'entrée. Dans une organisation sans culture design, on gagne de la portée stratégique en livrant d'abord sur le quotidien. Le pôle design n'est pas arrivé malgré le travail de nettoyage - il est arrivé grâce à lui.</p><p>Je l'intègre maintenant explicitement dans le cadrage des missions embarquées : le premier mois achète les six suivants.</p></div>
+      <div><p>Commencer par du nettoyage UI et du quick-and-dirty ressemblait à un déclassement - un travail qu'un junior aurait pu faire. Il a fallu du temps pour comprendre ce que c'était vraiment : la seule porte d'entrée. Dans une organisation sans culture design, on gagne de la portée stratégique en livrant d'abord sur le quotidien. Le pôle design n'est pas arrivé malgré le travail de nettoyage - il est arrivé grâce à lui.</p><p class="quote">Je l'intègre maintenant explicitement dans le cadrage des missions embarquées : le premier mois achète les six suivants.</p></div>
     </section>
     <nav class="project-navigation" aria-label="Navigation entre les projets">
       <a class="project-home" href="portfolio-case-studies.html">Tous les projets</a>
       <a class="project-next" href="orange-sosh-case-study-v2.html"><span>Retour au premier projet</span><strong>Orange & Sosh &rarr;</strong></a>
     </nav>
     <footer class="footer"><span>Alina Lagarde - Product Design Portfolio - 2026</span><span class="footer-mark">Alain Afflelou - Mise en place du Design Studio</span></footer>
-  </div></main>
+  </div>
+</main>
 <script>
   const languagePanels = document.querySelectorAll("[data-language-panel]");
   const languageOptions = document.querySelectorAll("[data-language-option]");

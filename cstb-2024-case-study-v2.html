@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CSTB - Programme RESTORE - Alina Lagarde</title>
+<title>CSTB - Programme RESTORE V2 - Alina Lagarde</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,500&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
@@ -1524,66 +1524,18 @@ h1 em {
 <script>
   const languagePanels = document.querySelectorAll("[data-language-panel]");
   const languageOptions = document.querySelectorAll("[data-language-option]");
-  const languageStorageKey = "portfolioLanguage";
-  const supportedLanguages = ["en", "fr"];
-
-  function isSupportedLanguage(language) {
-    return supportedLanguages.includes(language);
-  }
-
-  function getUrlLanguage() {
-    const language = new URLSearchParams(window.location.search).get("lang");
-    return isSupportedLanguage(language) ? language : null;
-  }
-
-  function getStoredLanguage() {
-    try {
-      const language = window.localStorage.getItem(languageStorageKey);
-      return isSupportedLanguage(language) ? language : null;
-    } catch (error) {
-      return null;
-    }
-  }
-
-  function storeLanguage(language) {
-    try {
-      window.localStorage.setItem(languageStorageKey, language);
-    } catch (error) {
-      // Ignore storage errors so the language switch still works in restricted contexts.
-    }
-  }
-
-  function addLanguageToHref(href, language) {
-    if (!href || href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:")) return href;
-    if (!href.includes(".html")) return href;
-
-    const [beforeHash, hash = ""] = href.split("#");
-    const [pathname, query = ""] = beforeHash.split("?");
-    const params = new URLSearchParams(query);
-    params.set("lang", language);
-
-    return pathname + "?" + params.toString() + (hash ? "#" + hash : "");
-  }
-
-  function updateInternalLanguageLinks(language) {
-    document.querySelectorAll("a[href]").forEach((link) => {
-      const href = link.getAttribute("href");
-      const nextHref = addLanguageToHref(href, language);
-      if (nextHref !== href) link.setAttribute("href", nextHref);
-    });
-  }
 
   function setLanguage(language) {
-    const nextLanguage = isSupportedLanguage(language) ? language : "en";
-    document.documentElement.lang = nextLanguage;
-    languagePanels.forEach((panel) => { panel.hidden = panel.dataset.languagePanel !== nextLanguage; });
+    document.documentElement.lang = language;
+    languagePanels.forEach((panel) => {
+      panel.hidden = panel.dataset.languagePanel !== language;
+    });
+
     languageOptions.forEach((option) => {
-      const isActive = option.dataset.languageOption === nextLanguage;
+      const isActive = option.dataset.languageOption === language;
       option.classList.toggle("is-active", isActive);
       option.setAttribute("aria-pressed", String(isActive));
     });
-    storeLanguage(nextLanguage);
-    updateInternalLanguageLinks(nextLanguage);
   }
 
   languageOptions.forEach((option) => {
@@ -1592,7 +1544,7 @@ h1 em {
     });
   });
 
-  setLanguage(getUrlLanguage() || getStoredLanguage() || "en");
+  setLanguage("en");
 </script>
 </body>
 </html>

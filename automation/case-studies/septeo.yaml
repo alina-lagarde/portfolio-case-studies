@@ -1,0 +1,330 @@
+slug: septeo
+template: standard-case-study
+language_default: en
+page_title: Septeo ADB - Alina Lagarde
+
+title_fr: Event Storming prospectif pour une roadmap IA-centric
+title_en: Prospective Event Storming for an AI-centric roadmap
+
+client: Septeo-ADB
+sector_fr: Logiciel de gestion immobilière
+sector_en: Property management software
+role_fr: Lead Facilitator / Service Designer
+role_en: Lead Facilitator / Service Designer
+format_fr: 2 jours - Présentiel
+format_en: 2 days - On-site
+status_fr: Terminé
+status_en: Complete
+sourcing_fr: Globant
+sourcing_en: Globant
+team_fr: Dounia Hamza · équipes Septeo-ADB
+team_en: Dounia Hamza · Septeo-ADB teams
+domain_fr: B2B SaaS - Immobilier / Comptabilité
+domain_en: B2B SaaS - Real estate / Accounting
+main_outputs_fr: Cartographie JTBD · 4 flux Event Storming · Fiches synthèse actionnables
+main_outputs_en: JTBD mapping · 4 Event Storming flows · Actionable summary cards
+
+labels:
+  topbar_fr: Service Design - Cas client
+  topbar_en: Service Design - Case Study
+  approach_fr: Approche
+  approach_en: Approach
+  evidence_fr: Preuves d'atelier
+  evidence_en: Workshop Evidence
+  results_fr: Résultats
+  results_en: Results
+  reflection_fr: Apprentissages
+  reflection_en: Learnings
+
+hero:
+  image: assets/septeo/hero-workshop-photo.jpg
+  alt_fr: Participants Septeo devant le board d'atelier Event Storming
+  alt_en: Septeo participants reviewing the Event Storming workshop board
+  eyebrow_fr: Septeo-ADB x Globant - Juin 2025
+  eyebrow_en: Septeo-ADB x Globant - June 2025
+  title_fr_html: <em>Event Storming</em><br>prospectif pour une<br>roadmap IA-centric
+  title_en_html: Prospective<br><em>Event Storming</em><br>for an AI-centric roadmap
+  lead_fr: Cartographie des flux métiers cibles pour une refonte comptable post-acquisition - 2 jours, restitution Miro, 4 flux cartographiés.
+  lead_en: Target business workflow mapping for a post-acquisition accounting redesign - 2 days, Miro restitution, 4 mapped flows.
+
+meta_cells_fr:
+  - label: Client
+    value: "Septeo-ADB\nLogiciel de gestion immobilière"
+  - label: Mon rôle
+    value: "Lead Facilitator\net Service Designer"
+  - label: Format
+    value: 2 jours - Présentiel
+  - label: Méthodes
+    chips:
+      - Event Storming
+      - JTBD
+      - Dot voting
+  - label: Statut
+    value: Terminé
+  - label: Livrables principaux
+    value: Cartographie JTBD · 4 flux Event Storming · Fiches synthèse actionnables
+meta_cells_en:
+  - label: Client
+    value: "Septeo-ADB\nProperty management software"
+  - label: My role
+    value: "Lead Facilitator\nand Service Designer"
+  - label: Format
+    value: 2 days - On-site
+  - label: Methods
+    chips:
+      - Event Storming
+      - JTBD
+      - Dot voting
+  - label: Status
+    value: Complete
+  - label: Main outputs
+    value: JTBD mapping · 4 Event Storming flows · Actionable summary cards
+
+context:
+  title_fr: Un écart post-acquisition à combler, une vision IA-centric à définir.
+  title_en: A post-acquisition gap to close, an AI-centric vision to define.
+  title_fr_html: Un écart post-acquisition à combler,<br>une vision IA-centric à définir.
+  title_en_html: A post-acquisition gap to close,<br>an AI-centric vision to define.
+  paragraphs_fr_html:
+    - >-
+      Septeo-ADB, leader français des logiciels pour administrateurs de biens
+      <strong>(3 200 agences, 150 000 utilisateurs)</strong>, venait d'acquérir un
+      nouveau produit comptable pour consolider ses deux métiers clés : la gestion
+      de copropriété <strong>(Syndic)</strong> et la gestion locative.
+    - "Le produit acquis couvrait environ <strong>90 % du périmètre Syndic, mais seulement 50 à 60 % de la gestion locative</strong>. L'objectif : définir des flux métiers cibles indépendamment des outils existants, identifier les fonctionnalités manquantes et prioriser le développement dans une logique « IA-centric »."
+  paragraphs_en_html:
+    - >-
+      Septeo-ADB, the French market leader in property management software
+      <strong>(3,200 agencies, 150,000 users)</strong>, had just acquired a new
+      accounting product to consolidate both its core domains: co-ownership management
+      <strong>(Syndic)</strong> and rental management.
+    - "The acquired product covered approximately <strong>90% of the Syndic scope but only 50-60% of rental management</strong>. The goal: define target business workflows independently of existing tools, identify missing features, and prioritize development in an \"AI-centric\" logic."
+  challenge_fr: Les interviews utilisateurs avaient été refusées pour des raisons budgétaires ; la connaissance métier initiale était minimale.
+  challenge_en: User interviews had been refused for budget reasons; initial domain knowledge was minimal.
+  callout_fr:
+    - label: Le véritable défi.
+      text: "Les interviews utilisateurs avaient été refusées pour des raisons budgétaires : nous sommes arrivées avec une connaissance métier minimale. L'interlocuteur client était peu familier des approches centrées utilisateur."
+    - label: Pivot au premier jour.
+      text: Les deux ateliers étaient initialement conçus selon la même structure. Dès la première matinée, les cas d'usage Syndic et Gestion locative se sont révélés nettement différents. Le programme du second atelier a été revu en fin de première journée, avec les participants métier présents sur les deux sessions.
+  callout_en:
+    - label: The real challenge.
+      text: User interviews had been refused for budget reasons - we arrived with minimal domain knowledge. The client contact was unfamiliar with user-centered approaches.
+    - label: Day one pivot.
+      text: The two workshops were initially identical in structure. From the first morning, Syndic and rental management use cases diverged significantly. The second workshop agenda was revised at the end of day one, with business participants attending both sessions.
+
+objective_fr: Cartographier des flux comptables cibles indépendamment des outils existants, identifier les fonctionnalités manquantes et cadrer la roadmap IA-centric.
+objective_en: Map target accounting flows independent of existing tools, identify missing features, and frame the "AI-centric" product roadmap.
+constraints_fr: Interviews utilisateurs refusées · connaissance métier minimale au départ · adaptation du second atelier après le premier jour.
+constraints_en: User interviews refused · minimal initial domain knowledge · second workshop adapted after day one.
+
+side_fields_fr:
+  - label: Objectif
+    value: Cartographier des flux comptables cibles indépendamment des outils existants, identifier les fonctionnalités manquantes et cadrer la roadmap IA-centric.
+  - label: Mission via
+    value: Globant
+  - label: Co-facilitatrice
+    value: Dounia Hamza
+  - label: Domaine
+    value: B2B SaaS - Immobilier / Comptabilité
+  - label: Livrable
+    value: 4 flux cartographiés + fiches synthèse actionnables
+    highlight: true
+side_fields_en:
+  - label: Objective
+    value: Map target accounting flows independent of existing tools, identify missing features, and frame the "AI-centric" product roadmap.
+  - label: Sourced via
+    value: Globant
+  - label: Co-facilitator
+    value: Dounia Hamza
+  - label: Domain
+    value: B2B SaaS - Real estate / Accounting
+  - label: Deliverable
+    value: 4 mapped flows + actionable summary cards
+    highlight: true
+
+participants:
+  title_fr: Deux groupes de 8 à 9 personnes aux profils hétérogènes.
+  title_en: Two groups of 8 to 9 people with varied profiles.
+  intro_fr: Les utilisateurs finaux étaient minoritaires, mais en position clé pour la vision terrain et la priorisation des flux.
+  intro_en: End users were in the minority but held a key position for field insight and flow prioritization.
+  cards_fr:
+    - title: Métier et produit
+      chips:
+        - PM
+        - PO
+        - CTO
+        - Consultants métier
+        - Formation
+        - Support
+    - title: Utilisateurs finaux - voix clé
+      chips:
+        - Administrateurs de biens
+        - 2-3 par atelier
+      text: En position minoritaire, mais avec un rôle clé pour prioriser les flux au plus près des besoins terrain.
+  cards_en:
+    - title: Business and Product
+      chips:
+        - PM
+        - PO
+        - CTO
+        - Business consultants
+        - Training
+        - Support
+    - title: End users - key voice
+      chips:
+        - Property managers
+        - 2-3 per workshop
+      text: In a minority position, but with a key role in prioritizing flows according to field needs.
+
+approach:
+  title_fr: 5 étapes par jour - du contexte brut à une entrée de roadmap IA.
+  title_en: 5 stages per day - from raw context to AI-ready roadmap input.
+  title_fr_html: 5 étapes par jour - du contexte brut à une entrée de roadmap IA.
+  title_en_html: 5 stages per day - from raw context to AI-ready roadmap input.
+  intro_fr: Chaque atelier suivait une progression structurée, de la construction collective du contexte à des livrables actionnables. La dimension prospective, imaginer les flux cibles sans contrainte de l'outil actuel, était intégrée à la phase 4 avec un focus sur les candidats à l'automatisation ou à l'assistance IA.
+  intro_en: Each workshop followed a structured arc, moving from collective sense-making to concrete actionable outputs. The prospective dimension - imagining target flows unconstrained by the current tool - was embedded in stage 4, with a focus on identifying candidates for AI automation or assistance.
+  intro_fr_html: Chaque atelier suivait une progression structurée, de la construction collective du contexte à des livrables actionnables. La dimension <strong>prospective</strong>, imaginer les flux cibles sans contrainte de l'outil actuel, était intégrée à la phase 4 avec un focus sur les candidats à <strong>l'automatisation ou à l'assistance IA.</strong>
+  intro_en_html: Each workshop followed a structured arc, moving from collective sense-making to concrete actionable outputs. The <strong>prospective dimension</strong> - imagining target flows unconstrained by the current tool - was embedded in stage 4, with a focus on identifying candidates for <strong>AI automation or assistance.</strong>
+  show_tools_line: false
+  tools_fr: Event Storming · JTBD · Dot voting
+  tools_en: Event Storming · JTBD · Dot voting
+  steps:
+    - step: "01"
+      title_fr: Introduction et icebreaker
+      title_en: Intro and icebreaker
+      text_fr: Objectifs, règles de co-création et alignement du groupe.
+      text_en: Objectives, co-creation rules, getting the room aligned.
+    - step: "02"
+      title_fr: Jobs to be done et macro-flux
+      title_en: Jobs-to-be-done and macro flows
+      text_fr: Identifier les JTBD et les traduire en flux métiers candidats.
+      text_en: Identifying JTBDs, translating into business flow candidates.
+    - step: "03"
+      title_fr: Priorisation par vote
+      title_en: Prioritization by vote
+      text_fr: Vote des utilisateurs finaux pour classer les flux selon leur impact terrain.
+      text_en: End users only - dot voting to rank flows by real-world impact.
+    - step: "04"
+      title_fr: Event Storming en sous-groupes
+      title_en: Event Storming in sub-groups
+      text_fr: Événements, commandes, acteurs, systèmes, règles, hotspots et idées IA.
+      text_en: Events, commands, actors, systems, rules, hotspots and AI ideas.
+    - step: "05"
+      title_fr: Pitch et débrief collectif
+      title_en: Plenary pitch and debrief
+      text_fr: Présentation de chaque sous-groupe et rétrospective à chaud.
+      text_en: Each sub-group presents - hot retrospective with all participants.
+
+evidence:
+  title_fr: Workspace Miro - vue d'ensemble de la restitution.
+  title_en: Miro workspace - full restitution overview.
+  title_fr_html: Workspace Miro - vue d'ensemble de la restitution.
+  title_en_html: Miro workspace - full restitution overview.
+
+evidence_images:
+  - file: assets/septeo/miro-overview.png
+    class: overview
+    alt_fr: Vue d'ensemble de la restitution Miro Septeo
+    alt_en: Miro restitution overview
+    caption_fr: Board de restitution des deux journées - Syndic en haut et Gestion locative en bas. Chaque section couvre le parcours complet, des JTBD aux cartes de flux priorisées.
+    caption_en: Two-day restitution board - Syndic (top) and Rental management (bottom). Each section covers the full arc from JTBDs to prioritized flow maps.
+
+results:
+  layout: flow_maps
+  title_fr: Des décisions exploitables pour la roadmap IA-centric.
+  title_en: Directly usable input for an AI-centric roadmap.
+  title_fr_html: Des décisions exploitables pour la roadmap IA-centric.
+  title_en_html: Directly usable input for an AI-centric roadmap.
+  flow_maps_label_fr: Cartes de flux métiers cibles
+  flow_maps_label_en: Target business flow maps
+  items_fr:
+    - label: Résultat 01
+      title: Jobs-to-be-done métier
+      text: Cartographie exhaustive de tous les jobs-to-be-done métier pour la gestion locative et les syndics (partie comptable) ; base commune construite avec les utilisateurs finaux avant toute contrainte outil.
+    - label: Résultat 02
+      title: 4 flux prioritaires cartographiés
+      text: "4 flux prioritaires (critiques et récurrents) cartographiés en détail via Event Storming : événements, commandes, acteurs, systèmes, règles, hotspots et opportunités d'innovation ; restitués en fiches synthèse actionnables avec candidats à l'automatisation IA flux par flux."
+    - label: Résultat 03
+      title: Priorisation terrain
+      text: Priorisation et pitch des évolutions majeures effectués par les administrateurs de biens via dot voting ; décisions de roadmap ancrées dans le terrain, pas dans les hypothèses produit.
+  items_en:
+    - label: Result 01
+      title: Business jobs-to-be-done
+      text: Full mapping of business jobs-to-be-done across rental management and co-ownership (accounting scope) ; shared foundation built with end users before any tool constraint.
+    - label: Result 02
+      title: 4 priority flows mapped
+      text: "4 priority flows (critical and recurring) mapped in detail via Event Storming: events, commands, actors, systems, rules, hotspots and innovation opportunities ; delivered as actionable summary cards with AI automation candidates identified step by step."
+    - label: Result 03
+      title: Field-grounded prioritization
+      text: Major workflow improvements prioritized and pitched by property managers via dot voting ; roadmap decisions grounded in field reality, not product assumptions.
+  flow_maps:
+    - file: assets/septeo/annual-balance-syndic.png
+      alt_fr: Bilan annuel - Syndic
+      alt_en: Bilan annuel - Syndic
+      caption_fr: Flux bilan annuel - Syndic
+      caption_en: Annual balance flow - Syndic
+    - file: assets/septeo/annual-accounting-rental.png
+      alt_fr: Traitement comptable annuel - Gestion locative
+      alt_en: Traitement comptable annuel - Gestion locative
+      caption_fr: Flux traitement comptable annuel - Gestion locative
+      caption_en: Annual accounting flow - Rental management
+  blocks_fr:
+    - title: Résultats
+      text: Voir les résultats détaillés.
+  blocks_en:
+    - title: Results
+      text: See detailed results.
+
+key_outcomes_fr:
+  - label: Résultat 01
+    text: Jobs-to-be-done métier cartographiés.
+key_outcomes_en:
+  - label: Result 01
+    text: Business jobs-to-be-done mapped.
+
+impact:
+  style: flow
+  title_fr: Des flux cibles aux écarts de développement.
+  title_en: From target flows to development gaps.
+  title_fr_html: Des flux cibles aux écarts de développement.
+  title_en_html: From target flows to development gaps.
+  before_fr: Le logiciel couvrait une partie du périmètre, mais les écarts restants devaient être objectivés à partir des flux métiers cibles.
+  before_en: The software covered part of the scope, but remaining gaps had to be objectified through target business workflows.
+  decision_fr: Les flux cartographiés ont permis de croiser besoins métier, fonctionnalités existantes et candidats à l'automatisation IA.
+  decision_en: The mapped flows made it possible to cross-reference business needs, existing features and AI automation candidates.
+  effect_fr: Les équipes produit ont pu prioriser à l'échelle des workflows, pas sous forme de demandes abstraites. Pas de retour sur l'implémentation à ce stade.
+  effect_en: Product teams could prioritize at workflow level, not through abstract feature requests. No follow-up on implementation received since delivery.
+  cards_fr:
+    - label: Avant
+      title: Un produit acquis à confronter au terrain
+      text: Le logiciel couvrait une partie du périmètre, mais les écarts restants devaient être objectivés à partir des flux métiers cibles.
+    - label: Décision
+      title: Des fiches synthèse actionnables
+      text: Les flux cartographiés ont permis de croiser besoins métier, fonctionnalités existantes et candidats à l'automatisation IA.
+    - label: Effet
+      title: Une priorisation plus opérationnelle
+      text: Les équipes produit ont pu prioriser à l'échelle des workflows, pas sous forme de demandes abstraites. Pas de retour sur l'implémentation à ce stade.
+  cards_en:
+    - label: Before
+      title: An acquired product to confront with field reality
+      text: The software covered part of the scope, but remaining gaps had to be objectified through target business workflows.
+    - label: Decision
+      title: Actionable summary cards
+      text: The mapped flows made it possible to cross-reference business needs, existing features and AI automation candidates.
+    - label: Effect
+      title: More operational prioritization
+      text: Product teams could prioritize at workflow level, not through abstract feature requests. No follow-up on implementation received since delivery.
+
+takeaway_fr:
+  - text: Séparer la cartographie de l'existant, menée avec les équipes métier et produit, de la phase prospective, menée avec davantage d'utilisateurs finaux, aurait rendu les deux exercices plus efficaces.
+  - text: Une session d'interviews métier en amont, même courte, aurait réduit significativement le temps de montée en contexte. Ce sont des points de cadrage à intégrer systématiquement dans les prochaines propositions.
+    highlight: true
+takeaway_en:
+  - text: Separating existing-state mapping with business and product teams from the prospective phase with more end users would have made both exercises more effective.
+  - text: A short upfront business interview session would have significantly reduced context-building time. These are framing points to integrate systematically into future proposals.
+    highlight: true
+
+footer_mark_fr: Septeo-ADB - Cas client
+footer_mark_en: Septeo-ADB - Case Study
+footer_text_fr: Alina Lagarde - Portfolio de Service Design - 2026
+footer_text_en: Alina Lagarde - Service Design Portfolio - 2026

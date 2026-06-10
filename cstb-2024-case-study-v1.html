@@ -293,17 +293,6 @@ h1 em {
   line-height: 1.55;
 }
 
-.metadata.has-status .meta-cell:nth-last-child(-n + 2) {
-  border-bottom: 1px solid var(--line);
-}
-
-.metadata.has-status .meta-cell.status {
-  border-bottom: 0;
-  border-right: 0;
-  grid-column: 1 / -1;
-  min-height: 66px;
-}
-
 .chip {
   background: var(--accent-soft);
   border-radius: 999px;
@@ -655,56 +644,6 @@ h1 em {
   font-size: 14px;
 }
 
-.outcomes-panel {
-  background: var(--paper);
-  border: 1px solid var(--line);
-  margin-top: 28px;
-  padding: 27px 30px 22px;
-}
-
-.outcomes-panel h3 {
-  color: var(--ink);
-  font-family: "Fraunces", Georgia, serif;
-  font-size: 25px;
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  line-height: 1.25;
-  margin-bottom: 18px;
-}
-
-.outcomes-list {
-  border-top: 1px solid var(--line);
-}
-
-.outcome-row {
-  align-items: start;
-  border-bottom: 1px solid var(--line);
-  display: grid;
-  gap: 24px;
-  grid-template-columns: 235px 1fr;
-  padding: 15px 0;
-}
-
-.outcome-row:last-child {
-  border-bottom: 0;
-  padding-bottom: 0;
-}
-
-.outcome-label {
-  color: var(--accent);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  line-height: 1.45;
-  text-transform: uppercase;
-}
-
-.outcome-value {
-  color: var(--copy);
-  font-size: 14px;
-  line-height: 1.65;
-}
-
 .reflection {
   border-bottom: 1px solid var(--line);
   display: grid;
@@ -883,10 +822,6 @@ h1 em {
     margin-bottom: 17px;
   }
 
-  .outcome-row {
-    grid-template-columns: 210px 1fr;
-  }
-
   .step {
     margin-bottom: 0;
   }
@@ -934,27 +869,6 @@ h1 em {
 
   .meta-cell:last-child {
     border-bottom: 0;
-  }
-
-  .metadata.has-status .meta-cell:nth-last-child(-n + 2) {
-    border-bottom: 1px solid var(--line);
-  }
-
-  .metadata.has-status .meta-cell.status {
-    border-bottom: 0;
-  }
-
-  .outcomes-panel {
-    padding: 24px 22px 20px;
-  }
-
-  .outcome-row {
-    display: block;
-    padding: 16px 0;
-  }
-
-  .outcome-label {
-    margin-bottom: 7px;
   }
 }
 
@@ -1106,7 +1020,7 @@ h1 em {
         <div class="eyebrow">CSTB / RESTORE - User Research Strategy</div>
         <h1><em>Cartographier</em><br>un écosystème métier<br>complexe</h1>
         <p class="hero-lead">Pour cadrer une roadmap d'outils IA-centric destinés à la rénovation énergétique des maisons individuelles.</p>
-        <div class="metadata has-status">
+        <div class="metadata">
           <div class="meta-cell">
             <div class="meta-label">Client</div>
             <div class="meta-value">CSTB<br>Centre Scientifique et Technique du Bâtiment</div>
@@ -1127,10 +1041,6 @@ h1 em {
               <span class="chip">Focus groups</span>
               <span class="chip">Concept testing</span>
             </div>
-          </div>
-          <div class="meta-cell status">
-            <div class="meta-label">Statut</div>
-            <div class="meta-value">Terminé</div>
           </div>
         </div>
       </div>
@@ -1266,16 +1176,6 @@ h1 em {
           <p>Plusieurs autres outils, dont un estimateur financier, ont été développés et livrés sans tests utilisateurs.</p>
         </article>
       </div>
-      <div class="outcomes-panel">
-        <h3>Résultats clés</h3>
-        <div class="outcomes-list">
-          <div class="outcome-row"><div class="outcome-label">Segments cibles</div><div class="outcome-value">Cartographie des segments cibles professionnels : architectes, artisans, conseillers, ensembliers et entreprises BTP.</div></div>
-          <div class="outcome-row"><div class="outcome-label">Parcours comparés</div><div class="outcome-value">Parcours comparés par segment lors d'une rénovation de maison individuelle, avec identification des frictions et des moments clés.</div></div>
-          <div class="outcome-row"><div class="outcome-label">Écosystème d'outils</div><div class="outcome-value">Mapping de l'écosystème d'outils de veille professionnelle par segment.</div></div>
-          <div class="outcome-row"><div class="outcome-label">Concepts CSTB</div><div class="outcome-value">Évaluation de l'appétence pour les concepts d'outils CSTB : identification des moments d'usage opportuns et pistes d'amélioration.</div></div>
-          <div class="outcome-row"><div class="outcome-label">Transfert</div><div class="outcome-value">Transfert de compétences user research auprès des équipes client CSTB.</div></div>
-        </div>
-      </div>
     </section>
 
     <section class="reflection">
@@ -1324,7 +1224,7 @@ h1 em {
         <div class="eyebrow">CSTB / RESTORE - User Research Strategy</div>
         <h1><em>Mapping</em><br>a complex professional<br>ecosystem</h1>
         <p class="hero-lead">To frame an AI-centric tool roadmap for the energy renovation of individual homes.</p>
-        <div class="metadata has-status">
+        <div class="metadata">
           <div class="meta-cell">
             <div class="meta-label">Client</div>
             <div class="meta-value">CSTB<br>Scientific and Technical Centre for Building</div>
@@ -1345,10 +1245,6 @@ h1 em {
               <span class="chip">Focus groups</span>
               <span class="chip">Concept testing</span>
             </div>
-          </div>
-          <div class="meta-cell status">
-            <div class="meta-label">Status</div>
-            <div class="meta-value">Complete</div>
           </div>
         </div>
       </div>
@@ -1484,16 +1380,6 @@ h1 em {
           <p>Several other tools, including a financial estimator, were developed and shipped without user testing.</p>
         </article>
       </div>
-      <div class="outcomes-panel">
-        <h3>Key outcomes</h3>
-        <div class="outcomes-list">
-          <div class="outcome-row"><div class="outcome-label">Target segments</div><div class="outcome-value">Mapping of professional target segments: architects, artisans, advisors, turnkey renovation providers and construction companies.</div></div>
-          <div class="outcome-row"><div class="outcome-label">Compared journeys</div><div class="outcome-value">Segment-by-segment comparison of journeys during an individual home renovation, with friction points and key moments identified.</div></div>
-          <div class="outcome-row"><div class="outcome-label">Tool ecosystem</div><div class="outcome-value">Mapping of the professional monitoring and watch-tool ecosystem by segment.</div></div>
-          <div class="outcome-row"><div class="outcome-label">CSTB concepts</div><div class="outcome-value">Evaluation of appetite for CSTB tool concepts: identification of relevant usage moments and improvement leads.</div></div>
-          <div class="outcome-row"><div class="outcome-label">Research transfer</div><div class="outcome-value">User research skills transfer to the CSTB client teams.</div></div>
-        </div>
-      </div>
     </section>
 
     <section class="reflection">
@@ -1524,66 +1410,18 @@ h1 em {
 <script>
   const languagePanels = document.querySelectorAll("[data-language-panel]");
   const languageOptions = document.querySelectorAll("[data-language-option]");
-  const languageStorageKey = "portfolioLanguage";
-  const supportedLanguages = ["en", "fr"];
-
-  function isSupportedLanguage(language) {
-    return supportedLanguages.includes(language);
-  }
-
-  function getUrlLanguage() {
-    const language = new URLSearchParams(window.location.search).get("lang");
-    return isSupportedLanguage(language) ? language : null;
-  }
-
-  function getStoredLanguage() {
-    try {
-      const language = window.localStorage.getItem(languageStorageKey);
-      return isSupportedLanguage(language) ? language : null;
-    } catch (error) {
-      return null;
-    }
-  }
-
-  function storeLanguage(language) {
-    try {
-      window.localStorage.setItem(languageStorageKey, language);
-    } catch (error) {
-      // Ignore storage errors so the language switch still works in restricted contexts.
-    }
-  }
-
-  function addLanguageToHref(href, language) {
-    if (!href || href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:")) return href;
-    if (!href.includes(".html")) return href;
-
-    const [beforeHash, hash = ""] = href.split("#");
-    const [pathname, query = ""] = beforeHash.split("?");
-    const params = new URLSearchParams(query);
-    params.set("lang", language);
-
-    return pathname + "?" + params.toString() + (hash ? "#" + hash : "");
-  }
-
-  function updateInternalLanguageLinks(language) {
-    document.querySelectorAll("a[href]").forEach((link) => {
-      const href = link.getAttribute("href");
-      const nextHref = addLanguageToHref(href, language);
-      if (nextHref !== href) link.setAttribute("href", nextHref);
-    });
-  }
 
   function setLanguage(language) {
-    const nextLanguage = isSupportedLanguage(language) ? language : "en";
-    document.documentElement.lang = nextLanguage;
-    languagePanels.forEach((panel) => { panel.hidden = panel.dataset.languagePanel !== nextLanguage; });
+    document.documentElement.lang = language;
+    languagePanels.forEach((panel) => {
+      panel.hidden = panel.dataset.languagePanel !== language;
+    });
+
     languageOptions.forEach((option) => {
-      const isActive = option.dataset.languageOption === nextLanguage;
+      const isActive = option.dataset.languageOption === language;
       option.classList.toggle("is-active", isActive);
       option.setAttribute("aria-pressed", String(isActive));
     });
-    storeLanguage(nextLanguage);
-    updateInternalLanguageLinks(nextLanguage);
   }
 
   languageOptions.forEach((option) => {
@@ -1592,7 +1430,7 @@ h1 em {
     });
   });
 
-  setLanguage(getUrlLanguage() || getStoredLanguage() || "en");
+  setLanguage("en");
 </script>
 </body>
 </html>

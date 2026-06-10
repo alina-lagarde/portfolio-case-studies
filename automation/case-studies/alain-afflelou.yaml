@@ -1,0 +1,290 @@
+slug: alain-afflelou
+template: standard-case-study
+language_default: en
+page_title: Alain Afflelou - Design Studio setup - Alina Lagarde
+
+title_fr: Construire une pratique product design à partir de zéro.
+title_en: Building a product design practice from scratch.
+
+client: Alain Afflelou
+sector_fr: Optique / Retail BtoC
+sector_en: Optics / B2C Retail
+role_fr: Lead Product Designer / Designer intégrée en solo, puis lead d'équipe
+role_en: Lead Product Designer / Solo embedded designer, then team lead
+format_fr: 14 mois (2 phases) · Hybride - Paris
+format_en: 14 months (2 phases) · Hybrid - Paris
+status_fr: Terminé
+status_en: Complete
+sourcing_fr: UX Republic
+sourcing_en: UX Republic
+team_fr: "Équipe interne Afflelou Digital : PO, développeurs, marketing, conduite du changement et process."
+team_en: "Afflelou Digital internal team: PO, developers, marketing, change, and process."
+domain_fr: BtoC · Retail / Optique · E-commerce
+domain_en: B2C · Retail / Optics · E-commerce
+main_outputs_fr: UI Kit · Design System / Parcours e-commerce
+main_outputs_en: UI Kit · Design System / E-commerce flows
+
+hero:
+  image: assets/alain-afflelou/AA04.png
+  alt_fr: Cartographie du flow du parcours produit Alain Afflelou
+  alt_en: Flow mapping for the Alain Afflelou product journey
+  eyebrow_fr: Alain Afflelou - Nov. 2019 à juin 2020
+  eyebrow_en: Alain Afflelou - Nov. 2019 to Jun. 2020
+  title_fr_html: Construire une <em>pratique product design</em><br>à partir de zéro.
+  title_en_html: Building a <em>product design practice</em><br>from scratch.
+  lead_fr: >-
+    Intégrée chez Afflelou Digital via UX Republic pour structurer la pratique design,
+    livrer des fonctionnalités e-commerce et faire monter l'équipe interne en compétences.
+  lead_en: >-
+    Embedded at Afflelou Digital via UX Republic to build a design practice, ship
+    e-commerce features, and upskill the internal team.
+
+context:
+  title_fr: Passer d'un modèle franchisé à des produits digitaux omnicanaux.
+  title_en: From a franchise-first business to omnichannel digital products.
+  title_fr_html: Passer d'un modèle franchisé<br>à des produits digitaux omnicanaux.
+  title_en_html: From a franchise-first business<br>to omnichannel digital products.
+  paragraphs_fr:
+    - >-
+      Alain Afflelou est une marque historique de l'optique française avec une présence
+      internationale, mais un modèle économique construit autour de la franchise plutôt
+      que du commerce digital. L'équipe avait besoin d'accélérer : lancer l'e-commerce
+      optique, ajouter un abonnement de lentilles et refondre Malentille.com.
+    - >-
+      La mission consistait aussi à construire la pratique design qui n'existait pas
+      encore : poser les outils, les rituels, les références communes et les compétences
+      nécessaires pour maintenir une qualité constante sur plusieurs lignes métier.
+  paragraphs_en:
+    - >-
+      Alain Afflelou is one of France's historic optics brands with an international
+      footprint, but a business model built on franchises rather than digital commerce.
+      The digital team needed to accelerate: launch optical e-commerce, add a contact
+      lens subscription, and replatform Malentille.com.
+    - >-
+      The mission also meant building the design practice that did not yet exist:
+      establishing the tools, rituals, shared references, and skills needed to keep
+      design quality consistent across several business lines.
+  challenge_fr: >-
+    La stratégie et les priorités du management ont changé plusieurs fois pendant la mission.
+    Il fallait rester productive et maintenir la qualité design malgré les pivots fréquents,
+    sans culture design préexistante pour stabiliser les décisions.
+  challenge_en: >-
+    Management strategy and priorities shifted repeatedly throughout the mission. Staying
+    productive and keeping design quality consistent while adapting to frequent pivots,
+    without an established design culture to anchor decisions, was the defining constraint.
+
+objective_fr: >-
+  Lancer l'e-commerce optique, construire le parcours d'abonnement aux lentilles et
+  mettre en place une équipe product design opérationnelle.
+objective_en: >-
+  Launch optical e-commerce, build a contact lens subscription flow, and stand up a
+  functioning product design team.
+constraints_fr: >-
+  Modèle centré franchises · prestataires externes · aucun outil ni culture design en
+  place · pivots fréquents du management.
+constraints_en: >-
+  Franchise-first business model · external providers · no existing design tooling or
+  culture · frequent management pivots.
+
+approach:
+  title_fr: Une pratique design itérative intégrée au cycle de livraison.
+  title_en: An iterative design practice embedded inside the delivery cycle.
+  title_fr_html: Une pratique design itérative intégrée<br>au cycle de livraison.
+  title_en_html: An iterative design practice embedded<br>inside the delivery cycle.
+  intro_fr: >-
+    Il n'y avait pas de budget important pour une étude amont. L'approche reposait sur
+    un apprentissage qualitatif continu : audit, tests légers, co-design, production et
+    rituels de transmission utilisables après la mission.
+  intro_en: >-
+    There was no large upfront research budget. The approach relied on continuous
+    qualitative learning: audit, lightweight user testing, co-design, production, and
+    handoff rituals that could remain useful after the mission.
+  steps:
+    - step: "01"
+      title_fr: Audit et cadrage
+      title_en: Audit and scoping
+      text_fr: >-
+        Audit UI/UX, cartographie des parties prenantes, cadrage des besoins et mise en
+        place de l'espace collaboratif.
+      text_en: >-
+        UI/UX audit, stakeholder mapping, needs framing, and collaborative workspace setup.
+    - step: "02"
+      title_fr: Recherche utilisateur
+      title_en: User research
+      text_fr: >-
+        Tests guerilla, synthèse, études Testapic et boucle continue tester-apprendre-itérer.
+      text_en: >-
+        Guerilla tests, synthesis, Testapic studies, and a continuous test-learn-iterate loop.
+    - step: "03"
+      title_fr: Co-design et production
+      title_en: Co-design and production
+      text_fr: >-
+        Ateliers, wireframes, maquettes haute fidélité, prototypes, faisabilité, roadmap et
+        UX writing.
+      text_en: >-
+        Workshops, wireframes, high-fidelity mockups, prototypes, feasibility checks,
+        roadmap input, and UX writing.
+    - step: "04"
+      title_fr: Design Ops
+      title_en: Design Ops
+      text_fr: >-
+        Migration Figma, UI Kit, design system réutilisable, recrutement, coaching et montée
+        en compétences.
+      text_en: >-
+        Figma migration, UI Kit, reusable design system, recruitment, coaching, and team
+        upskilling.
+    - step: "05"
+      title_fr: Transmission et acculturation
+      title_en: Handoff and acculturation
+      text_fr: >-
+        Handoff aux équipes et prestataires, évangélisation UX et coaching du management
+        intermédiaire.
+      text_en: >-
+        Handover to internal teams and providers, UX evangelization, and coaching for
+        middle management.
+  tools_fr: Figma · Miro · Google Analytics · Trello · Google Suite · Teams
+  tools_en: Figma · Miro · Google Analytics · Trello · Google Suite · Teams
+
+evidence:
+  title_fr: Recherche, co-design et production dans un même rythme opérationnel.
+  title_en: Research, co-design, and production in the same operating rhythm.
+  title_fr_html: Recherche, co-design et production<br>dans un même rythme opérationnel.
+  title_en_html: Research, co-design, and production<br>in the same operating rhythm.
+
+evidence_images:
+  - file: assets/alain-afflelou/AA01.png
+    class: workshop
+    alt_fr: Atelier de co-design avec les parties prenantes internes et des contributeurs terrain.
+    alt_en: Co-design workshop with internal stakeholders and field contributors.
+    caption_fr: Atelier de co-design avec les parties prenantes internes et des contributeurs terrain.
+    caption_en: Co-design workshop with internal stakeholders and field contributors.
+  - file: assets/alain-afflelou/AA02.png
+    alt_fr: Protocole et synthèse de tests guerilla pour le parcours lunettes Magic.
+    alt_en: Guerilla testing protocol and synthesis for the Magic eyewear journey.
+    caption_fr: Protocole et synthèse de tests guerilla pour le parcours lunettes Magic.
+    caption_en: Guerilla testing protocol and synthesis for the Magic eyewear journey.
+  - file: assets/alain-afflelou/AA03.png
+    wide: true
+    alt_fr: Expérience d'abonnement aux lentilles, traces d'atelier, parcours et spécifications UI.
+    alt_en: Contact lens subscription experience, workshop evidence, user flows, and UI specifications.
+    caption_fr: Expérience d'abonnement aux lentilles, traces d'atelier, parcours et spécifications UI.
+    caption_en: Contact lens subscription experience, workshop evidence, user flows, and UI specifications.
+  - file: assets/alain-afflelou/AA04.png
+    alt_fr: Cartographie du flow pour rendre visible et actionnable un parcours d'achat complexe.
+    alt_en: Flow mapping used to make a complex purchasing journey visible and actionable.
+    caption_fr: Cartographie du flow pour rendre visible et actionnable un parcours d'achat complexe.
+    caption_en: Flow mapping used to make a complex purchasing journey visible and actionable.
+  - file: assets/alain-afflelou/AA05.png
+    alt_fr: Parcours mobile Magic et variantes d'interfaces haute fidélité.
+    alt_en: Mobile Magic eyewear journey and high-fidelity interface variants.
+    caption_fr: Parcours mobile Magic et variantes d'interfaces haute fidélité.
+    caption_en: Mobile Magic eyewear journey and high-fidelity interface variants.
+
+results:
+  title_fr: Construire une capacité design tout en livrant les parcours produit.
+  title_en: A design capability built while shipping product journeys.
+  title_fr_html: Construire une capacité design<br>tout en livrant les parcours produit.
+  title_en_html: A design capability built while<br>shipping product journeys.
+  blocks_fr:
+    - title: Scope produit livré
+      text: Parcours e-commerce optique · abonnement lentilles · refonte Malentille.com.
+    - title: Socle design commun
+      text: UI Kit et design system avec composants, patterns, principes et spécifications UX/UI réutilisables.
+    - title: Pratique opérationnelle
+      text: Audit et roadmaps · synthèses de recherche · facilitation d'ateliers · handoffs prestataires · coaching d'équipe.
+  blocks_en:
+    - title: Delivered product scope
+      text: Optical e-commerce flows · contact lens subscription · Malentille.com redesign.
+    - title: Shared design foundation
+      text: UI Kit and design system with reusable components, patterns, principles, and UX/UI specifications.
+    - title: Operational practice
+      text: Audit and roadmaps · research synthesis · workshop facilitation · provider handoffs · team coaching.
+
+key_outcomes_fr:
+  - label: Pôle design
+    text: Constitué de zéro - 2 personnes formées et opérationnelles sur Figma
+  - label: Devs front + PO
+    text: Montée en compétences sur le product design, la user research et le guerilla testing
+  - label: Parcours e-commerce livrés
+    text: Abonnement lentilles (Malentille.com) + parcours offre lunettes Magic
+  - label: Stratégie de test
+    text: Conçue pour la sortie prothèses auditives - omnicanal, personnes âgées et accompagnants
+  - label: Design system
+    text: Initié et formalisé sous forme d'UI Kit - composants, patterns, spécifications UX/UI
+  - label: Middle management
+    text: Acculturé à l'UX, la user research, le design thinking et le lean
+
+key_outcomes_en:
+  - label: Design practice
+    text: Built from zero - 2 people trained and operational on Figma
+  - label: Front-end devs + POs
+    text: Upskilled on product design, user research, and guerilla testing
+  - label: E-commerce flows shipped
+    text: Contact lens subscription (Malentille.com) + Magic glasses offer
+  - label: Research strategy
+    text: Designed for hearing aids launch - omnichannel, elderly users and caregivers
+  - label: Design system
+    text: Initiated and formalized as a UI Kit - components, patterns, UX and UI specs
+  - label: Middle management
+    text: Acculturated to UX, user research, design thinking, and lean
+
+impact:
+  before_fr: Aucun outil, processus ou référentiel product design partagé chez Afflelou Digital.
+  before_en: No shared product design tooling, process, or reference inside Afflelou Digital.
+  decision_fr: Construire les outils, rituels, handoffs et compétences internes tout en livrant les parcours e-commerce.
+  decision_en: Build shared tools, rituals, handoffs, and internal capabilities while shipping the e-commerce journeys.
+  effect_fr: >-
+    À la fin de la mission, l'équipe disposait d'une référence design commune, d'outils
+    réutilisables, de rituels de production et de personnes capables de poursuivre la
+    pratique.
+  effect_en: >-
+    At the end of the mission, the team had a shared design reference, reusable tooling,
+    production rituals, and people able to keep the practice moving.
+  title_fr: De zéro pratique design à une équipe interne opérationnelle.
+  title_en: From zero design practice to an operational internal team.
+  title_fr_html: De zéro pratique design<br>à une équipe interne opérationnelle.
+  title_en_html: From zero design practice<br>to an operational internal team.
+  paragraphs_fr:
+    - >-
+      À la fin de la mission, l'équipe disposait d'une référence design commune, d'outils
+      réutilisables, de rituels de production et de personnes capables de poursuivre la
+      pratique.
+    - >-
+      Le signal le plus fort que les fondations ont tenu : après la période de clause
+      contractuelle, Afflelou est revenu directement - sans passer par une agence - pour
+      finaliser les parcours et les handoffs UI. La pratique a tenu sans la designer
+      d'origine.
+  paragraphs_en:
+    - >-
+      At the end of the mission, the team had a shared design reference, reusable tooling,
+      production rituals, and people able to keep the practice moving.
+    - >-
+      The strongest signal that the foundation held: after the contractual clause period,
+      Afflelou came back directly - without going through an agency - to finalize the
+      design system and UI handoffs. The practice ran without the original designer.
+
+takeaway_fr:
+  - text: >-
+      Commencer par du nettoyage UI et du quick-and-dirty ressemblait à un déclassement -
+      un travail qu'un junior aurait pu faire. Il a fallu du temps pour comprendre ce que
+      c'était vraiment : la seule porte d'entrée. Dans une organisation sans culture design,
+      on gagne de la portée stratégique en livrant d'abord sur le quotidien. Le pôle design
+      n'est pas arrivé malgré le travail de nettoyage - il est arrivé grâce à lui.
+  - text: >-
+      Je l'intègre maintenant explicitement dans le cadrage des missions embarquées : le
+      premier mois achète les six suivants.
+    highlight: true
+takeaway_en:
+  - text: >-
+      Starting with UI cleanup and quick-and-dirty fixes felt like a step down - work a
+      junior could handle. It took time to see it for what it was: the only way in. In an
+      organization with no design culture, you earn strategic scope by delivering on the
+      mundane first. The design studio didn't happen despite the cleanup work - it happened
+      because of it.
+  - text: >-
+      I now factor this in explicitly when scoping embedded missions: the first month buys
+      the next six.
+    highlight: true
+
+footer_mark_fr: Alain Afflelou - Mise en place du Design Studio
+footer_mark_en: Alain Afflelou - Design Studio setup

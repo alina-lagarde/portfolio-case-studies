@@ -1,0 +1,177 @@
+slug: orange-sosh
+template: legacy-copy
+source_html: orange-sosh-case-study-v2.html
+language_default: en
+page_title: Orange & Sosh - Alina Lagarde
+
+title_fr: Mutualisation progressive des parcours d'assistance Orange et Sosh
+title_en: Progressive consolidation of Orange and Sosh support journeys
+
+client: Orange & Sosh
+sector_fr: Télécom · Assistance digitale
+sector_en: Telecom · Digital support
+role_fr: Coach en Design Thinking / Design Strategist
+role_en: Design Thinking Coach / Design Strategist
+format_fr: 3 mois · Hybride · Bagneux
+format_en: 3 months · Hybrid · Bagneux
+status_fr: Terminé · Livré
+status_en: Complete · Delivered
+sourcing_fr: Freelance via Viséo (ESN)
+sourcing_en: Freelance via Viséo (ESN)
+team_fr: PM · PO · Lead UX · UX Designer · UI Designer · Data scientist (ponctuel) · Connaissance client (ponctuel)
+team_en: PM · PO · Lead UX · UX Designer · UI Designer · Data scientist (ad hoc) · Customer knowledge expert (ad hoc)
+domain_fr: Assistance digitale · SEO · Chatbot · Parcours de contact
+domain_en: Digital support · SEO · Chatbot · Contact journey
+main_outputs_fr: Périmètre MVP priorisé · 5 cartes de test structurées · Vision séquencée V01 -> V02
+main_outputs_en: Prioritised MVP scope · 5 structured test cards · Sequenced V01 -> V02 vision
+
+labels:
+  topbar_fr: Stratégie produit - Cas client
+  topbar_en: Product strategy - Case Study
+  approach_fr: Approche
+  approach_en: Approach
+  evidence_fr: Extraits du projet
+  evidence_en: Project evidence
+  results_fr: Résultats
+  results_en: Results
+  reflection_fr: Apprentissage
+  reflection_en: Takeaway
+
+hero:
+  image: assets/orange-sosh/cover-high-resolution.png
+  alt_fr: Illustration haute résolution pour le cas Orange et Sosh
+  alt_en: High-resolution illustration for the Orange and Sosh case study
+  eyebrow_fr: Orange & Sosh - 2023
+  eyebrow_en: Orange & Sosh - 2023
+  title_fr_html: Structurer une trajectoire produit progressive
+  title_en_html: Structuring an incremental product trajectory
+  lead_fr: Passer d'un débat de périmètre à une trajectoire MVP séquencée, testable et validée en comité.
+  lead_en: Moving from a scope debate to a sequenced, testable MVP trajectory validated in steering committee.
+
+context:
+  title_fr: Faire converger deux écosystèmes sans big bang.
+  title_en: Converging two ecosystems without a big bang.
+  paragraphs_fr:
+    - Orange et Sosh partageaient des enjeux d'assistance digitale, mais leurs parcours, leurs contraintes SEO et leurs logiques de contact ne pouvaient pas être fusionnés en une seule fois sans risque.
+    - La mission a consisté à clarifier le périmètre MVP, documenter les exclusions, structurer des hypothèses de test et aligner l'équipe cœur sur une trajectoire V01 -> V02.
+  paragraphs_en:
+    - Orange and Sosh shared digital support challenges, but their journeys, SEO constraints and contact logic could not be merged all at once without risk.
+    - The mission clarified the MVP scope, documented exclusions, structured test hypotheses and aligned the core team on a V01 -> V02 trajectory.
+  challenge_fr: Réduire le risque de mutualisation avant tout développement, tout en gardant l'équipe alignée sur une vision commune.
+  challenge_en: Reduce consolidation risk before development while keeping the team aligned on a shared vision.
+
+objective_fr: Prioriser le périmètre MVP, séquencer la convergence Orange/Sosh et structurer les hypothèses de test.
+objective_en: Prioritise the MVP scope, sequence Orange/Sosh convergence and structure test hypotheses.
+constraints_fr: Divergence initiale sur le périmètre · enjeux SEO · articulation chatbot Djingo · risque de big bang produit.
+constraints_en: Initial scope disagreement · SEO stakes · Djingo chatbot articulation · product big-bang risk.
+
+approach:
+  title_fr: Une trajectoire cadrée par briques, tests et arbitrages.
+  title_en: A trajectory framed through building blocks, tests and trade-offs.
+  intro_fr: La mission a combiné cadrage produit, ateliers de priorisation, formalisation des exclusions et cartes de test pour transformer un débat conceptuel en trajectoire actionnable.
+  intro_en: The mission combined product framing, prioritisation workshops, documented exclusions and test cards to turn a conceptual debate into an actionable trajectory.
+  tools_fr: Ateliers · Priorisation MVP · Cartes de test · KPIs · Comité de pilotage
+  tools_en: Workshops · MVP prioritisation · Test cards · KPIs · Steering committee
+  steps:
+    - step: "01"
+      title_fr: Clarifier le périmètre
+      title_en: Clarify scope
+      text_fr: Aligner l'équipe cœur sur les briques à inclure, à exclure et à reporter.
+      text_en: Align the core team on what to include, exclude and defer.
+    - step: "02"
+      title_fr: Séquencer la trajectoire
+      title_en: Sequence the trajectory
+      text_fr: Transformer une convergence en big bang en deux incréments V01 -> V02.
+      text_en: Turn a big-bang convergence into two V01 -> V02 increments.
+    - step: "03"
+      title_fr: Structurer les tests
+      title_en: Structure tests
+      text_fr: Formaliser 5 cartes de test avec hypothèses, KPIs et critères de décision.
+      text_en: Formalise 5 test cards with hypotheses, KPIs and decision criteria.
+
+evidence:
+  title_fr: Supports de cadrage et d'arbitrage.
+  title_en: Framing and trade-off materials.
+
+evidence_images:
+  - file: assets/orange-sosh/diagnostic.png
+    alt_fr: Diagnostic des parcours Orange et Sosh
+    alt_en: Orange and Sosh journey diagnosis
+    caption_fr: Diagnostic des parcours et points de convergence.
+    caption_en: Journey diagnosis and convergence points.
+  - file: assets/orange-sosh/journeys.png
+    alt_fr: Cartographie des parcours Orange et Sosh
+    alt_en: Orange and Sosh journey mapping
+    caption_fr: Cartographie des parcours et scénarios de contact.
+    caption_en: Journey mapping and contact scenarios.
+  - file: assets/orange-sosh/mvp-workshop.png
+    alt_fr: Atelier de priorisation MVP
+    alt_en: MVP prioritisation workshop
+    caption_fr: Atelier de priorisation et arbitrages MVP.
+    caption_en: Prioritisation workshop and MVP trade-offs.
+
+results:
+  title_fr: Du débat de périmètre à une trajectoire produit maîtrisée.
+  title_en: From scope debate to a controlled product trajectory.
+  blocks_fr:
+    - title: Court terme
+      text: Périmètre MVP priorisé et livré en 6 briques structurantes ; décisions d'exclusion aussi documentées que les inclusions.
+    - title: Moyen terme
+      text: Convergence progressive et testée entre Orange et Sosh, avec une meilleure articulation SEO, chatbot Djingo et parcours de contact.
+  blocks_en:
+    - title: Short-term
+      text: MVP scope prioritised and delivered across 6 structural building blocks; exclusion decisions as documented as inclusions.
+    - title: Medium-term
+      text: Progressive, tested convergence between Orange and Sosh, with better articulation between SEO, Djingo chatbot and the contact journey.
+
+key_outcomes_fr:
+  - label: Court terme
+    text: Périmètre MVP priorisé, équipe cœur alignée sur V01 -> V02, risque de mutualisation réduit avant développement.
+  - label: Moyen terme
+    text: Convergence progressive Orange/Sosh, articulation SEO/Djingo/contact, décisions fondées sur 5 cartes de test avec KPIs.
+key_outcomes_en:
+  - label: Short-term
+    text: Prioritised MVP scope, core team aligned on V01 -> V02, consolidation risk reduced before development.
+  - label: Medium-term
+    text: Progressive Orange/Sosh convergence, SEO/Djingo/contact articulation, decisions grounded in 5 test cards with KPIs.
+
+impact:
+  style: flow
+  title_fr: Impact
+  title_en: Impact
+  before_fr: Le point de départ était un débat conceptuel sur le périmètre et une convergence envisagée comme un big bang.
+  before_en: The starting point was a conceptual scope debate and a convergence initially envisioned as a big bang.
+  decision_fr: La convergence Orange/Sosh a été reséquencée en deux incréments testables.
+  decision_en: Orange/Sosh convergence was resequenced into two testable increments.
+  effect_fr: Le projet est devenu une trajectoire produit maîtrisée et validée en comité, sans rouvrir les arbitrages à chaque étape.
+  effect_en: The project became a controlled product trajectory validated in steering committee, without reopening trade-offs at every stage.
+  cards_fr:
+    - label: Avant
+      title: Un débat de périmètre
+      text: Le point de départ était un débat conceptuel sur le périmètre et une convergence envisagée comme un big bang.
+    - label: Décision
+      title: Deux incréments testables
+      text: La convergence Orange/Sosh a été reséquencée en V01 puis V02, avec des exclusions documentées autant que les inclusions.
+    - label: Effet
+      title: Une trajectoire validée
+      text: Le comité a validé une trajectoire maîtrisée, mesurable et partageable par toute l'équipe.
+  cards_en:
+    - label: Before
+      title: A scope debate
+      text: The starting point was a conceptual scope debate and a convergence initially envisioned as a big bang.
+    - label: Decision
+      title: Two testable increments
+      text: Orange/Sosh convergence was resequenced into V01 then V02, with exclusions documented as carefully as inclusions.
+    - label: Effect
+      title: A validated trajectory
+      text: The steering committee validated a controlled, measurable trajectory that the full team could share.
+
+takeaway_fr:
+  - "Je n'ai pas corrigé les angles morts de l'équipe frontalement. J'ai construit un processus qui permettrait à la réalité d'émerger d'elle-même. C'est ça que je ne sais pas mettre dans un portfolio."
+takeaway_en:
+  - "I didn't correct the team's blind spots head-on. I built a process that would let reality surface on its own. That's what I don't know how to put in a portfolio."
+
+footer_mark_fr: Orange & Sosh - Stratégie produit
+footer_mark_en: Orange & Sosh - Product strategy
+footer_text_fr: Alina Lagarde - Portfolio UX Strategy - 2026
+footer_text_en: Alina Lagarde - UX Strategy Portfolio - 2026
