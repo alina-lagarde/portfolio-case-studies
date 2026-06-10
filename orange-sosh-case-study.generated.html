@@ -921,21 +921,14 @@ h1 em {
   color: var(--orange);
 }
 
-.footer {
-  align-items: center;
-  color: var(--quiet);
-  display: flex;
-  font-size: 12px;
-  justify-content: space-between;
-  margin: 0 auto;
-  max-width: 1360px;
-  padding: 28px 54px;
-}
+.footer { align-items:center; color:var(--quiet); display:flex; flex-wrap:wrap; font-size:12px; gap:clamp(18px,4vw,58px); justify-content:flex-start; margin:0 auto; max-width:1360px; padding:28px 54px; }
 
 .footer-mark {
+
   align-items: center;
   display: flex;
   gap: 13px;
+  margin-left: auto;
 }
 
 .footer-mark::before {
@@ -1204,6 +1197,50 @@ h1 em {
     break-inside: avoid;
   }
 }
+
+.contact-cta {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(18px, 4vw, 58px);
+}
+
+.contact-link,
+.contact-text {
+  font: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.contact-link {
+  color: var(--accent, var(--blue, var(--orange, var(--quiet))));
+}
+
+.contact-text {
+  color: var(--quiet);
+}
+
+.contact-link:hover,
+.contact-link:focus-visible {
+  color: var(--ink);
+}
+
+.footer.is-wrapped .footer-mark,
+.footer.is-wrapped .footer-count {
+  margin-left: 0;
+}
+
+
+@media (max-width: 980px) {
+  .contact-cta {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -1506,6 +1543,11 @@ h1 em {
   </nav>
   <footer class="footer">
     <span>Alina Lagarde - Design Strategy Portfolio - 2026</span>
+      <div class="contact-cta" aria-label="Contact">
+        <a class="contact-link" href="https://calendar.app.google/cZrdXorbJqAxpcS5A" target="_blank" rel="noopener noreferrer">Échangeons 30 min</a>
+        <a class="contact-link" href="mailto:alinalagarde@gmail.com">alinalagarde@gmail.com</a>
+        <span class="contact-text">+33 6 46 64 49 79</span>
+      </div>
     <span class="footer-mark">Orange &amp; Sosh - Use Case</span>
   </footer>
   </div>
@@ -1808,6 +1850,11 @@ h1 em {
   </nav>
   <footer class="footer">
     <span>Alina Lagarde - Portfolio de stratégie design - 2026</span>
+      <div class="contact-cta" aria-label="Contact">
+        <a class="contact-link" href="https://calendar.app.google/cZrdXorbJqAxpcS5A" target="_blank" rel="noopener noreferrer">Échangeons 30 min</a>
+        <a class="contact-link" href="mailto:alinalagarde@gmail.com">alinalagarde@gmail.com</a>
+        <span class="contact-text">+33 6 46 64 49 79</span>
+      </div>
     <span class="footer-mark">Orange &amp; Sosh - Cas client</span>
   </footer>
   </div>
@@ -1864,6 +1911,18 @@ h1 em {
     });
   }
 
+
+  function updateWrappedFooters() {
+    document.querySelectorAll(".footer").forEach((footer) => {
+      const firstItem = footer.firstElementChild;
+      const rightItem = footer.querySelector(".footer-mark, .footer-count");
+      if (!firstItem || !rightItem) return;
+
+      const isWrapped = rightItem.offsetTop > firstItem.offsetTop + 2;
+      footer.classList.toggle("is-wrapped", isWrapped);
+    });
+  }
+
   function setLanguage(language) {
     const nextLanguage = isSupportedLanguage(language) ? language : "en";
     document.documentElement.lang = nextLanguage;
@@ -1875,6 +1934,7 @@ h1 em {
     });
     storeLanguage(nextLanguage);
     updateInternalLanguageLinks(nextLanguage);
+    updateWrappedFooters();
   }
 
   languageOptions.forEach((option) => {
@@ -1882,6 +1942,9 @@ h1 em {
       setLanguage(document.documentElement.lang === "en" ? "fr" : "en");
     });
   });
+
+  window.addEventListener("resize", updateWrappedFooters);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(updateWrappedFooters);
 
   setLanguage(getUrlLanguage() || getStoredLanguage() || "en");
 </script>

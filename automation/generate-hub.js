@@ -93,8 +93,8 @@ let html = fs.readFileSync(sourcePath, "utf8");
 
 html = replaceNthProjectList(html, projectList(projects, "fr"), 1);
 html = replaceNthProjectList(html, projectList(projects, "en"), 2);
-html = html.replaceAll(/<span>\d+ use cases<\/span>/g, `<span>${projects.length} use cases</span>`);
-html = html.replaceAll(/<span>\d+ case studies<\/span>/g, `<span>${projects.length} case studies</span>`);
+html = html.replaceAll(/<span(?: class="footer-count")?>\d+ use cases<\/span>/g, `<span class="footer-count">${projects.length} use cases</span>`);
+html = html.replaceAll(/<span(?: class="footer-count")?>\d+ case studies<\/span>/g, `<span class="footer-count">${projects.length} case studies</span>`);
 
 fs.writeFileSync(outputPath, html, "utf8");
 

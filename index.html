@@ -230,8 +230,10 @@ h1 em {
   border-top: 1px solid var(--line);
   color: var(--quiet);
   display: flex;
+  flex-wrap: wrap;
   font-size: 11px;
-  justify-content: space-between;
+  gap: clamp(18px, 4vw, 58px);
+  justify-content: flex-start;
   letter-spacing: 0.14em;
   margin: 0 auto;
   max-width: 1360px;
@@ -271,6 +273,10 @@ h1 em {
     align-items: flex-start;
     flex-direction: column;
     gap: 18px;
+  }
+
+  .footer-count {
+    margin-left: 0;
   }
 
   h1 {
@@ -342,6 +348,44 @@ h1 em {
 .profile-link:focus-visible {
   color: var(--paper);
 }
+
+.contact-cta {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(18px, 4vw, 58px);
+}
+
+.contact-link,
+.contact-text {
+  font: inherit;
+  font-weight: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.contact-link {
+  color: var(--accent);
+}
+
+.contact-text {
+  color: var(--quiet);
+}
+
+.contact-link:hover,
+.contact-link:focus-visible {
+  color: var(--paper);
+}
+
+.footer-count {
+  margin-left: auto;
+}
+
+.footer.is-wrapped .footer-mark,
+.footer.is-wrapped .footer-count {
+  margin-left: 0;
+}
+
 </style>
 </head>
 <body>
@@ -433,7 +477,12 @@ h1 em {
     </section>
     <footer class="footer">
       <span>Alina Lagarde - Portfolio - 2026</span>
-      <span>5 use cases</span>
+      <div class="contact-cta" aria-label="Contact">
+        <a class="contact-link" href="https://calendar.app.google/cZrdXorbJqAxpcS5A" target="_blank" rel="noopener noreferrer">Échangeons 30 min</a>
+        <a class="contact-link" href="mailto:alinalagarde@gmail.com">alinalagarde@gmail.com</a>
+        <span class="contact-text">+33 6 46 64 49 79</span>
+      </div>
+      <span class="footer-count">5 use cases</span>
     </footer>
   </div>
 
@@ -524,7 +573,12 @@ h1 em {
     </section>
     <footer class="footer">
       <span>Alina Lagarde - Portfolio - 2026</span>
-      <span>5 case studies</span>
+      <div class="contact-cta" aria-label="Contact">
+        <a class="contact-link" href="https://calendar.app.google/cZrdXorbJqAxpcS5A" target="_blank" rel="noopener noreferrer">Échangeons 30 min</a>
+        <a class="contact-link" href="mailto:alinalagarde@gmail.com">alinalagarde@gmail.com</a>
+        <span class="contact-text">+33 6 46 64 49 79</span>
+      </div>
+      <span class="footer-count">5 case studies</span>
     </footer>
   </div>
 </main>
@@ -580,6 +634,18 @@ h1 em {
     });
   }
 
+
+  function updateWrappedFooters() {
+    document.querySelectorAll(".footer").forEach((footer) => {
+      const firstItem = footer.firstElementChild;
+      const rightItem = footer.querySelector(".footer-mark, .footer-count");
+      if (!firstItem || !rightItem) return;
+
+      const isWrapped = rightItem.offsetTop > firstItem.offsetTop + 2;
+      footer.classList.toggle("is-wrapped", isWrapped);
+    });
+  }
+
   function setLanguage(language) {
     const nextLanguage = isSupportedLanguage(language) ? language : "en";
     document.documentElement.lang = nextLanguage;
@@ -591,6 +657,7 @@ h1 em {
     });
     storeLanguage(nextLanguage);
     updateInternalLanguageLinks(nextLanguage);
+    updateWrappedFooters();
   }
 
   languageOptions.forEach((option) => {
@@ -598,6 +665,9 @@ h1 em {
       setLanguage(document.documentElement.lang === "en" ? "fr" : "en");
     });
   });
+
+  window.addEventListener("resize", updateWrappedFooters);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(updateWrappedFooters);
 
   setLanguage(getUrlLanguage() || getStoredLanguage() || "en");
 </script>
